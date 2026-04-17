@@ -1,0 +1,206 @@
+"use client"
+
+import { motion, useScroll, useTransform, useSpring } from "motion/react"
+import { useRef } from "react"
+import { Upload, Scan, Brain, FileCheck, Zap } from "lucide-react"
+
+const steps = [
+  {
+    icon: Upload,
+    title: "Ingest",
+    description: "Upload NDA securely",
+    detail:
+      "Supports PDF, DOCX, and TXT. Files are encrypted and processed inside your infrastructure.",
+  },
+  {
+    icon: Scan,
+    title: "Structure",
+    description: "Extract clauses and metadata",
+    detail:
+      "Parses contracts into structured clauses, obligations, dates, and legal entities for precise analysis.",
+  },
+  {
+    icon: Brain,
+    title: "Analyze",
+    description: "Run policy-aware evaluation",
+    detail:
+      "Compares clauses against your company policy, reference contracts, and known risk patterns.",
+  },
+  {
+    icon: FileCheck,
+    title: "Decide",
+    description: "Generate clear risk decisions",
+    detail:
+      "Classifies contracts as Safe, Review, or High-Risk with detailed reasoning and clause-level insights.",
+  },
+  {
+    icon: Zap,
+    title: "Act",
+    description: "Review, edit, and finalize",
+    detail:
+      "Apply rewrite suggestions, assign reviewers, and export approved documents with full audit history.",
+  },
+]
+
+export function HowItWorksHorizontal() {
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  })
+
+  const stepCount = steps.length
+
+  // Adjusted horizontal movement:
+  // We move by (card width + gap) for each step to keep the "active" card centered.
+  const x = useSpring(
+    useTransform(
+      scrollYProgress,
+      [0, 1],
+      ["0vw", `-${(stepCount - 1) * 45}vw`]
+    ),
+    { stiffness: 100, damping: 30 }
+  )
+
+  return (
+    <section ref={containerRef} className="relative h-[600vh] bg-muted/30">
+      <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
+        <div className="container mx-auto mb-16 max-w-7xl">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="mb-6 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-2">
+              <span className="text-sm font-medium text-primary">
+                How It Works
+              </span>
+            </div>
+            <h2 className="mb-6 text-4xl font-bold md:text-4xl">
+              From upload to decision
+              <br />
+              <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
+                in seconds
+              </span>
+            </h2>
+          </motion.div>
+        </div>
+
+        <div className="relative flex items-center">
+          {/* <div className="absolute top-1/2 right-0 left-0 h-[2px] bg-border/40" /> */}
+
+          <motion.div style={{ x }} className="flex items-center px-[37.5vw]">
+            {steps.map((step, index) => {
+              const start = index / stepCount
+              const end = (index + 1) / stepCount
+
+              return (
+                <div key={index} className="flex items-center">
+                  {/* Connector: Only shows if it's not the first card */}
+                  {index !== 0 && (
+                    <Connector
+                      progress={scrollYProgress}
+                      // Connector fills in the gap BEFORE the card's active range
+                      range={[start - 0.1, start]}
+                    />
+                  )}
+
+                  <Card
+                    step={step}
+                    index={index}
+                    progress={scrollYProgress}
+                    range={[start, end]}
+                  />
+                </div>
+              )
+            })}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Card({
+  step,
+  index,
+  progress,
+  range,
+}: {
+  step: (typeof steps)[number]
+  index: number
+  progress: ReturnType<typeof useScroll>["scrollYProgress"]
+  range: [number, number]
+}) {
+  // Clamped range to prevent the "non-decreasing" error
+  const safeStart = Math.max(0, range[0])
+  const safeEnd = Math.min(1, range[0] + 0.05)
+
+  // Scale and Y animation only trigger when we enter the card's range
+  const scale = useTransform(progress, [safeStart, safeEnd], [0.8, 1])
+  const y = useTransform(progress, [safeStart, safeEnd], [20, 0])
+
+  // Fade in card as it approaches
+  const opacityStart = Math.max(0, safeStart - 0.05)
+  const opacity = useTransform(progress, [opacityStart, safeStart], [0.3, 1])
+  // const height = useTransform(progress, [opacityStart, safeStart], [80, 400])
+  const height = useTransform(progress, [safeStart, safeEnd], [72, 400])
+
+  // Detail text appears after the card has expanded
+  const detailOpacity = useTransform(
+    progress,
+    [safeEnd, safeEnd + 0.05],
+    [0, 1]
+  )
+
+  return (
+    <motion.div
+      style={{ height }}
+      className="w-[25vw] min-w-[260px] space-y-4 overflow-hidden rounded-3xl border-2 border-border bg-card p-6 transition-all duration-300 hover:border-primary/50"
+    >
+      <div className="flex items-center gap-3 border-b pb-4">
+        <div className="border-blue-700 px-2 py-1 text-sm text-primary">
+          {index + 1}.
+        </div>
+        <h3 className="text-lg text-primary italic">{step.title}</h3>
+      </div>
+      <motion.div className="flex h-full w-full flex-col">
+        <motion.p className="text-md font-semibold">
+          {step.description}
+        </motion.p>
+        <motion.p className="text-sm">{step.detail}</motion.p>
+        <div className="mt-2 mb-6 flex flex-1 items-center justify-center">
+          <div className="flex h-24 w-24 items-center justify-center rounded-2xl">
+            <step.icon
+              className="h-25 w-25 text-primary"
+              strokeWidth={1} // Use 1 for light, 1.5 for medium-light
+            />
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+function Connector({
+  progress,
+  range,
+}: {
+  progress: ReturnType<typeof useScroll>["scrollYProgress"]
+  range: [number, number]
+}) {
+  const width = useTransform(progress, [range[0], range[1]], ["0%", "100%"])
+
+  return (
+    <div className="flex w-[15vw] items-center px-0">
+      <div className="relative h-[15px] w-full bg-border">
+        <motion.div
+          style={{ width }}
+          className="absolute top-0 left-0 h-full bg-primary"
+        />
+      </div>
+    </div>
+  )
+}
