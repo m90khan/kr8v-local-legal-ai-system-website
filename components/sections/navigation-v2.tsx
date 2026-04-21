@@ -6,10 +6,12 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import { ThemeToggle } from "@/components/shared/theme-toggle"
+import { CalendlyModal } from "@/components/shared/calendly-modal"
 
 export function NavigationV2() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [showCalendly, setShowCalendly] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,7 @@ export function NavigationV2() {
     { label: "How it Works", href: "#how-it-works" },
     { label: "Pricing", href: "#pricing" },
     { label: "Vision", href: "/vision" },
+    { label: "Contact", href: "/contact" },
   ]
 
   return (
@@ -90,22 +93,14 @@ export function NavigationV2() {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-          >
-            <Button variant="ghost" size="sm">
-              Sign In
-            </Button>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
             <Button
               size="sm"
-              className="rounded-full bg-gradient-to-r from-primary to-chart-2"
+              onClick={() => setShowCalendly(true)}
+              className="rounded-sm bg-gradient-to-r from-primary to-chart-2"
             >
-              Start Free Trial
+              Book a Demo
             </Button>
           </motion.div>
         </div>
@@ -146,16 +141,24 @@ export function NavigationV2() {
                 </span>
                 <ThemeToggle />
               </div>
-              <Button variant="ghost" className="w-full">
-                Sign In
-              </Button>
-              <Button className="w-full rounded-full bg-gradient-to-r from-primary to-chart-2">
-                Start Free Trial
+              <Button
+                onClick={() => {
+                  setShowCalendly(true)
+                  setIsMobileMenuOpen(false)
+                }}
+                className="w-full bg-gradient-to-r from-primary to-chart-2"
+              >
+                Book a Demo
               </Button>
             </div>
           </div>
         </motion.div>
       )}
+
+      <CalendlyModal
+        isOpen={showCalendly}
+        onClose={() => setShowCalendly(false)}
+      />
     </motion.nav>
   )
 }

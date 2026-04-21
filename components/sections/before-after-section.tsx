@@ -36,7 +36,7 @@ export function BeforeAfterSection() {
       ref={containerRef}
       className="relative overflow-hidden bg-muted/30 px-6 py-32"
     >
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
           className="mb-20 text-center"

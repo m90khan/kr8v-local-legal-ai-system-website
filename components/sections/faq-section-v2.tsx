@@ -59,13 +59,13 @@ export function FaqSectionV2() {
       <div className="container mx-auto">
         {/* Section Header */}
         <motion.div
-          className="mb-20 text-center"
+          className="mx-auto mb-20 max-w-3xl text-center"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.div
-            className="mb-6 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-2"
+            className="mb-6 inline-block rounded-sm border border-primary/20 bg-primary/10 px-4 py-2"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
@@ -81,7 +81,7 @@ export function FaqSectionV2() {
         </motion.div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="mx-auto max-w-3xl space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -94,7 +94,7 @@ export function FaqSectionV2() {
               }}
             >
               <motion.div
-                className="cursor-pointer overflow-hidden rounded-2xl border-2 border-border bg-card"
+                className="cursor-pointer overflow-hidden rounded-sm border-2 border-border bg-card"
                 onClick={() => toggleFaq(index)}
                 whileHover={{ borderColor: "hsl(var(--primary) / 0.3)" }}
                 transition={{ duration: 0.2 }}
@@ -103,7 +103,7 @@ export function FaqSectionV2() {
                 <div className="flex items-start justify-between gap-4 p-6">
                   <h3 className="flex-1 text-lg font-bold">{faq.question}</h3>
                   <motion.div
-                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/10"
+                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-sm bg-primary/10"
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -126,7 +126,7 @@ export function FaqSectionV2() {
                     >
                       <div className="px-6 pb-6">
                         <div
-                          className={`h-1 w-12 bg-gradient-to-r ${faq.gradient} mb-4 rounded-full`}
+                          className={`h-1 w-12 bg-gradient-to-r ${faq.gradient} mb-4 rounded-sm`}
                         />
                         <p className="leading-relaxed text-muted-foreground">
                           {faq.answer}
@@ -142,7 +142,7 @@ export function FaqSectionV2() {
 
         {/* Bottom CTA */}
         <motion.div
-          className="mt-16 rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 via-chart-2/5 to-chart-3/5 p-8 text-center"
+          className="mx-auto mt-16 max-w-3xl rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 via-chart-2/5 to-chart-3/5 p-8 text-center"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
@@ -156,7 +156,7 @@ export function FaqSectionV2() {
           </p>
 
           <motion.button
-            className="rounded-full bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="rounded-sm bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

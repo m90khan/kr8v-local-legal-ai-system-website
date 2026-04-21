@@ -131,7 +131,6 @@ export default function VisionPageV3() {
   const startRef = useRef<HTMLDivElement>(null)
   const roadmapRef = useRef<HTMLDivElement>(null)
   const principlesRef = useRef<HTMLDivElement>(null)
-  const endStateRef = useRef<HTMLDivElement>(null)
 
   const problemsInView = useInView(problemsRef, {
     once: true,
@@ -140,10 +139,6 @@ export default function VisionPageV3() {
   const startInView = useInView(startRef, { once: true, margin: "-100px" })
   const roadmapInView = useInView(roadmapRef, { once: true, margin: "-100px" })
   const principlesInView = useInView(principlesRef, {
-    once: true,
-    margin: "-100px",
-  })
-  const endStateInView = useInView(endStateRef, {
     once: true,
     margin: "-100px",
   })
@@ -391,47 +386,6 @@ export default function VisionPageV3() {
           </div>
         </div>
       </section>
-
-      {/* Where This Leads */}
-      {/* <section ref={endStateRef} className="bg-muted/30 px-6 py-32">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            className="rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/10 via-chart-2/10 to-chart-3/10 p-12 text-center"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={endStateInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="mb-8 text-3xl leading-tight font-bold md:text-5xl">
-              Where This Leads
-            </h2>
-            <div className="mb-8 grid gap-6 md:grid-cols-3">
-              {[
-                "Every contract understood instantly",
-                "Every risk surfaced before it matters",
-                "Every legal decision informed, consistent, and private",
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="rounded-xl border border-border bg-background/50 p-4 text-left"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
-                      <span className="font-bold text-primary">
-                        {index + 1}
-                      </span>
-                    </div>
-                    <p className="text-muted-foreground">{item}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-primary-foreground">
-              <span>Explore the system</span>
-              <ArrowRight className="h-4 w-4" />
-            </div>
-          </motion.div>
-        </div>
-      </section> */}
 
       {/* CTA */}
       <CtaSectionV3 />

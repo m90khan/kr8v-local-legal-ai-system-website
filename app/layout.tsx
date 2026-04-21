@@ -5,6 +5,8 @@ import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { CookieConsent } from "@/components/shared/cookie-consent"
+import { GA_MEASUREMENT_ID } from "@/lib/constants"
 
 const roboto = Roboto({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -91,7 +93,7 @@ export default function RootLayout({
       <head>
         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-TRACKINGID"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         />
         <Script
           id="google-analytics"
@@ -101,7 +103,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-TRACKINGID', {
+              gtag('config', '${GA_MEASUREMENT_ID}', {
                 page_path: window.location.pathname,
               });
             `,
@@ -110,6 +112,7 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
+        <CookieConsent />
       </body>
     </html>
   )

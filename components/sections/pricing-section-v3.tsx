@@ -216,7 +216,7 @@ export function PricingSectionV3() {
 
         {/* Trust Note */}
         <motion.div
-          className="container mx-auto text-center"
+          className="container mx-auto max-w-7xl text-center"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 1.2 }}

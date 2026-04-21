@@ -93,14 +93,10 @@ export function TestimonialsSectionV3() {
           >
             <span className="text-sm font-medium text-primary">Use Cases</span>
           </motion.div>
-          <h2 className="mb-6 text-4xl font-bold md:text-6xl">
-            What you can do with
-            <br />
-            <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
-              KR8V
-            </span>
+          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+            What you can do with KR8V
           </h2>
-          <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
+          <p className="text-md mx-auto max-w-2xl text-muted-foreground">
             See how KR8V helps founders and legal teams catch risky clauses and
             speed up NDA review.
           </p>

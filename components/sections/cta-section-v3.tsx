@@ -1,13 +1,18 @@
 "use client"
 
+import { useState } from "react"
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Upload, ArrowRight, CheckCircle } from "lucide-react"
+import { ArrowRight, CheckCircle, Play, Calendar } from "lucide-react"
+import { CalendlyModal } from "@/components/shared/calendly-modal"
+import { VideoModal } from "@/components/shared/video-modal"
 
 export function CtaSectionV3() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
+  const [showCalendly, setShowCalendly] = useState(false)
+  const [showVideo, setShowVideo] = useState(false)
 
   return (
     <section
@@ -54,7 +59,8 @@ export function CtaSectionV3() {
         />
       </div>
 
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-7xl">
+        <div className="mx-auto max-w-4xl">
         <motion.div
           className="relative overflow-hidden rounded-xl border-2 border-border bg-gradient-to-br from-card/90 to-muted/90 p-12 backdrop-blur-xl md:p-16"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -126,11 +132,26 @@ export function CtaSectionV3() {
               >
                 <Button
                   size="lg"
-                  className="group rounded-full bg-gradient-to-r from-primary to-chart-2 px-12 py-8 text-lg text-white shadow-xl"
+                  onClick={() => setShowCalendly(true)}
+                  className="group rounded-sm bg-gradient-to-r from-primary to-chart-2 px-12 py-8 text-lg text-white shadow-xl"
                 >
-                  <Upload className="mr-2 h-6 w-6" />
-                  Run NDA Analysis
+                  <Calendar className="mr-2 h-6 w-6" />
+                  Book a Demo
                   <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  size="lg"
+                  variant="outline"
+                  onClick={() => setShowVideo(true)}
+                  className="group rounded-sm px-12 py-8 text-lg"
+                >
+                  <Play className="mr-2 h-6 w-6" />
+                  Watch Demo Video
                 </Button>
               </motion.div>
             </motion.div>
@@ -224,6 +245,7 @@ export function CtaSectionV3() {
             }}
           />
         </motion.div>
+        </div>
 
         {/* Footer */}
         <motion.footer
@@ -233,16 +255,16 @@ export function CtaSectionV3() {
           transition={{ duration: 0.8, delay: 1 }}
         >
           <div className="mb-6 flex flex-col items-center justify-center gap-6 sm:flex-row">
-            <a href="#" className="transition-colors hover:text-foreground">
+            <a href="/privacy" className="transition-colors hover:text-foreground">
               Privacy Policy
             </a>
             <span className="hidden sm:inline">•</span>
-            <a href="#" className="transition-colors hover:text-foreground">
+            <a href="/terms" className="transition-colors hover:text-foreground">
               Terms of Service
             </a>
             <span className="hidden sm:inline">•</span>
-            <a href="#" className="transition-colors hover:text-foreground">
-              Documentation
+            <a href="/contact" className="transition-colors hover:text-foreground">
+              Contact
             </a>
             <span className="hidden sm:inline">•</span>
             <a
@@ -255,6 +277,16 @@ export function CtaSectionV3() {
           <p>© 2024 KR8V. Private AI for legal contract intelligence.</p>
         </motion.footer>
       </div>
+
+      {/* Modals */}
+      <CalendlyModal
+        isOpen={showCalendly}
+        onClose={() => setShowCalendly(false)}
+      />
+      <VideoModal
+        isOpen={showVideo}
+        onClose={() => setShowVideo(false)}
+      />
     </section>
   )
 }

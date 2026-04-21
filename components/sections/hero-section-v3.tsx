@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
 import { Button } from "@/components/ui/button"
 import {
@@ -9,10 +10,14 @@ import {
   CheckCircle,
   AlertTriangle,
   XCircle,
+  Play,
+  Calendar,
 } from "lucide-react"
 import { useRef } from "react"
+import { VideoModal } from "@/components/shared/video-modal"
 
 export function HeroSectionV3() {
+  const [showVideo, setShowVideo] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -51,7 +56,7 @@ export function HeroSectionV3() {
       </div>
 
       <motion.div
-        className="relative z-10 container mx-auto px-6 text-center"
+        className="relative z-10 container mx-auto max-w-7xl px-6 text-center"
         style={{ y, opacity }}
       >
         {/* Trust Badges */}
@@ -83,11 +88,9 @@ export function HeroSectionV3() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="block">
-            Review NDAs without sending them anywhere.
-          </span>
+          <span className="block">Stop spending 45 minutes on every NDA.</span>
           <span className="block bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
-            Identify Contract Risks in 10 Seconds
+            Identify contract risks in 10 seconds.
           </span>
         </motion.h1>
 
@@ -126,21 +129,22 @@ export function HeroSectionV3() {
               size="lg"
               className="group text-md rounded-sm bg-gradient-to-r from-primary to-chart-2 px-5 py-6 shadow-lg"
             >
+              <Calendar className="mr-2 h-5 w-5" />
               Book a Demo
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </motion.div>
-          {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/vision" passHref>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-md rounded-dm border-2 px-5 py-6"
-              >
-                See How It Works
-              </Button>
-            </Link>
-          </motion.div> */}
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => setShowVideo(true)}
+              className="group text-md rounded-sm px-5 py-6"
+            >
+              <Play className="mr-2 h-5 w-5" />
+              Watch Demo
+            </Button>
+          </motion.div>
         </motion.div>
 
         {/* Decision Output Preview */}
@@ -278,6 +282,8 @@ export function HeroSectionV3() {
           </div>
         </motion.div>
       </motion.div>
+
+      <VideoModal isOpen={showVideo} onClose={() => setShowVideo(false)} />
     </section>
   )
 }
