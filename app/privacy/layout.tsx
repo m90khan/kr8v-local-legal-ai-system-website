@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { NavigationV2 } from "@/components/sections/navigation-v2"
+import { Navigation } from "@/components/sections/navigation"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | KR8V - Private AI NDA Analysis",
@@ -47,7 +47,7 @@ export default function PrivacyLayout({
 }) {
   return (
     <>
-      <NavigationV2 />
+      <Navigation />
       {children}
     </>
   )

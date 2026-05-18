@@ -3,31 +3,10 @@
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
 import { X, Check, ArrowRight } from "lucide-react"
-
-const comparisons = [
-  {
-    before: "Reading 10+ pages of dense legal text",
-    after: "10-second AI summary with risk scores",
-  },
-  {
-    before: "Missing dangerous clauses buried in paragraphs",
-    after: "Every risk automatically flagged and highlighted",
-  },
-  {
-    before: "Waiting 2-3 days for lawyer review",
-    after: "Instant analysis the moment you upload",
-  },
-  {
-    before: "Hoping you didn't miss something important",
-    after: "Clear decision: Sign, Negotiate, or Reject",
-  },
-  {
-    before: "$500+ legal review fee per contract",
-    after: "Unlimited reviews, one flat price",
-  },
-]
+import content from "@/content.json"
 
 export function BeforeAfterSection() {
+  const beforeAfterData = content.before_after_section
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
 
@@ -36,7 +15,7 @@ export function BeforeAfterSection() {
       ref={containerRef}
       className="relative overflow-hidden bg-muted/30 px-6 py-32"
     >
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto max-w-5xl">
         {/* Section Header */}
         <motion.div
           className="mb-20 text-center"
@@ -45,11 +24,12 @@ export function BeforeAfterSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            Stop approving contracts you don't control
+            {beforeAfterData?.title ||
+              "Stop approving contracts you don't control"}
           </h2>
           <p className="text-md mx-auto max-w-2xl text-muted-foreground">
-            Without structured review, risky clauses slip through unnoticed.
-            KR8V turns unstructured NDAs into clear, actionable decisions.
+            {beforeAfterData?.subtitle ||
+              "Without structured review, risky clauses slip through unnoticed. KR8V turns unstructured NDAs into clear, actionable decisions."}
           </p>
         </motion.div>
 
@@ -78,7 +58,7 @@ export function BeforeAfterSection() {
           </div>
 
           {/* Comparison Rows */}
-          {comparisons.map((item, index) => (
+          {beforeAfterData?.pairs?.map((item, index) => (
             <motion.div
               key={index}
               className="grid gap-6 md:grid-cols-2"
@@ -121,28 +101,6 @@ export function BeforeAfterSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        {/* <motion.div
-          className="mt-16 text-center p-8 rounded-3xl bg-gradient-to-br from-primary/5 via-chart-2/5 to-chart-3/5 border-2 border-primary/20"
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
-          <h3 className="text-3xl font-bold mb-4">
-            Review your first NDA in 60 seconds
-          </h3>
-          <p className="text-lg text-muted-foreground mb-6">
-            No credit card. No installation. Just upload and see the difference.
-          </p>
-          <motion.button
-            className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Try It Now — Free
-          </motion.button>
-        </motion.div> */}
       </div>
     </section>
   )

@@ -1,13 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, Suspense } from "react"
+import { useSearchParams } from "next/navigation"
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Badge } from "@/components/ui/badge"
 import {
   Select,
   SelectContent,
@@ -15,8 +15,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { CtaSectionV3 } from "@/components/sections/cta-section-v3"
-import { CalendlyModal } from "@/components/shared/calendly-modal"
+import { CtaSection } from "@/components/sections/cta-section"
+import { ZohoEmbed } from "@/components/shared/zoho-embed"
 import { cn } from "@/lib/utils"
 import {
   ArrowRight,
@@ -25,6 +25,7 @@ import {
   Calendar,
   Users,
   HelpCircle,
+  MessageSquare,
 } from "lucide-react"
 import { Turnstile } from "@marsidev/react-turnstile"
 
@@ -35,10 +36,11 @@ const INQUIRY_TYPES = [
   { value: "other", label: "Other", icon: HelpCircle },
 ]
 
-export default function ContactPage() {
+function ContactForm() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
   const turnstileRef = useRef<any>(null)
+  const searchParams = useSearchParams()
 
   const [formData, setFormData] = useState({
     name: "",
@@ -52,9 +54,18 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [showCalendly, setShowCalendly] = useState(false)
+  const [activeTab, setActiveTab] = useState<"message" | "demo">("message")
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  useEffect(() => {
+    const tab = searchParams.get("activeTab")
+    if (tab === "demo") {
+      setActiveTab("demo")
+    }
+  }, [searchParams])
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
@@ -71,7 +82,12 @@ export default function ContactPage() {
       return
     }
 
-    if (!formData.name || !formData.email || !formData.inquiryType || !formData.message) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.inquiryType ||
+      !formData.message
+    ) {
       setError("Please fill in all required fields.")
       return
     }
@@ -93,17 +109,14 @@ export default function ContactPage() {
       const data = await res.json()
 
       if (res.ok) {
-        if (formData.inquiryType === "demo") {
-          setShowCalendly(true)
-        } else {
-          setSuccess(true)
-        }
+        setSuccess(true)
       } else {
         setError(data.error || "Something went wrong. Please try again.")
         turnstileRef.current?.reset()
         setCaptchaToken(null)
       }
     } catch (err) {
+      console.log("Error submitting contact form:", err)
       setError("Network error. Please check your connection.")
       turnstileRef.current?.reset()
       setCaptchaToken(null)
@@ -112,13 +125,18 @@ export default function ContactPage() {
     }
   }
 
-  const selectedInquiry = INQUIRY_TYPES.find((t) => t.value === formData.inquiryType)
+  const selectedInquiry = INQUIRY_TYPES.find(
+    (t) => t.value === formData.inquiryType
+  )
   const SelectedIcon = selectedInquiry?.icon || HelpCircle
 
   return (
     <>
-      <main ref={containerRef} className="relative min-h-screen bg-background px-6 py-32">
-        <div className="container mx-auto max-w-7xl">
+      <main
+        ref={containerRef}
+        className="relative min-h-screen bg-background px-6 py-32"
+      >
+        <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -132,7 +150,9 @@ export default function ContactPage() {
                 animate={isInView ? { scale: 1, opacity: 1 } : {}}
                 transition={{ duration: 0.5 }}
               >
-                <span className="text-sm font-medium text-primary">Contact Us</span>
+                <span className="text-sm font-medium text-primary">
+                  Contact Us
+                </span>
               </motion.div>
               <h1 className="mb-4 text-4xl font-bold md:text-5xl">
                 Get in Touch
@@ -140,6 +160,38 @@ export default function ContactPage() {
               <p className="text-lg text-muted-foreground">
                 Ready to transform your NDA review process? Let&apos;s talk.
               </p>
+            </div>
+
+            {/* Tabs */}
+            <div className="mb-8 flex justify-center">
+              <div className="inline-flex items-center gap-1 rounded-full border border-border bg-muted/30 p-1">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("message")}
+                  className={cn(
+                    "flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-all",
+                    activeTab === "message"
+                      ? "bg-primary text-primary-foreground shadow-md"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  <MessageSquare className="h-4 w-4" />
+                  Send Message
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("demo")}
+                  className={cn(
+                    "flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-all",
+                    activeTab === "demo"
+                      ? "bg-primary text-primary-foreground shadow-md"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  <Calendar className="h-4 w-4" />
+                  Book a Demo
+                </button>
+              </div>
             </div>
 
             {/* Success State */}
@@ -157,7 +209,8 @@ export default function ContactPage() {
                   </div>
                   <h2 className="mb-4 text-2xl font-bold">Message Sent!</h2>
                   <p className="mb-6 text-muted-foreground">
-                    Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                    Thank you for reaching out. We&apos;ll get back to you
+                    within 24 hours.
                   </p>
                   <Button
                     onClick={() => setSuccess(false)}
@@ -166,6 +219,26 @@ export default function ContactPage() {
                   >
                     Send Another Message
                   </Button>
+                </Card>
+              </motion.div>
+            ) : activeTab === "demo" ? (
+              /* Calendly Embed */
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Card className="border-2 border-border p-6 md:p-8">
+                  <h2 className="mb-6 text-xl font-bold text-center">
+                    Schedule a Demo
+                  </h2>
+                  <p className="mb-6 text-center text-muted-foreground">
+                    Choose a time that works best for you.
+                  </p>
+                  <ZohoEmbed
+                    prefillName={formData.name}
+                    prefillEmail={formData.email}
+                  />
                 </Card>
               </motion.div>
             ) : (
@@ -222,7 +295,10 @@ export default function ContactPage() {
                     {/* Company */}
                     <div className="space-y-2">
                       <label htmlFor="company" className="text-sm font-medium">
-                        Company <span className="text-xs text-muted-foreground">(optional)</span>
+                        Company{" "}
+                        <span className="text-xs text-muted-foreground">
+                          (optional)
+                        </span>
                       </label>
                       <Input
                         id="company"
@@ -240,10 +316,12 @@ export default function ContactPage() {
                       </label>
                       <Select
                         value={formData.inquiryType}
-                        onValueChange={(value) => handleSelectChange("inquiryType", value)}
+                        onValueChange={(value) =>
+                          handleSelectChange("inquiryType", value)
+                        }
                         required
                       >
-                        <SelectTrigger className="w-full">
+                        <SelectTrigger className="w-full py-5">
                           <SelectValue placeholder="Select inquiry type" />
                         </SelectTrigger>
                         <SelectContent>
@@ -282,7 +360,10 @@ export default function ContactPage() {
                     <div className="flex justify-center">
                       <Turnstile
                         ref={turnstileRef}
-                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
+                        siteKey={
+                          process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
+                          "1x00000000000000000000AA"
+                        }
                         onSuccess={(token) => setCaptchaToken(token)}
                         onExpire={() => setCaptchaToken(null)}
                         onError={() => setCaptchaToken(null)}
@@ -361,17 +442,16 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </main>
-
-      {/* Calendly Modal */}
-      <CalendlyModal
-        isOpen={showCalendly}
-        onClose={() => setShowCalendly(false)}
-        prefillName={formData.name}
-        prefillEmail={formData.email}
-      />
-
       {/* CTA Footer */}
-      <CtaSectionV3 />
+      <CtaSection />
     </>
+  )
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background px-6 py-32" />}>
+      <ContactForm />
+    </Suspense>
   )
 }

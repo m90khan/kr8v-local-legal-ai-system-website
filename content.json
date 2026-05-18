@@ -1,0 +1,546 @@
+{
+  "hero": {
+    "headline": "Stop spending hours on every NDA. Identify potential contract risks in seconds.",
+    "subhead": "Deploy on your network. Analyze contracts with local AI. Keep full control over sensitive documents. Designed for teams that need private, transparent contract analysis without external dependencies.",
+    "data_flow": "Runs locally. Your data stays within your environment.",
+    "trust_badges": [
+      { "text": "SOC 2-Aligned Controls" },
+      { "text": "Local AI Deployment" },
+      { "text": "Encrypted storage" }
+    ],
+    "decision_preview": {
+      "title": "Analysis Results",
+      "decisions": [
+        {
+          "status": "Safe to Sign",
+          "description": "Standard clauses, minimal identifiable risk"
+        },
+        {
+          "status": "Needs Review",
+          "description": "Specific clauses require attention"
+        },
+        {
+          "status": "Higher Risk",
+          "description": "Potentially risky terms detected"
+        }
+      ],
+      "footer": "Suggested decision + reasoning + clause-level insights"
+    },
+    "floating_stats": [
+      { "value": "Seconds", "label": "Typical analysis time" },
+      { "value": "Local-first", "label": "Private processing" }
+    ],
+    "micro_signals": [
+      "No data leaves your environment",
+      "Runs locally or self-hosted",
+      "Designed for sensitive documents"
+    ],
+    "cta": [{ "label": "Book a Demo" }, { "label": "View Workflow" }]
+  },
+  "problem_section": {
+    "title": "NDAs hide risk",
+    "subtitle": "in plain English",
+    "description": "Instantly identify high-risk clauses, missing protections, and deviations from your standards.",
+    "real_nda": {
+      "title": "Standard Mutual NDA",
+      "pages": "12",
+      "source": "Received from investor",
+      "time_to_read": "45 minutes",
+      "page_indicator": "Page 7 of 12"
+    },
+    "snippet": [
+      {
+        "section": "6.1",
+        "text": "The Receiving Party agrees that all Confidential Information shall remain the exclusive property of the Disclosing Party."
+      },
+      {
+        "section": "6.3",
+        "text": "Each party acknowledges that unauthorized disclosure may cause irreparable harm."
+      },
+      {
+        "section": "6.4",
+        "text": "This Agreement shall be governed by the laws of Delaware without regard to conflicts of law principles."
+      }
+    ],
+    "bottom_note": "... and 6 more pages of legal text",
+    "stats": [
+      {
+        "stat": "Hidden risk",
+        "label": "Identify risky clauses and missing protections instantly"
+      },
+      {
+        "stat": "Reduced workload",
+
+        "label": "Reduce manual contract review time significantly"
+      },
+      {
+        "stat": "Consistent evaluation",
+        "label": "Standardize approvals based on your internal policy"
+      }
+    ]
+  },
+  "before_after_section": {
+    "title": "Stop relying on unstructured contract review",
+    "subtitle": "Turn dense legal text into clear, structured decisions",
+    "pairs": [
+      {
+        "before": "Reading 10+ pages of dense legal text",
+        "after": "Structured summary with highlighted risks"
+      },
+      {
+        "before": "Missing critical clauses buried in paragraphs",
+        "after": "Clause-level risk detection and highlighting"
+      },
+      {
+        "before": "Delays waiting for legal review",
+        "after": "Immediate first-pass analysis"
+      },
+      {
+        "before": "Uncertainty before signing",
+        "after": "Clear suggested decision with reasoning"
+      },
+      {
+        "before": "High cost per legal review",
+        "after": "Reduce routine review workload"
+      }
+    ]
+  },
+  "decision_output_section": {
+    "badge": "Decision Intelligence",
+    "title": "Get structured risk decisions with clear reasoning",
+    "subtitle": "KR8V does not just analyze contracts — it helps you decide what to do next.",
+    "decisions": [
+      {
+        "status": "Lower Observed Risk",
+        "mode": "low",
+        "description": "Standard clauses with limited deviations detected",
+        "example": "Balanced mutual NDA with defined confidentiality obligations and standard disclosure terms",
+        "action": "Proceed through standard internal review workflow",
+        "confidence": "Moderate"
+      },
+      {
+        "status": "Review Recommended",
+        "mode": "medium",
+
+        "description": "Potentially unclear or non-standard clauses identified",
+        "example": "Ambiguous liability language or missing confidentiality survival provisions",
+        "action": "Escalate flagged sections for additional review",
+        "confidence": "Moderate"
+      },
+      {
+        "status": "Elevated Risk Signals",
+        "mode": "high",
+        "description": "Potentially imbalanced or higher-risk clauses detected",
+        "example": "Broad liability exposure or one-sided confidentiality obligations",
+        "action": "Request revisions before approval",
+        "confidence": "Moderate"
+      }
+    ],
+    "highlight": {
+      "title": "This is not just analysis — it's decision support",
+      "description": "Most tools highlight text. KR8V provides structured recommendations, reasoning, and next steps so you can act faster with confidence.",
+      "benefits": [
+        "Suggested decisions",
+        "Transparent reasoning",
+        "Clause-level explanations"
+      ]
+    }
+  },
+  "how_it_works": {
+    "title": "How It Works",
+    "subtitle": "From upload to structured decision",
+    "steps": [
+      {
+        "title": "Upload",
+        "icon": "Upload",
+        "description": "Import NDA files securely",
+        "detail": "Supports PDF, DOCX, and TXT documents processed within your environment."
+      },
+      {
+        "title": "Structure",
+        "icon": "FileSearch",
+        "description": "Parse clauses and metadata",
+        "detail": "Breaks agreements into structured clauses, obligations, entities, and sections."
+      },
+      {
+        "title": "Retrieve",
+        "icon": "Database",
+        "description": "Compare against references and policies",
+        "detail": "Uses local retrieval to compare agreements against internal standards and approved reference documents."
+      },
+      {
+        "title": "Analyze",
+        "icon": "ShieldAlert",
+        "description": "Generate AI-assisted review guidance",
+        "detail": "Local models identify deviations, explain risks, and provide contextual reasoning."
+      },
+      {
+        "title": "Review",
+        "icon": "ClipboardCheck",
+        "description": "Apply workflow decisions",
+        "detail": "Assign reviewers, attach evidence, update clauses, and track review states."
+      },
+      {
+        "title": "Export",
+        "icon": "FileOutput",
+        "description": "Maintain review history",
+        "detail": "Export reviewed documents and preserve audit-ready activity history."
+      }
+    ]
+  },
+  "screenshot_annotation_section": {
+    "title": "Inside the KR8V workflow",
+    "image": {
+      "url": "/images/annotated_screenshot.png",
+      "alt": "Annotated screenshot of KR8V contract analysis interface"
+    },
+    "annotations": [
+      {
+        "title": "Risk Scoring",
+        "description": "Clause-level risk analysis with clear reasoning."
+      },
+      {
+        "title": "Clause Detection",
+        "description": "Highlights risky terms and missing protections."
+      },
+      {
+        "title": "Rewrite Suggestions",
+        "description": "Suggests safer alternatives based on policy rules."
+      },
+      {
+        "title": "Decision Output",
+        "description": "Clear review outcomes with actionable next steps."
+      }
+    ]
+  },
+  "trust_explainer": {
+    "title": "How KR8V generates decisions",
+    "points": [
+      "Clause-level parsing of contract structure",
+      "Comparison against common NDA patterns",
+      "Policy-based evaluation using configurable rules",
+      "Risk scoring based on deviations and missing protections",
+      "Transparent reasoning for every flagged clause"
+    ]
+  },
+  "features": {
+    "title": "Platform Capabilities",
+    "subtitle": "Private AI-assisted contract review infrastructure",
+    "items": [
+      {
+        "title": "Local-First AI Processing",
+        "description": "Run contract analysis using local or self-hosted models without mandatory external AI APIs."
+      },
+      {
+        "title": "Reference-Driven Review",
+        "description": "Compare uploaded agreements against approved templates and policy references."
+      },
+      {
+        "title": "Clause-Aware Analysis",
+        "description": "Identify deviations, missing protections, and potentially problematic clauses."
+      },
+      {
+        "title": "Workflow Orchestration",
+        "description": "Support assignment, escalation, approval, and review-required workflows."
+      },
+      {
+        "title": "Audit & Version History",
+        "description": "Maintain traceable review logs and document history."
+      },
+      {
+        "title": "DOCX Export",
+        "description": "Export reviewed agreements with applied edits and updates."
+      }
+    ],
+    "highlight": {
+      "title": "Built for controlled environments",
+      "description": "Designed for teams that require privacy, transparency, and control over sensitive legal data."
+    }
+  },
+
+  "differentiator": {
+    "title": "Why KR8V LEGAL is different",
+    "subtitle": "Designed for private, controlled contract analysis",
+    "comparison_headers": ["Typical AI Tools", "KR8V"],
+    "items": [
+      {
+        "feature": "Data stays within your environment",
+        "cloud": false,
+        "kr8v": true
+      },
+      {
+        "feature": "Local or self-hosted deployment",
+        "cloud": false,
+        "kr8v": true
+      },
+      { "feature": "Policy-aware evaluation", "cloud": false, "kr8v": true },
+      { "feature": "Clause-level analysis", "cloud": true, "kr8v": true },
+      { "feature": "Structured decision output", "cloud": false, "kr8v": true },
+      {
+        "feature": "Audit logs and version history",
+        "cloud": false,
+        "kr8v": true
+      },
+      {
+        "feature": "Workflow-based decisions (approve/reject/review)",
+        "cloud": false,
+        "kr8v": true
+      },
+      {
+        "feature": "No vendor lock-in or external dependency",
+        "cloud": false,
+        "kr8v": true
+      }
+    ],
+    "data_flow": {
+      "title": "Traditional vs KR8V Data Flow",
+      "cloud_flow": [
+        "Your Data",
+        "→ Internet",
+        "→ External AI APIs",
+        "→ Third-Party Processing"
+      ],
+      "kr8v_flow": [
+        "Your Data",
+        "→ Local AI Models",
+        "→ Private Network",
+        "→ Full Control"
+      ]
+    },
+    "bottom_highlight": {
+      "title": "Your Data, Your Infrastructure, Your Control",
+      "description": "Most AI tools require sending your contracts to external servers. KR8V keeps everything inside your infrastructure."
+    }
+  },
+
+  "security_section": {
+    "security": {
+      "title": "Security & Compliance",
+      "subtitle": "Built for privacy-first environments",
+      "tagline": "KR8V is designed for teams that require visibility, control, and private document processing.",
+      "features": [
+        {
+          "title": "Encrypted Document Storage",
+          "icon": "LockKeyhole",
+          "description": "Uploaded documents are encrypted at rest using AES-256-GCM."
+        },
+        {
+          "title": "Role-Based Access Control",
+          "icon": "ShieldCheck",
+          "description": "Restrict access using role-aware authentication and permissions."
+        },
+        {
+          "title": "Audit Logging",
+          "icon": "ScrollText",
+          "description": "Track sensitive review actions and document activity."
+        },
+        {
+          "title": "Private Deployment",
+          "icon": "ServerCog",
+          "description": "Deploy within customer-controlled infrastructure or internal networks."
+        },
+        {
+          "title": "Secure Session Handling",
+          "icon": "Cookie",
+          "description": "Supports secure cookie handling, expiration, and session validation."
+        },
+        {
+          "title": "Security Hardening",
+          "icon": "ShieldAlert",
+          "description": "Implements validation, upload restrictions, and baseline request hardening."
+        }
+      ]
+    },
+    "compliance_note": {
+      "title": "Security Alignment Positioning",
+      "description": "KR8V implements security-focused controls related to access management, encrypted storage, audit logging, and request hardening. KR8V is not currently SOC 2 certified, ISO 27001 certified, or GDPR certified."
+    },
+    "trust_statement": {
+      "title": "Built for Sensitive Documents",
+      "description": "KR8V is designed for teams that require visibility, control, and private document processing.",
+      "markers": [
+        "Local or self-hosted deployment",
+        "Encrypted storage",
+        "Traceable review history",
+        "No external API dependency"
+      ]
+    }
+  },
+
+  "who_its_for": {
+    "title": "Who KR8V is designed for",
+    "subtitle": "Built for teams reviewing sensitive agreements inside controlled environments.",
+    "groups": [
+      {
+        "title": "Internal Legal Teams",
+        "icon": "Scale",
+        "description": "Accelerate routine NDA review while maintaining human oversight and review consistency."
+      },
+      {
+        "title": "Procurement & Vendor Teams",
+        "icon": "BriefcaseBusiness",
+        "description": "Identify non-standard terms and policy deviations before agreements move forward."
+      },
+      {
+        "title": "Security-Conscious Organizations",
+        "icon": "Shield",
+        "description": "Keep sensitive agreements within private infrastructure and internal review workflows."
+      },
+      {
+        "title": "Operations & Compliance Teams",
+        "icon": "ClipboardList",
+        "description": "Reduce repetitive contract review work while maintaining audit visibility and process control."
+      }
+    ]
+  },
+  "use_cases": {
+    "title": "Use Cases",
+    "subtitle": "How teams use KR8V",
+    "description": "Support faster and more consistent NDA review inside private internal workflows.",
+    "cases": [
+      {
+        "scenario": "Reviewing a vendor NDA before procurement approval",
+        "outcome": "Detected broad liability exposure and missing confidentiality survival language",
+        "icon": "shield",
+        "metric": "Review guidance generated in seconds",
+        "gradient": "from-primary to-chart-2"
+      },
+      {
+        "scenario": "Handling high NDA volume across internal teams",
+        "outcome": "Automatically surfaced agreements with elevated risk signals for additional review",
+        "icon": "layers",
+        "metric": "Reduced repetitive review workload",
+        "gradient": "from-chart-2 to-chart-3"
+      },
+      {
+        "scenario": "Reviewing agreements from trusted partners",
+        "outcome": "Identified non-standard clauses embedded within otherwise familiar contract language",
+        "icon": "search",
+        "metric": "Earlier visibility into hidden risk",
+        "gradient": "from-chart-3 to-chart-4"
+      },
+      {
+        "scenario": "Comparing multiple vendor agreements during evaluation",
+        "outcome": "Standardized clause comparison across agreements to support more consistent review decisions",
+        "icon": "git-compare",
+        "metric": "Clearer side-by-side contract review",
+        "gradient": "from-chart-4 to-primary"
+      }
+    ],
+    "footer": {
+      "tagline": "Designed for fast, structured contract review",
+      "signals": [
+        "Policy-aware analysis",
+        "Clause-level risk detection",
+        "Private local deployment"
+      ]
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Private contract intelligence for internal teams",
+    "description": "Deploy KR8V within your environment with flexible licensing and optional support services.",
+    "plans": [
+      {
+        "name": "KR8V License",
+        "description": "Private AI contract review deployed inside your infrastructure",
+        "price": "From $899",
+        "period": "Annual license",
+        "features": [
+          "Unlimited internal users",
+          "Local or self-hosted deployment",
+          "Local AI-assisted NDA review",
+          "Workflow and audit capabilities",
+          "Clause-level analysis",
+          "Policy-aware review guidance",
+          "Product updates during active license period",
+          "Free Deployment Support for the first time"
+        ],
+        "cta": "Book a Demo",
+        "popular": true
+      }
+    ],
+    "support": {
+      "title": "Optional Support",
+      "description": "onboarding, customization, and priority support are available separately based on your environment and requirements.",
+      "items": [
+        "Migration Deployment assistance",
+        "Infrastructure setup",
+        "Custom policy configuration",
+        "Workflow customization"
+      ]
+    },
+    "trust_note": {
+      "title": "AI-assisted review, not legal replacement",
+      "description": "KR8V helps teams identify potential contract risks faster through structured analysis and policy-aware review. Final legal decisions should always involve appropriate human judgment.",
+      "badges": [
+        "Local-first processing",
+        "Self-hosted deployment",
+        "No external API dependency",
+        "Audit-ready workflows"
+      ]
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Questions about deployment, licensing, and review workflows",
+    "items": [
+      {
+        "question": "Where is contract data processed?",
+        "answer": "KR8V is designed for self-hosted and local deployment. In standard deployments, contracts remain within customer-controlled infrastructure."
+      },
+      {
+        "question": "Does KR8V require external AI APIs?",
+        "answer": "No. KR8V is designed to support local AI inference without requiring mandatory external AI services."
+      },
+      {
+        "question": "How should teams use KR8V?",
+        "answer": "KR8V is designed for AI-assisted first-pass NDA review, clause analysis, workflow management, and structured internal review support."
+      },
+      {
+        "question": "Can KR8V replace legal counsel?",
+        "answer": "No. KR8V is designed as review-support software to help teams identify potentially important clauses and accelerate review workflows."
+      },
+      {
+        "question": "What contract types are supported?",
+        "answer": "KR8V is currently optimized for NDAs and confidentiality agreements."
+      },
+      {
+        "question": "Do you support other contract types?",
+        "answer": "Currently focused on NDAs; roadmap for broader contracts. visit our vision page for more details."
+      }
+    ],
+    "bottom_cta": {
+      "title": "Explore private AI-assisted NDA review",
+      "description": "Discuss deployment models, workflows, and infrastructure requirements with the KR8V team.",
+      "cta": "Request Demo"
+    }
+  },
+  "cta": {
+    "headline": "Instantly analyze contract ",
+    "subHeadline": "risks in seconds",
+    "subhead": "Upload an NDA and receive structured risk analysis, clause-level breakdowns, and review guidance in seconds.",
+    "tagline": "Self-hosted. Local-first. Designed for sensitive legal workflows.",
+    "cta": [{ "label": "Book a Demo" }, { "label": "Watch Demo Video" }],
+    "metrics": [
+      { "metric": "< 100 sec", "label": "Typical NDA analysis" },
+      { "metric": "Local-first", "label": "No external API calls" },
+      { "metric": "Deployable", "label": "On-prem & private systems" }
+    ],
+    "trust_signals": [
+      "Local AI execution",
+      "Private deployment architecture",
+      "Audit-ready workflows"
+    ],
+    "social_proof": "Trusted by 100+ teams for faster contract review workflows",
+    "footer": {
+      "links": [
+        { "label": "Privacy Policy", "url": "/privacy" },
+        { "label": "Terms of Service", "url": "/terms" },
+        { "label": "Contact", "url": "/contact" },
+        { "label": "Vision", "url": "/vision" }
+      ],
+      "copyright": "© 2026 KR8V. Private AI-assisted NDA review infrastructure."
+    }
+  }
+}

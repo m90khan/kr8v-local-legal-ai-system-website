@@ -3,6 +3,7 @@
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
 import { Cloud, Server, X, Check } from "lucide-react"
+import { getDifferentiatorContent } from "@/lib/content"
 
 const comparisons = [
   {
@@ -50,7 +51,7 @@ const comparisons = [
 export function DifferentiatorSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
-
+  const content = getDifferentiatorContent()
   return (
     <section
       ref={containerRef}
@@ -82,16 +83,27 @@ export function DifferentiatorSection() {
             transition={{ duration: 0.5 }}
           >
             <span className="text-sm font-medium text-primary">
-              Why KR8V is different
+              {content.title}
             </span>
           </motion.div>
-          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+          {/* <h2 className="mb-6 text-3xl font-bold md:text-4xl">
             Unlike cloud AI tools,
             <br />
             <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
               KR8V never sends your contracts outside your control
             </span>
-          </h2>
+          </h2> */}
+          <motion.h1
+            className="mb-6 text-3xl font-bold tracking-tight md:text-3xl lg:text-3xl"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="block">{content.subtitle.split(", ")[0]}.</span>
+            <span className="block bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
+              {content.subtitle.split(", ")[1]}
+            </span>
+          </motion.h1>
         </motion.div>
 
         {/* Visual Comparison */}
@@ -121,7 +133,7 @@ export function DifferentiatorSection() {
 
           {/* Comparison Rows */}
           <div className="space-y-3">
-            {comparisons.map((item, index) => (
+            {content.items.map((item, index) => (
               <motion.div
                 key={index}
                 className="grid grid-cols-3 items-center gap-6 rounded-2xl border border-border bg-card p-4 transition-colors duration-300 hover:border-primary/30"
@@ -140,11 +152,11 @@ export function DifferentiatorSection() {
                   <motion.div
                     whileHover={{
                       scale: 1.2,
-                      rotate: item.traditional ? 0 : -10,
+                      rotate: item.cloud ? 0 : -10,
                     }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    {item.traditional ? (
+                    {item.cloud ? (
                       <Check className="h-6 w-6 text-muted-foreground" />
                     ) : (
                       <X className="h-6 w-6 text-destructive" />
@@ -187,19 +199,18 @@ export function DifferentiatorSection() {
         </div>
 
         {/* Visual Network Diagram */}
-        <motion.div
-          className="mx-auto mt-20 max-w-4xl"
+        {/* <motion.div
+          className="mx-auto mt-20 max-w-5xl"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1, delay: 1.5 }}
         >
-          <div className="relative rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-card to-muted/30 p-12">
+           <div className="relative rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-card to-muted/30 p-12">
             <h4 className="mb-8 text-center text-xl font-bold">
               Traditional vs KR8V Data Flow
             </h4>
 
             <div className="grid gap-12 md:grid-cols-2">
-              {/* Traditional Flow */}
               <div className="space-y-4">
                 <div className="mb-4 text-center text-sm font-medium text-muted-foreground">
                   Cloud AI Tools
@@ -228,7 +239,7 @@ export function DifferentiatorSection() {
                 </div>
               </div>
 
-              {/* KR8V Flow */}
+          
               <div className="space-y-4">
                 <div className="mb-4 text-center text-sm font-medium text-muted-foreground">
                   KR8V
@@ -253,8 +264,8 @@ export function DifferentiatorSection() {
                 </div>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </div> 
+        </motion.div>*/}
       </div>
     </section>
   )

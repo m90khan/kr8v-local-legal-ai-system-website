@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { NavigationV2 } from "@/components/sections/navigation-v2"
+import { Navigation } from "@/components/sections/navigation"
 
 export const metadata: Metadata = {
   title: "Our Vision | Private Legal AI Infrastructure",
@@ -63,7 +63,7 @@ export default function VisionLayout({
 }) {
   return (
     <>
-      <NavigationV2 />
+      <Navigation />
       {children}
     </>
   )

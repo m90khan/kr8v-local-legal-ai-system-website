@@ -1,8 +1,8 @@
 "use client"
-
 import { motion, useInView, AnimatePresence } from "motion/react"
 import { useRef, useState } from "react"
 import { Plus, Minus } from "lucide-react"
+import { getFaqContent } from "@/lib/content"
 
 const faqs = [
   {
@@ -42,11 +42,11 @@ const faqs = [
     gradient: "from-primary to-chart-3",
   },
 ]
-export function FaqSectionV2() {
+export function FaqSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
   const [openIndex, setOpenIndex] = useState<number | null>(0)
-
+  const content = getFaqContent()
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
   }
@@ -70,19 +70,21 @@ export function FaqSectionV2() {
             animate={isInView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-sm font-medium text-primary">FAQ</span>
+            <span className="text-sm font-medium text-primary">
+              {content.title}
+            </span>
           </motion.div>
           <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            The questions everyone asks
+            {content.subtitle}
           </h2>
-          <p className="text-xl text-muted-foreground">
+          {/* <p className="text-xl text-muted-foreground">
             Honest answers to the hard questions about AI contract review
-          </p>
+          </p> */}
         </motion.div>
 
         {/* FAQ Items */}
-        <div className="mx-auto max-w-3xl space-y-4">
-          {faqs.map((faq, index) => (
+        <div className="mx-auto max-w-5xl space-y-4">
+          {content.items.map((faq, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
@@ -126,7 +128,7 @@ export function FaqSectionV2() {
                     >
                       <div className="px-6 pb-6">
                         <div
-                          className={`h-1 w-12 bg-gradient-to-r ${faq.gradient} mb-4 rounded-sm`}
+                          className={`mb-4 h-1 w-12 rounded-sm bg-gradient-to-r from-chart-4 to-chart-5`}
                         />
                         <p className="leading-relaxed text-muted-foreground">
                           {faq.answer}
@@ -142,17 +144,15 @@ export function FaqSectionV2() {
 
         {/* Bottom CTA */}
         <motion.div
-          className="mx-auto mt-16 max-w-3xl rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 via-chart-2/5 to-chart-3/5 p-8 text-center"
+          className="mx-auto mt-16 max-w-5xl rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 via-chart-2/5 to-chart-3/5 p-8 text-center"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <p className="mb-2 text-lg font-medium">Still evaluating KR8V?</p>
+          <p className="mb-2 text-lg font-medium">{content.bottom_cta.title}</p>
 
           <p className="mb-4 text-muted-foreground">
-            Speak with our team to understand deployment options, security
-            model, and how KR8V fits into your legal workflow. We can walk
-            through architecture, onboarding, and use cases in detail.
+            {content.bottom_cta.description}
           </p>
 
           <motion.button
@@ -160,7 +160,7 @@ export function FaqSectionV2() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Request Demo
+            {content.bottom_cta.cta}
           </motion.button>
         </motion.div>
       </div>

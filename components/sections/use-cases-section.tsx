@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   Clock,
 } from "lucide-react"
+import { getUseCasesContent } from "@/lib/content"
 
 const useCases = [
   {
@@ -46,11 +47,12 @@ const useCases = [
   },
 ]
 
-export function TestimonialsSectionV3() {
+export function UseCasesSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
+  const content = getUseCasesContent()
   const [currentIndex, setCurrentIndex] = useState(0)
-
+  const useCases = content?.cases || []
   const nextUseCase = () => {
     setCurrentIndex((prev) => (prev + 1) % useCases.length)
   }
@@ -91,14 +93,15 @@ export function TestimonialsSectionV3() {
             animate={isInView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-sm font-medium text-primary">Use Cases</span>
+            <span className="text-sm font-medium text-primary">
+              {content.title}
+            </span>
           </motion.div>
           <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            What you can do with KR8V
+            {content.subtitle}
           </h2>
           <p className="text-md mx-auto max-w-2xl text-muted-foreground">
-            See how KR8V helps founders and legal teams catch risky clauses and
-            speed up NDA review.
+            {content.description}
           </p>
         </motion.div>
 
@@ -199,20 +202,20 @@ export function TestimonialsSectionV3() {
           transition={{ duration: 0.8, delay: 1 }}
         >
           <p className="mb-4 text-sm text-muted-foreground">
-            Built for founders who've signed their first NDA or their hundredth
+            {content.footer.tagline}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8">
             <div className="flex items-center gap-2 text-muted-foreground/70">
               <ShieldCheck className="h-5 w-5" />
-              <span className="text-sm">No legal training required</span>
+              <span className="text-sm"> {content.footer.signals[0]}</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground/70">
               <Clock className="h-5 w-5" />
-              <span className="text-sm">30-second analysis</span>
+              <span className="text-sm"> {content.footer.signals[1]}</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground/70">
               <FileSearch className="h-5 w-5" />
-              <span className="text-sm">Catches what humans miss</span>
+              <span className="text-sm"> {content.footer.signals[2]}</span>
             </div>
           </div>
         </motion.div>

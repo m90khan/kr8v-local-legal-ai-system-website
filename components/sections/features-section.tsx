@@ -67,7 +67,7 @@ export function FeaturesSection() {
       ref={containerRef}
       className="relative overflow-hidden bg-background px-6 py-32"
     >
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto max-w-5xl">
         {/* Section Header */}
         <motion.div
           className="mb-20 text-center"
@@ -179,7 +179,7 @@ export function FeaturesSection() {
         </div>
 
         {/* Additional Feature Highlight */}
-        <motion.div
+        {/* <motion.div
           className="mt-16"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -197,7 +197,7 @@ export function FeaturesSection() {
               </p>
             </div>
           </Card>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

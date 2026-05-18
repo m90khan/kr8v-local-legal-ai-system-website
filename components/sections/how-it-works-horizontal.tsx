@@ -2,54 +2,35 @@
 
 import { motion, useScroll, useTransform, useSpring } from "motion/react"
 import { useRef } from "react"
-import { Upload, Scan, Brain, FileCheck, Zap } from "lucide-react"
 
-const steps = [
-  {
-    icon: Upload,
-    title: "Ingest",
-    description: "Upload NDA securely",
-    detail:
-      "Supports PDF, DOCX, and TXT. Files are encrypted and processed inside your infrastructure.",
-  },
-  {
-    icon: Scan,
-    title: "Structure",
-    description: "Extract clauses and metadata",
-    detail:
-      "Parses contracts into structured clauses, obligations, dates, and legal entities for precise analysis.",
-  },
-  {
-    icon: Brain,
-    title: "Analyze",
-    description: "Run policy-aware evaluation",
-    detail:
-      "Compares clauses against your company policy, reference contracts, and known risk patterns.",
-  },
-  {
-    icon: FileCheck,
-    title: "Decide",
-    description: "Generate clear risk decisions",
-    detail:
-      "Classifies contracts as Safe, Review, or High-Risk with detailed reasoning and clause-level insights.",
-  },
-  {
-    icon: Zap,
-    title: "Act",
-    description: "Review, edit, and finalize",
-    detail:
-      "Apply rewrite suggestions, assign reviewers, and export approved documents with full audit history.",
-  },
-]
+import {
+  Upload,
+  FileSearch,
+  Database,
+  ShieldAlert,
+  ClipboardCheck,
+  FileOutput,
+} from "lucide-react"
+import { getHowItWorksContent } from "@/lib/content"
 
+export const iconMap = {
+  Upload,
+  FileSearch,
+  Database,
+  ShieldAlert,
+  ClipboardCheck,
+  FileOutput,
+}
 export function HowItWorksHorizontal() {
   const containerRef = useRef(null)
+  const content = getHowItWorksContent()
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   })
 
-  const stepCount = steps.length
+  const stepCount = content?.steps.length
 
   // Adjusted horizontal movement:
   // We move by (card width + gap) for each step to keep the "active" card centered.
@@ -63,7 +44,7 @@ export function HowItWorksHorizontal() {
   )
 
   return (
-    <section ref={containerRef} className="relative h-[600vh] bg-muted/30">
+    <section ref={containerRef} className="relative h-[600vh] bg-background">
       <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
         <div className="container mx-auto mb-16 max-w-7xl">
           <motion.div
@@ -92,7 +73,7 @@ export function HowItWorksHorizontal() {
           {/* <div className="absolute top-1/2 right-0 left-0 h-[2px] bg-border/40" /> */}
 
           <motion.div style={{ x }} className="flex items-center px-[37.5vw]">
-            {steps.map((step, index) => {
+            {content?.steps.map((step, index) => {
               const start = index / stepCount
               const end = (index + 1) / stepCount
 
@@ -129,7 +110,7 @@ function Card({
   progress,
   range,
 }: {
-  step: (typeof steps)[number]
+  step: { icon: string; title: string; description: string; detail: string }
   index: number
   progress: ReturnType<typeof useScroll>["scrollYProgress"]
   range: [number, number]
@@ -154,29 +135,49 @@ function Card({
     [safeEnd, safeEnd + 0.05],
     [0, 1]
   )
+  const rawFillWidth = useTransform(
+    progress,
+    [safeStart, safeEnd],
+    ["0%", "100%"]
+  )
+  const Icon = iconMap[step.icon as keyof typeof iconMap]
 
   return (
     <motion.div
       style={{ height }}
-      className="w-[25vw] min-w-[260px] space-y-4 overflow-hidden rounded-3xl border-2 border-border bg-card p-6 transition-all duration-300 hover:border-primary/50"
+      className="relative w-[25vw] min-w-[260px] space-y-4 overflow-hidden rounded-3xl border-2 border-border bg-card p-6 transition-all duration-300 hover:border-primary/50"
     >
-      <div className="flex items-center gap-3 border-b pb-4">
+      <motion.div
+        style={{
+          width: rawFillWidth,
+          height,
+        }}
+        className="absolute inset-0 z-0 origin-center bg-primary/5 transition-all duration-300"
+      />
+
+      <div className="relative z-2 flex items-center gap-3 border-b pb-4">
         <div className="border-blue-700 px-2 py-1 text-sm text-primary">
           {index + 1}.
         </div>
         <h3 className="text-lg text-primary italic">{step.title}</h3>
       </div>
-      <motion.div className="flex h-full w-full flex-col">
+      <motion.div className="relative z-1 flex h-full w-full flex-col">
         <motion.p className="text-md font-semibold">
           {step.description}
         </motion.p>
         <motion.p className="text-sm">{step.detail}</motion.p>
         <div className="mt-2 mb-6 flex flex-1 items-center justify-center">
           <div className="flex h-24 w-24 items-center justify-center rounded-2xl">
-            <step.icon
+            {/* <step.icon
               className="h-25 w-25 text-primary"
               strokeWidth={1} // Use 1 for light, 1.5 for medium-light
-            />
+            /> */}
+            {Icon && (
+              <Icon
+                className="h-25 w-25 text-primary"
+                strokeWidth={1} // Use 1 for light, 1.5 for medium-light
+              />
+            )}
           </div>
         </div>
       </motion.div>
@@ -193,11 +194,16 @@ function Connector({
 }) {
   const width = useTransform(progress, [range[0], range[1]], ["0%", "100%"])
 
+  const fillWidth = useSpring(width, {
+    stiffness: 80,
+    damping: 20,
+    mass: 0.5,
+  })
   return (
     <div className="flex w-[15vw] items-center px-0">
-      <div className="relative h-[15px] w-full bg-border">
+      <div className="relative h-[6px] w-full bg-border">
         <motion.div
-          style={{ width }}
+          style={{ width: width }}
           className="absolute top-0 left-0 h-full bg-primary"
         />
       </div>

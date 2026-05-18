@@ -2,13 +2,15 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "motion/react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import { ThemeToggle } from "@/components/shared/theme-toggle"
 import { CalendlyModal } from "@/components/shared/calendly-modal"
 
-export function NavigationV2() {
+export function Navigation() {
+  const router = useRouter()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [showCalendly, setShowCalendly] = useState(false)
@@ -37,7 +39,7 @@ export function NavigationV2() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
       <motion.div
-        className="mx-auto flex max-w-7xl items-center justify-between rounded-full px-6 py-3"
+        className="mx-auto flex max-w-5xl items-center justify-between rounded-sm px-6 py-3"
         style={{
           backgroundColor: isScrolled
             ? "oklch(from var(--background) l c h / 0.8)"
@@ -54,12 +56,12 @@ export function NavigationV2() {
         {/* Logo */}
         <Link href="/">
           <motion.div
-            className="cursor-pointer text-2xl font-bold tracking-tight"
+            className="cursor-pointer text-xl font-bold tracking-tight"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <span className="bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">
-              KR8V
+              LEXON AI
             </span>
           </motion.div>
         </Link>
@@ -97,7 +99,7 @@ export function NavigationV2() {
           >
             <Button
               size="sm"
-              onClick={() => setShowCalendly(true)}
+              onClick={() => router.push("/contact?activeTab=demo")}
               className="rounded-sm bg-gradient-to-r from-primary to-chart-2"
             >
               Book a Demo
@@ -143,7 +145,7 @@ export function NavigationV2() {
               </div>
               <Button
                 onClick={() => {
-                  setShowCalendly(true)
+                  router.push("/contact?activeTab=demo")
                   setIsMobileMenuOpen(false)
                 }}
                 className="w-full bg-gradient-to-r from-primary to-chart-2"

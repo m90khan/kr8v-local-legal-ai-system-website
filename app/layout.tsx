@@ -3,10 +3,11 @@ import { Geist_Mono, Roboto } from "next/font/google"
 import Script from "next/script"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/providers/ThemeProvider"
 import { cn } from "@/lib/utils"
 import { CookieConsent } from "@/components/shared/cookie-consent"
 import { GA_MEASUREMENT_ID } from "@/lib/constants"
+import { LenisProvider } from "@/components/providers/LenisProvider"
 
 const roboto = Roboto({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -111,7 +112,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <LenisProvider>{children}</LenisProvider>
+        </ThemeProvider>
         <CookieConsent />
       </body>
     </html>

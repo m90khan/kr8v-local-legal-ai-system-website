@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { NavigationV2 } from "@/components/sections/navigation-v2"
+import { Navigation } from "@/components/sections/navigation"
 
 export const metadata: Metadata = {
   title: "Terms of Service | KR8V - Private AI NDA Analysis",
@@ -46,7 +46,7 @@ export default function TermsLayout({
 }) {
   return (
     <>
-      <NavigationV2 />
+      <Navigation />
       {children}
     </>
   )

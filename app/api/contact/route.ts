@@ -12,14 +12,15 @@ const redis = new Redis({
 
 const ratelimit = new Ratelimit({
   redis: redis,
-  limiter: Ratelimit.slidingWindow(3, "1 h"),
+  limiter: Ratelimit.slidingWindow(5, "1 h"),
 })
 
 export async function POST(req: NextRequest) {
   const ip =
     req.headers.get("x-real-ip") ||
     req.headers.get("x-forwarded-for")?.split(",")[0] ||
-    "127.0.0.1"
+    "127.0.0.1" ||
+    "localhost"
 
   const { success: limitReached } = await ratelimit.limit(ip)
   if (!limitReached) {
@@ -77,58 +78,190 @@ export async function POST(req: NextRequest) {
     }
     const inquiryLabel = inquiryLabels[body.inquiryType] || body.inquiryType
 
-    // Send notification email
-    await resend.emails.send({
-      from: "KR8V <khan@kr8v.agency>",
-      to: ["khan@kr8v.agency"],
-      subject: `New ${inquiryLabel} from ${body.name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${body.name}</p>
-        <p><strong>Email:</strong> ${body.email}</p>
-        <p><strong>Company:</strong> ${body.company || "Not provided"}</p>
-        <p><strong>Inquiry Type:</strong> ${inquiryLabel}</p>
-        <p><strong>Message:</strong></p>
-        <p>${body.message}</p>
-      `,
-    })
+    // Shared email styles matching globals.css
+    const emailStyles = `
+      <style>
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+          background-color: #F5F5F5;
+          margin: 0;
+          padding: 0;
+        }
+        .container {
+          max-width: 600px;
+          margin: 40px auto;
+          background: #FFFFFF;
+          padding: 40px;
+          border: 1px solid #E5E5E5;
+          border-radius: 8px;
+        }
+        .logo {
+          font-size: 24px;
+          font-weight: 700;
+          letter-spacing: -1px;
+          color: #1A1A1A;
+          text-decoration: none;
+          margin-bottom: 30px;
+          display: block;
+        }
+        .logo-accent {
+          color: #1447e6;
+        }
+        .section-title {
+          font-size: 14px;
+          font-weight: 600;
+          color: #1447e6;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 8px;
+        }
+        .header {
+          font-size: 20px;
+          font-weight: 600;
+          color: #1A1A1A;
+          margin-bottom: 20px;
+        }
+        .body-text {
+          font-size: 15px;
+          line-height: 1.6;
+          color: #1A1A1A;
+          margin-bottom: 16px;
+        }
+        .muted-text {
+          color: #71717A;
+        }
+        .highlight {
+          color: #1A1A1A;
+          font-weight: 600;
+        }
+        .highlight-accent {
+          color: #1447e6;
+          font-weight: 600;
+        }
+        .field-label {
+          font-size: 12px;
+          font-weight: 600;
+          color: #71717A;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 4px;
+        }
+        .field-value {
+          font-size: 15px;
+          color: #1A1A1A;
+          margin-bottom: 16px;
+        }
+        .divider {
+          border: 0;
+          border-top: 1px solid #E5E5E5;
+          margin: 24px 0;
+        }
+        .footer {
+          font-size: 12px;
+          color: #71717A;
+          border-top: 1px solid #E5E5E5;
+          padding-top: 20px;
+          margin-top: 32px;
+        }
+        .cta-button {
+          display: inline-block;
+          background: #1447e6;
+          color: #FFFFFF;
+          padding: 12px 24px;
+          border-radius: 6px;
+          text-decoration: none;
+          font-weight: 500;
+          margin-top: 8px;
+        }
+        .cta-button:hover {
+          background: #1447e6;
+        }
+      </style>
+    `
 
-    // Send auto-reply email
-    const subjectsList = inquiryLabel
+    // Send notification email to admin
     await resend.emails.send({
-      from: "KR8V <khan@kr8v.agency>",
-      to: [body.email],
-      subject: "Message Received — KR8V",
+      from: "LEXON AI <lexon@p9ix.com>",
+      to: ["lexon@p9ix.com"],
+      subject: `New ${inquiryLabel} inquiry from ${body.name}`,
       html: `
         <!DOCTYPE html>
         <html>
           <head>
-            <meta charset="utf-8">
-            <style>
-              body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
-              .container { max-width: 600px; margin: 40px auto; background: #ffffff; padding: 40px; border: 1px solid #eeeeee; border-radius: 8px; }
-              .logo { font-size: 24px; font-weight: 700; letter-spacing: -1px; color: #000000; text-decoration: none; margin-bottom: 30px; display: block; }
-              .header { font-size: 18px; font-weight: 500; color: #111111; margin-bottom: 16px; }
-              .body-text { font-size: 15px; line-height: 1.6; color: #444444; margin-bottom: 24px; }
-              .highlight { color: #000000; font-weight: 600; }
-              .footer { font-size: 12px; color: #888888; border-top: 1px solid #eeeeee; padding-top: 20px; margin-top: 40px; }
-            </style>
+            <meta charset="utf-8" />
+            <title>New Inquiry</title>
+            ${emailStyles}
           </head>
           <body>
             <div class="container">
-              <a href="https://ndaagent.com" class="logo">KR8V</a>
-              <div class="header">Hi ${body.name},</div>
-              <div class="body-text">
-                Thank you for reaching out to <span class="highlight">KR8V</span>. We&apos;ve received your inquiry regarding <span class="highlight">${subjectsList}</span>.
+              <a href="https://lexon.p9ix.com" class="logo">LEXON AI</a>
+
+              <div class="section-title">New Contact Form Submission</div>
+              <div class="header">${inquiryLabel} Inquiry</div>
+
+              <div class="field-label">Name</div>
+              <div class="field-value">${body.name}</div>
+
+              <div class="field-label">Email</div>
+              <div class="field-value">${body.email}</div>
+
+              <div class="field-label">Company</div>
+              <div class="field-value">${body.company || "Not provided"}</div>
+
+              <div class="field-label">Inquiry Type</div>
+              <div class="field-value">${inquiryLabel}</div>
+
+              <hr class="divider" />
+
+              <div class="field-label">Message</div>
+              <div class="body-text" style="white-space: pre-line;">${body.message}</div>
+
+              <hr class="divider" />
+
+              <div class="footer">
+                This email was generated automatically via P9IX contact system.
               </div>
+            </div>
+          </body>
+        </html>
+      `,
+    })
+
+    // Send auto-reply email to user
+    await resend.emails.send({
+      from: "LEXON AI <lexon@p9ix.com>",
+      to: [body.email],
+      subject: "Message Received - LEXON AI",
+      html: `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8" />
+            <title>Message Received</title>
+            ${emailStyles}
+          </head>
+          <body>
+            <div class="container">
+              <a href="https://lexon.p9ix.com" class="logo">LEXON AI</a>
+
+              <div class="header">Hi ${body.name},</div>
+
+              <div class="body-text">
+                Thank you for reaching out to <span class="highlight-accent">LEXON AI</span>. We've received your inquiry regarding <span class="highlight">${inquiryLabel}</span>.
+              </div>
+
               <div class="body-text">
                 Our team will review your message and get back to you within <span class="highlight">24 hours</span>.
               </div>
+
               <div class="body-text">
-                In the meantime, feel free to explore our <a href="https://ndaagent.com/vision">product vision</a> to learn more about how KR8V is building the future of private legal intelligence.
+                In the meantime, feel free to explore our <a href="https://lexon.p9ix.com/vision" class="highlight-accent">product vision</a> to learn more about how LEXON is building the future of private legal intelligence.
               </div>
+
+                       <a href="https://lexon.p9ix.com" class="cta-button">Learn More</a>
+
               <div class="footer">
-                &copy; ${new Date().getFullYear()} KR8V. All rights reserved.
+                &copy; ${new Date().getFullYear()} P9IX. All rights reserved.
               </div>
             </div>
           </body>

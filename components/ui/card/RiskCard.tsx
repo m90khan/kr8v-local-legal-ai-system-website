@@ -174,6 +174,13 @@ export function ProblemSectionV2Interactive() {
   return (
     <section className="mx-auto max-w-5xl space-y-4">
       {/* MAIN CARD */}
+
+      {clauseState === "accepted" && (
+        <p className="text-muted-foreground">
+          <span className="text-foreground/50">6.2 </span>
+          {currentRewrite}
+        </p>
+      )}
       <motion.div
         key={risk}
         initial={{ opacity: 0, y: 10 }}
