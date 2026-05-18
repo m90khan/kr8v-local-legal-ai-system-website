@@ -12,41 +12,6 @@ import {
 } from "lucide-react"
 import { getUseCasesContent } from "@/lib/content"
 
-const useCases = [
-  {
-    scenario: "Reviewing a 15-page NDA from a new vendor",
-    outcome:
-      "Flagged an unlimited liability clause and missing indemnity protections",
-    icon: "search",
-    metric: "30 sec vs ~3 hrs manual review",
-    gradient: "from-primary to-chart-2",
-  },
-  {
-    scenario: "Processing 40+ NDAs monthly across the team",
-    outcome:
-      "Automatically filtered low-risk agreements, escalating only critical ones for legal review",
-    icon: "shield",
-    metric: "Up to 80% reduction in manual review",
-    gradient: "from-chart-2 to-chart-3",
-  },
-  {
-    scenario: "Signing an NDA from a long-term trusted partner",
-    outcome:
-      "Detected a non-standard non-compete clause embedded in boilerplate language",
-    icon: "clock",
-    metric: "Hidden risk identified early",
-    gradient: "from-chart-3 to-chart-4",
-  },
-  {
-    scenario: "Comparing multiple NDAs before vendor selection",
-    outcome:
-      "Standardized clause comparison to identify the most favorable terms across vendors",
-    icon: "search",
-    metric: "Side-by-side risk comparison",
-    gradient: "from-chart-4 to-primary",
-  },
-]
-
 export function UseCasesSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })

@@ -56,16 +56,25 @@ export function HowItWorksHorizontal() {
           >
             <div className="mb-6 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-2">
               <span className="text-sm font-medium text-primary">
-                How It Works
+                {content.title}
               </span>
             </div>
-            <h2 className="mb-6 text-4xl font-bold md:text-4xl">
-              From upload to decision
-              <br />
-              <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
-                in seconds
+
+            <motion.h2
+              className="mb-6 text-3xl font-bold tracking-tight md:text-3xl lg:text-3xl"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              <span className="block">{content.subtitle.split(", ")[0]}</span>
+              <span className="block bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
+                {content.subtitle.split(", ")[1]}
               </span>
-            </h2>
+            </motion.h2>
           </motion.div>
         </div>
 
@@ -168,10 +177,6 @@ function Card({
         <motion.p className="text-sm">{step.detail}</motion.p>
         <div className="mt-2 mb-6 flex flex-1 items-center justify-center">
           <div className="flex h-24 w-24 items-center justify-center rounded-2xl">
-            {/* <step.icon
-              className="h-25 w-25 text-primary"
-              strokeWidth={1} // Use 1 for light, 1.5 for medium-light
-            /> */}
             {Icon && (
               <Icon
                 className="h-25 w-25 text-primary"

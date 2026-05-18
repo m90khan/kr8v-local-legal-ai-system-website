@@ -62,7 +62,7 @@ export function DecisionOutputSection() {
               <motion.div
                 className={`relative rounded-3xl p-8 ${
                   decision.mode === "low"
-                    ? "border-green-500/20 bg-green-500/5 hover:border-green-500/40"
+                    ? "border-sky-500/20 bg-sky-500/5 hover:border-sky-500/40"
                     : decision.mode === "medium"
                       ? "border-yellow-500/30 bg-yellow-500/5 hover:border-yellow-500/50"
                       : "border-red-500/30 bg-red-500/5 hover:border-red-500/50"
@@ -73,7 +73,7 @@ export function DecisionOutputSection() {
                 {/* Icon */}
                 <div className="relative mb-6">
                   {decision.mode === "low" && (
-                    <CheckCircle className="h-16 w-16 text-green-500" />
+                    <CheckCircle className="h-16 w-16 text-sky-500" />
                   )}
                   {decision.mode === "medium" && (
                     <AlertTriangle className="h-16 w-16 text-yellow-500" />
@@ -87,7 +87,7 @@ export function DecisionOutputSection() {
                 <h3
                   className={`mb-3 text-2xl font-bold ${
                     decision.mode === "low"
-                      ? "text-green-600 dark:text-green-400"
+                      ? "text-sky-600 dark:text-sky-400"
                       : decision.mode === "medium"
                         ? "text-yellow-600 dark:text-yellow-400"
                         : "text-red-600"
@@ -116,7 +116,7 @@ export function DecisionOutputSection() {
                     <span
                       className={
                         decision.mode === "low"
-                          ? "text-green-600 dark:text-green-400"
+                          ? "text-sky-600 dark:text-sky-400"
                           : decision.mode === "medium"
                             ? "text-yellow-600"
                             : "text-red-600"
@@ -132,7 +132,7 @@ export function DecisionOutputSection() {
                 <motion.div
                   className={`absolute right-0 bottom-0 left-0 h-1 rounded-b-3xl ${
                     decision.mode === "low"
-                      ? "bg-green-500"
+                      ? "bg-sky-500"
                       : decision.mode === "medium"
                         ? "bg-yellow-500"
                         : "bg-red-500"

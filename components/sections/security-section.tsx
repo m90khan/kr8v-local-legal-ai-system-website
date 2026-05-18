@@ -96,13 +96,18 @@ export function SecuritySection() {
               {security?.title || "Security & Compliance"}
             </span>
           </motion.div>
-          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            {security?.subtitle || "Security built"}
-            <br />
-            <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
-              {security?.tagline || "into every layer"}
+
+          <motion.h1
+            className="mb-6 text-3xl font-bold tracking-tight md:text-3xl lg:text-3xl"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="block">{security.subtitle.split(", ")[0]}.</span>
+            <span className="block bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
+              {security.subtitle.split(", ")[1]}
             </span>
-          </h2>
+          </motion.h1>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
             {security?.tagline ||
               "Your data security is our foundation, not an afterthought"}
@@ -143,97 +148,6 @@ export function SecuritySection() {
             )
           })}
         </div>
-
-        {/* Compliance - Simple List Items */}
-        {/* <motion.div
-          className="mx-auto max-w-4xl"
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.9 }}
-        >
-          <div className="mb-12 text-center">
-            <h3 className="mb-4 text-3xl font-bold">
-              {compliance?.title || "Compliance Ready"}
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-2">
-            {compliance?.items?.map((item, index) => (
-              <motion.div
-                key={index}
-                className="rounded-2xl border-2 border-border bg-gradient-to-br from-card to-muted/30 p-6 text-center"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1 + 1.2,
-                  type: "spring",
-                  stiffness: 100,
-                }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="text-lg font-medium">{item}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
-
-        {/* Trust Statement */}
-        {/* <motion.div
-          className="mt-20 rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 via-chart-2/5 to-chart-3/5 p-12 text-center"
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.5 }}
-        >
-          <h3 className="mb-4 text-2xl font-bold">
-            {compliance?.title || "Zero-Trust by Design"}
-          </h3>
-          <p className="mx-auto mb-6 max-w-2xl text-lg text-muted-foreground">
-            {trustStatement?.description ||
-              "Lexon AI is built for environments where sensitive documents cannot be exposed."}
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            {trustStatement?.markers?.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="rounded-full border border-border bg-background px-4 py-2"
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 1.7 + index * 0.1 }}
-              >
-                <span className="text-sm font-medium">{feature}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
-
-        {/*  <motion.div
-          className="mt-20 rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 via-chart-2/5 to-chart-3/5 p-12 text-center"
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.5 }}
-        >
-          <h3 className="mb-4 text-2xl font-bold">
-            {compliance?.title || "Zero-Trust by Design"}
-          </h3>
-          <p className="mx-auto mb-6 max-w-2xl text-lg text-muted-foreground">
-            {trustStatement?.description ||
-              "Lexon AI is built for environments where sensitive documents cannot be exposed."}
-          </p>
-        <div className="flex flex-wrap items-center justify-center gap-6">
-            {trustStatement?.markers?.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="rounded-full border border-border bg-background px-4 py-2"
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 1.7 + index * 0.1 }}
-              >
-                <span className="text-sm font-medium">{feature}</span>
-              </motion.div>
-            ))}
-          </div> 
-        </motion.div>*/}
       </div>
     </section>
   )

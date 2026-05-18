@@ -30,7 +30,6 @@ import {
 import { Turnstile } from "@marsidev/react-turnstile"
 
 const INQUIRY_TYPES = [
-  { value: "demo", label: "Demo Request", icon: Calendar },
   { value: "pricing", label: "Pricing Question", icon: Mail },
   { value: "partnership", label: "Partnership", icon: Users },
   { value: "other", label: "Other", icon: HelpCircle },
@@ -229,7 +228,7 @@ function ContactForm() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <Card className="border-2 border-border p-6 md:p-8">
-                  <h2 className="mb-6 text-xl font-bold text-center">
+                  <h2 className="mb-6 text-center text-xl font-bold">
                     Schedule a Demo
                   </h2>
                   <p className="mb-6 text-center text-muted-foreground">
@@ -450,7 +449,9 @@ function ContactForm() {
 
 export default function ContactPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-background px-6 py-32" />}>
+    <Suspense
+      fallback={<div className="min-h-screen bg-background px-6 py-32" />}
+    >
       <ContactForm />
     </Suspense>
   )

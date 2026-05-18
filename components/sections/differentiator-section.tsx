@@ -5,49 +5,6 @@ import { useRef } from "react"
 import { Cloud, Server, X, Check } from "lucide-react"
 import { getDifferentiatorContent } from "@/lib/content"
 
-const comparisons = [
-  {
-    feature: "Data stays inside your infrastructure",
-    traditional: false,
-    kr8v: true,
-  },
-  {
-    feature: "Runs on local or self-hosted AI",
-    traditional: false,
-    kr8v: true,
-  },
-  {
-    feature: "Policy-aware contract analysis",
-    traditional: false,
-    kr8v: true,
-  },
-  {
-    feature: "Reference-driven comparisons",
-    traditional: false,
-    kr8v: true,
-  },
-  {
-    feature: "Clause-level risk detection",
-    traditional: true,
-    kr8v: true,
-  },
-  {
-    feature: "Audit logs and version history",
-    traditional: false,
-    kr8v: true,
-  },
-  {
-    feature: "Workflow-based decisions (approve/reject/review)",
-    traditional: false,
-    kr8v: true,
-  },
-  {
-    feature: "No vendor lock-in or external dependency",
-    traditional: false,
-    kr8v: true,
-  },
-]
-
 export function DifferentiatorSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
@@ -86,13 +43,7 @@ export function DifferentiatorSection() {
               {content.title}
             </span>
           </motion.div>
-          {/* <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            Unlike cloud AI tools,
-            <br />
-            <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
-              Lexon AI never sends your contracts outside your control
-            </span>
-          </h2> */}
+
           <motion.h1
             className="mb-6 text-3xl font-bold tracking-tight md:text-3xl lg:text-3xl"
             initial={{ opacity: 0, y: 40 }}
@@ -118,7 +69,9 @@ export function DifferentiatorSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <Cloud className="mx-auto mb-2 h-8 w-8 text-muted-foreground" />
-              <h3 className="text-lg font-bold">Cloud AI Tools</h3>
+              <h3 className="text-lg font-bold">
+                {content.comparison_headers[0]}
+              </h3>
             </motion.div>
             <motion.div
               className="rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-chart-2/10 p-6 text-center"
@@ -127,7 +80,10 @@ export function DifferentiatorSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Server className="mx-auto mb-2 h-8 w-8 text-primary" />
-              <h3 className="text-lg font-bold">Lexon AI</h3>
+              <h3 className="text-lg font-bold">
+                {" "}
+                {content.comparison_headers[1]}
+              </h3>
             </motion.div>
           </div>
 
@@ -189,83 +145,13 @@ export function DifferentiatorSection() {
             transition={{ duration: 0.8, delay: 1.2 }}
           >
             <h3 className="mb-4 text-xl font-bold">
-              Your Data, Your Infrastructure, Your Control
+              {content.bottom_highlight.title}
             </h3>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              Most AI tools require sending your contracts to external servers.
-              Lexon AI keeps everything inside your infrastructure.
+              {content.bottom_highlight.description}
             </p>
           </motion.div>
         </div>
-
-        {/* Visual Network Diagram */}
-        {/* <motion.div
-          className="mx-auto mt-20 max-w-5xl"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 1.5 }}
-        >
-           <div className="relative rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-card to-muted/30 p-12">
-            <h4 className="mb-8 text-center text-xl font-bold">
-              Traditional vs Lexon AI Data Flow
-            </h4>
-
-            <div className="grid gap-12 md:grid-cols-2">
-              <div className="space-y-4">
-                <div className="mb-4 text-center text-sm font-medium text-muted-foreground">
-                  Cloud AI Tools
-                </div>
-                <div className="flex flex-col gap-3">
-                  {[
-                    "Your Data",
-                    "→ Internet",
-                    "→ External AI APIs",
-                    "→ Third-Party Processing",
-                  ].map((step, i) => (
-                    <motion.div
-                      key={i}
-                      className={`rounded-lg p-3 text-center ${
-                        i === 0
-                          ? "border border-primary/30 bg-primary/20"
-                          : "border border-destructive/20 bg-destructive/10"
-                      }`}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ delay: 1.7 + i * 0.1 }}
-                    >
-                      {step}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-          
-              <div className="space-y-4">
-                <div className="mb-4 text-center text-sm font-medium text-muted-foreground">
-                  Lexon AI
-                </div>
-                <div className="flex flex-col gap-3">
-                  {[
-                    "Your Data",
-                    "→ Local AI Models",
-                    "→ Private Network",
-                    "→ Full Control",
-                  ].map((step, i) => (
-                    <motion.div
-                      key={i}
-                      className="rounded-lg border border-primary/30 bg-primary/20 p-3 text-center"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ delay: 1.7 + i * 0.1 }}
-                    >
-                      {step}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div> 
-        </motion.div>*/}
       </div>
     </section>
   )

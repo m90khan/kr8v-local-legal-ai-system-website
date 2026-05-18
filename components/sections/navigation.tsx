@@ -6,14 +6,13 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { ThemeToggle } from "@/components/shared/theme-toggle"
-import { CalendlyModal } from "@/components/shared/calendly-modal"
 
 export function Navigation() {
   const router = useRouter()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [showCalendly, setShowCalendly] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,9 +23,9 @@ export function Navigation() {
   }, [])
 
   const navLinks = [
-    { label: "Features", href: "#features" },
-    { label: "How it Works", href: "#how-it-works" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "Features", href: "/#features" },
+    { label: "How it Works", href: "/#how-it-works" },
+    { label: "Pricing", href: "/#pricing" },
     { label: "Vision", href: "/vision" },
     { label: "Contact", href: "/contact" },
   ]
@@ -54,16 +53,17 @@ export function Navigation() {
         transition={{ duration: 0.3 }}
       >
         {/* Logo */}
-        <Link href="/">
-          <motion.div
-            className="cursor-pointer text-xl font-bold tracking-tight"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          >
-            <span className="bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">
-              LEXON AI
-            </span>
-          </motion.div>
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/images/logo.png"
+            alt="Lexon AI"
+            width={32}
+            height={32}
+            className="hidden h-5 w-auto md:block"
+          />
+          <span className="bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-xl font-bold tracking-tight text-transparent">
+            Lexon AI
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -156,11 +156,6 @@ export function Navigation() {
           </div>
         </motion.div>
       )}
-
-      <CalendlyModal
-        isOpen={showCalendly}
-        onClose={() => setShowCalendly(false)}
-      />
     </motion.nav>
   )
 }

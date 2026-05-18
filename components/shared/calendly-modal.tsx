@@ -3,21 +3,21 @@
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { X } from "lucide-react"
-import { CALENDLY } from "@/lib/constants"
+import { ZOHO_BOOKINGS } from "@/lib/constants"
 
-interface CalendlyModalProps {
+interface BookingModalProps {
   isOpen: boolean
   onClose: () => void
   prefillName?: string
   prefillEmail?: string
 }
 
-export function CalendlyModal({
+export function BookingModal({
   isOpen,
   onClose,
   prefillName = "",
   prefillEmail = "",
-}: CalendlyModalProps) {
+}: BookingModalProps) {
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
@@ -35,12 +35,12 @@ export function CalendlyModal({
     }
   }, [isOpen])
 
-  const calendlyUrl = new URL(CALENDLY.url)
+  const bookingUrl = new URL(ZOHO_BOOKINGS.url)
   if (prefillName) {
-    calendlyUrl.searchParams.set("name", prefillName)
+    bookingUrl.searchParams.set("name", prefillName)
   }
   if (prefillEmail) {
-    calendlyUrl.searchParams.set("email", prefillEmail)
+    bookingUrl.searchParams.set("email", prefillEmail)
   }
 
   return (
@@ -77,11 +77,11 @@ export function CalendlyModal({
               <X className="h-5 w-5" />
             </button>
 
-            {/* Calendly Embed */}
+            {/* Booking Embed */}
             {isMounted && (
               <div className="h-full w-full">
                 <iframe
-                  src={calendlyUrl.toString()}
+                  src={bookingUrl.toString()}
                   className="h-full w-full"
                   title="Schedule a Demo"
                 />

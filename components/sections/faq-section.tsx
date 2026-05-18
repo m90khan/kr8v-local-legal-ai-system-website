@@ -4,44 +4,6 @@ import { useRef, useState } from "react"
 import { Plus, Minus } from "lucide-react"
 import { getFaqContent } from "@/lib/content"
 
-const faqs = [
-  {
-    question: "Is this legally reliable? Can I trust the AI's analysis?",
-    answer:
-      "Lexon AI uses advanced NLP models trained on large datasets of NDA-style contracts to identify common risk patterns and clause issues. However, this is decision support software, not legal advice. The system highlights potential risks and suggests areas for review, but final interpretation and decisions should always involve qualified human judgment. Think of it like an advanced contract review assistant — it helps surface issues you might miss, but it does not replace legal responsibility. Many teams use Lexon AI for first-pass review, then involve legal counsel only for flagged sections, reducing review time significantly.",
-    gradient: "from-primary to-chart-2",
-  },
-  {
-    question: "Can I use this instead of a lawyer?",
-    answer:
-      "For standard NDAs and routine confidentiality agreements, Lexon AI can often handle first-pass review effectively. However, it is not a replacement for legal counsel in complex negotiations, high-value deals, or custom legal structures. It is designed to help teams quickly identify unusual or risky clauses in commonly used agreements, so legal experts can focus on higher-impact decisions rather than repetitive reviews.",
-    gradient: "from-chart-2 to-chart-3",
-  },
-  {
-    question: "Where does my data go? Who can see my contracts?",
-    answer:
-      "Your contracts are processed in a privacy-first architecture. Lexon AI is designed for local or self-hosted deployment, meaning your documents can remain within your infrastructure. We do not use your contract data to train external models, and we do not access your documents unless you explicitly enable a hosted configuration. In self-hosted setups, your data stays within your environment and can be encrypted at rest according to your own security policies.",
-    gradient: "from-chart-3 to-chart-4",
-  },
-  {
-    question: "What happens if the AI makes a mistake?",
-    answer:
-      "Every flagged issue includes the exact clause, explanation, and reasoning used to identify it, so you can validate the result independently. Like any automated system, Lexon AI can produce both false positives and false negatives, which is why it is designed for transparency rather than blind automation. The system prioritizes caution, meaning it may flag more potential issues than strictly necessary in order to reduce the chance of missing critical risks.",
-    gradient: "from-chart-4 to-chart-5",
-  },
-  {
-    question: "How long does analysis take? Can it handle complex contracts?",
-    answer:
-      "Typical NDAs are analyzed in 10–15 seconds. Longer or more complex contracts (20+ pages) usually complete within 60 seconds, depending on system configuration. Lexon AI is designed to handle documents up to around 100 pages, though performance depends on deployment environment. Highly complex agreements with layered dependencies may take longer, but still typically faster than manual legal review.",
-    gradient: "from-chart-5 to-primary",
-  },
-  {
-    question: "Do you support contracts other than NDAs?",
-    answer:
-      "Lexon AI is currently optimized for NDAs and confidentiality agreements. Support for additional contract types such as employment agreements, vendor contracts, and MSAs is planned as the product expands. The core AI engine is general-purpose, but reliability depends on domain-specific tuning of clause models and risk rules.",
-    gradient: "from-primary to-chart-3",
-  },
-]
 export function FaqSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
@@ -143,7 +105,7 @@ export function FaqSection() {
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
+        {/* <motion.div
           className="mx-auto mt-16 max-w-5xl rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 via-chart-2/5 to-chart-3/5 p-8 text-center"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -162,7 +124,7 @@ export function FaqSection() {
           >
             {content.bottom_cta.cta}
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

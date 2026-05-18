@@ -6,7 +6,6 @@ import { motion, useInView } from "motion/react"
 import { useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Play, Calendar } from "lucide-react"
-import { CalendlyModal } from "@/components/shared/calendly-modal"
 import { VideoModal } from "@/components/shared/video-modal"
 import content from "@/content.json"
 
@@ -15,7 +14,6 @@ export function CtaSection() {
   const ctaData = content.cta
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
-  const [showCalendly, setShowCalendly] = useState(false)
   const [showVideo, setShowVideo] = useState(false)
 
   return (
@@ -268,10 +266,6 @@ export function CtaSection() {
       </div>
 
       {/* Modals */}
-      <CalendlyModal
-        isOpen={showCalendly}
-        onClose={() => setShowCalendly(false)}
-      />
       <VideoModal isOpen={showVideo} onClose={() => setShowVideo(false)} />
     </section>
   )

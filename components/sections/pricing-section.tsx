@@ -177,35 +177,6 @@ export function PricingSection() {
             </div>
           </motion.div>
         )}
-
-        {/* Trust Note */}
-        {/* <motion.div
-          className="container mx-auto max-w-5xl text-center"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
-          <Card className="border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-chart-2/5 p-8">
-            <h3 className="mb-3 text-xl font-bold">
-              {pricingData?.trust_note?.title ||
-                "AI-assisted review, not AI replacement"}
-            </h3>
-            <p className="mb-4 text-muted-foreground">
-              {pricingData?.trust_note?.description ||
-                "Lexon AI helps surface potential risks in contracts so teams can review faster and make more informed decisions."}
-            </p>
-            <div className="grid grid-cols-2 items-center justify-center gap-4 text-sm">
-              {pricingData?.trust_note?.badges?.map((item, i) => (
-                <div
-                  key={i}
-                  className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-medium"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </Card>
-        </motion.div> */}
       </div>
     </section>
   )

@@ -24,10 +24,41 @@ export default function PrivacyPage() {
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
               Privacy Policy
             </h1>
-            <p className="text-muted-foreground">Last updated: April 2026</p>
+            <p className="text-muted-foreground">Last updated: May 2026</p>
           </div>
 
           <div className="space-y-8">
+            <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-chart-2/5 p-8">
+              <h2 className="mb-4 text-2xl font-bold">About This Policy</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  This Privacy Policy applies only to the{" "}
+                  <strong className="text-foreground">Lexon AI website</strong>{" "}
+                  ({COMPANY.website}). It describes how we collect, use, and
+                  protect information gathered through this landing page.
+                </p>
+                <p>
+                  This policy does{" "}
+                  <strong className="text-foreground">not</strong> apply to the
+                  Lexon AI software deployed on your infrastructure. The
+                  deployed product operates entirely within your environment
+                  under your control.
+                </p>
+                <p>
+                  For our broader company privacy practices, see the{" "}
+                  <a
+                    href={COMPANY.privacyPolicy}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline"
+                  >
+                    Kr8v Privacy Policy
+                  </a>
+                  .
+                </p>
+              </div>
+            </Card>
+
             <Card className="border-2 border-border p-8">
               <h2 className="mb-4 text-2xl font-bold">
                 1. Information We Collect
@@ -38,7 +69,8 @@ export default function PrivacyPage() {
                     Contact Form Data:
                   </strong>{" "}
                   When you fill out our contact form, we collect your name,
-                  email address, company name (optional), and message content.
+                  email address, company name (optional), inquiry type, and
+                  message content.
                 </p>
                 <p>
                   <strong className="text-foreground">
@@ -49,12 +81,18 @@ export default function PrivacyPage() {
                   pages visited, time spent on site, and general geographic
                   location.
                 </p>
+                <p>
+                  <strong className="text-foreground">Booking Data:</strong>{" "}
+                  When you schedule a demo through our booking system, the
+                  scheduling provider collects information necessary to
+                  facilitate the appointment.
+                </p>
               </div>
             </Card>
 
             <Card className="border-2 border-border p-8">
               <h2 className="mb-4 text-2xl font-bold">
-                2. Local Product Deployment - Your Data Stays With You
+                2. Deployed Software — Zero Data Collection
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -64,33 +102,32 @@ export default function PrivacyPage() {
                 </p>
                 <p>
                   When you deploy{" "}
+                  <strong className="text-foreground">Lexon AI</strong> on your
+                  infrastructure,{" "}
                   <strong className="text-foreground">
-                    Lexon AI
-                  </strong>{" "}
-                  locally on your infrastructure,{" "}
-                  <strong className="text-foreground">
-                    ALL contract processing occurs entirely on YOUR device or
-                    servers
+                    the software collects zero telemetry, sends zero analytics,
+                    and transmits zero data back to us
                   </strong>
-                  . Kr8v does NOT have access to, collect, store, or transmit
-                  any of your contract data.
+                  . {COMPANY.name} has no access to, collects, stores, or
+                  transmits any of your contract data or usage information.
                 </p>
                 <ul className="list-inside list-disc space-y-2">
                   <li>Your contracts never leave your network</li>
-                  <li>No data is sent to external APIs or cloud services</li>
+                  <li>No telemetry, crash reporting, or usage analytics</li>
+                  <li>No external API calls to {COMPANY.name} systems</li>
                   <li>
                     All AI processing happens locally on your infrastructure
                   </li>
                   <li>
-                    We have zero visibility into your documents or analysis
-                    results
+                    We have zero visibility into your documents, analysis
+                    results, or how you use the product
                   </li>
                 </ul>
                 <p>
-                  This means the privacy protections described in this policy
-                  apply primarily to the data we collect through our website and
-                  contact form, NOT to your contract data when using the Lexon
-                  AI product.
+                  If you configure the product to use external AI providers
+                  (e.g., OpenAI, Anthropic), your data is subject to those
+                  providers&apos; privacy policies. You control which providers
+                  are used and should review their terms independently.
                 </p>
               </div>
             </Card>
@@ -101,8 +138,12 @@ export default function PrivacyPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  We use cookies to improve your experience and analyze site
-                  traffic. Below are the cookie categories:
+                  Cookies and analytics are used{" "}
+                  <strong className="text-foreground">
+                    only on this landing page
+                  </strong>
+                  . The deployed Lexon AI software does not use cookies,
+                  tracking, or analytics of any kind.
                 </p>
 
                 <div className="rounded-lg border border-border bg-muted/50 p-4">
@@ -115,7 +156,7 @@ export default function PrivacyPage() {
                     and theme preferences.
                     <br />
                     <span className="text-xs">
-                      No consent required - always active
+                      No consent required — always active
                     </span>
                   </p>
                 </div>
@@ -162,19 +203,19 @@ export default function PrivacyPage() {
                 </div>
 
                 <div className="rounded-lg border border-border bg-muted/50 p-4">
-                  <h3 className="mb-2 font-bold">Calendly</h3>
+                  <h3 className="mb-2 font-bold">Zoho Bookings</h3>
                   <p className="text-sm">
-                    When you book a demo, you may be redirected to
-                    Calendly&apos;s scheduling service. If you choose to use
-                    Calendly, their privacy policy will apply. We recommend
-                    reviewing Calendly&apos;s privacy policy at{" "}
+                    When you book a demo, you may be redirected to Zoho
+                    Bookings&apos;s scheduling service. If you choose to use
+                    Zoho Bookings, their privacy policy will apply. We recommend
+                    reviewing Zoho&apos;s privacy policy at{" "}
                     <a
-                      href="https://calendly.com/privacy"
+                      href="https://www.zoho.com/privacy.html"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary underline"
                     >
-                      calendly.com/privacy
+                      zoho.com/privacy
                     </a>
                     .
                   </p>
@@ -215,7 +256,7 @@ export default function PrivacyPage() {
                     To send you information about our products and services
                   </li>
                   <li>To improve our website based on analytics data</li>
-                  <li>To schedule demo appointments via Calendly</li>
+                  <li>To schedule demo appointments via Zoho Bookings</li>
                   <li>To prevent spam and abuse of our contact form</li>
                 </ul>
                 <p>
@@ -235,8 +276,8 @@ export default function PrivacyPage() {
                   up to 26 months.
                 </p>
                 <p>
-                  If you book a demo via Calendly, that data is subject to
-                  Calendly&apos;s privacy policy.
+                  If you book a demo via Zoho Bookings, that data is subject to
+                  Zoho&apos;s privacy policy and retention practices.
                 </p>
               </div>
             </Card>
@@ -295,10 +336,11 @@ export default function PrivacyPage() {
                   alteration, disclosure, or destruction.
                 </p>
                 <p>
-                  For our local product (Lexon AI), security is handled
+                  For the deployed Lexon AI product, security is handled
                   entirely by your organization&apos;s infrastructure. We
                   recommend following best practices for self-hosted
-                  applications.
+                  applications, including network isolation, access controls,
+                  and encryption at rest.
                 </p>
               </div>
             </Card>
@@ -343,6 +385,24 @@ export default function PrivacyPage() {
                   <p>
                     <strong className="text-foreground">{COMPANY.name}</strong>
                   </p>
+                  <p>
+                    <span className="text-sm text-muted-foreground">
+                      {COMPANY.structure.aiDivision} is the AI division of{" "}
+                      {COMPANY.structure.company}. {COMPANY.structure.product}{" "}
+                      is the legal AI product built by{" "}
+                      {COMPANY.structure.aiDivision}.
+                    </span>
+                  </p>
+                  <p className="text-sm">
+                    Registered by: {COMPANY.registration.owner}
+                  </p>
+                  <p className="text-sm">{COMPANY.registration.authority}</p>
+                  <p className="text-sm">
+                    Registration No: {COMPANY.registration.regNo}
+                  </p>
+                  <p className="text-sm">
+                    Reference No: {COMPANY.registration.refNo}
+                  </p>
                   <p>{COMPANY.address}</p>
                   <p>
                     Email:{" "}
@@ -353,7 +413,28 @@ export default function PrivacyPage() {
                       {COMPANY.email}
                     </a>
                   </p>
-                  <p>Website: {COMPANY.website}</p>
+                  <p>
+                    Website:{" "}
+                    <a
+                      href={COMPANY.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline"
+                    >
+                      {COMPANY.website}
+                    </a>
+                  </p>
+                  <p>
+                    Company Privacy Policy:{" "}
+                    <a
+                      href={COMPANY.privacyPolicy}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline"
+                    >
+                      {COMPANY.privacyPolicy}
+                    </a>
+                  </p>
                 </div>
               </div>
             </Card>

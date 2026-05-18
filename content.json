@@ -148,7 +148,7 @@
   },
   "how_it_works": {
     "title": "How It Works",
-    "subtitle": "From upload to structured decision",
+    "subtitle": "From upload to, structured decision",
     "steps": [
       {
         "title": "Upload",
@@ -224,34 +224,49 @@
     ]
   },
   "features": {
+    "badge": "Intelligent Review",
     "title": "Platform Capabilities",
     "subtitle": "Private AI-assisted contract review infrastructure",
+
     "items": [
       {
+        "icon": "Lock",
         "title": "Local-First AI Processing",
-        "description": "Run contract analysis using local or self-hosted models without mandatory external AI APIs."
+        "description": "Run contract analysis using local or self-hosted models without mandatory external AI APIs.",
+        "gradient": "from-primary to-chart-2"
       },
       {
+        "icon": "Brain",
         "title": "Reference-Driven Review",
-        "description": "Compare uploaded agreements against approved templates and policy references."
+        "description": "Compare uploaded agreements against approved templates and policy references.",
+        "gradient": "from-chart-3 to-chart-4"
       },
       {
+        "icon": "TrendingUp",
         "title": "Clause-Aware Analysis",
-        "description": "Identify deviations, missing protections, and potentially problematic clauses."
+        "description": "Identify deviations, missing protections, and potentially problematic clauses.",
+        "gradient": "from-chart-4 to-chart-5"
       },
       {
+        "icon": "Scale",
         "title": "Workflow Orchestration",
-        "description": "Support assignment, escalation, approval, and review-required workflows."
+        "description": "Support assignment, escalation, approval, and review-required workflows.",
+        "gradient": "from-chart-2 to-chart-3"
       },
       {
+        "icon": "FileCheck",
         "title": "Audit & Version History",
-        "description": "Maintain traceable review logs and document history."
+        "description": "Maintain traceable review logs and document history.",
+        "gradient": "from-chart-5 to-primary"
       },
       {
+        "icon": "RefreshCw",
         "title": "DOCX Export",
-        "description": "Export reviewed agreements with applied edits and updates."
+        "description": "Export reviewed agreements with applied edits and updates.",
+        "gradient": "from-primary to-chart-3"
       }
     ],
+
     "highlight": {
       "title": "Built for controlled environments",
       "description": "Designed for teams that require privacy, transparency, and control over sensitive legal data."
@@ -316,7 +331,7 @@
   "security_section": {
     "security": {
       "title": "Security & Compliance",
-      "subtitle": "Built for privacy-first environments",
+      "subtitle": "Built for, privacy-first environments",
       "tagline": "Lexon AI is designed for teams that require visibility, control, and private document processing.",
       "features": [
         {

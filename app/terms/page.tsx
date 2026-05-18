@@ -24,7 +24,7 @@ export default function TermsPage() {
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
               Terms of Service
             </h1>
-            <p className="text-muted-foreground">Last updated: April 2026</p>
+            <p className="text-muted-foreground">Last updated: May 2026</p>
           </div>
 
           <div className="space-y-8">
@@ -69,7 +69,7 @@ export default function TermsPage() {
                 </p>
                 <p>The Services include:</p>
                 <ul className="list-inside list-disc space-y-2">
-                  <li>NDA document analysis and risk assessment</li>
+                  <li>Contract document analysis and risk assessment</li>
                   <li>Clause-level risk identification</li>
                   <li>
                     Decision support recommendations (Safe, Review, High Risk)
@@ -166,7 +166,7 @@ export default function TermsPage() {
 
             <Card className="border-2 border-border p-8">
               <h2 className="mb-4 text-2xl font-bold">
-                6. AI-Assisted Review - Important Disclaimer
+                6. AI-Assisted Review — Important Disclaimer
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <div className="rounded-lg border-2 border-destructive/30 bg-destructive/5 p-4">
@@ -187,7 +187,7 @@ export default function TermsPage() {
                 <p>By using Lexon AI, you acknowledge and agree that:</p>
                 <ul className="list-inside list-disc space-y-2">
                   <li>
-                    The output from NDA Agent should not be construed as legal
+                    The output from Lexon AI should not be construed as legal
                     advice or as a legal opinion
                   </li>
                   <li>
@@ -217,14 +217,25 @@ export default function TermsPage() {
 
             <Card className="border-2 border-border p-8">
               <h2 className="mb-4 text-2xl font-bold">
-                7. Subscription and Licensing
+                7. Licensing
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  <strong className="text-foreground">Company License:</strong>{" "}
-                  The Company License is a one-time purchase that grants you the
-                  right to deploy and use Lexon AI within your organization.
-                  Pricing and features are as published on our website.
+                  <strong className="text-foreground">Perpetual License with Annual Maintenance:</strong>{" "}
+                  Lexon AI is licensed under a perpetual license model. Upon
+                  purchase, you receive a perpetual license to use the software
+                  indefinitely. Your annual maintenance renewal provides:
+                </p>
+                <ul className="list-inside list-disc space-y-2">
+                  <li>Access to software updates and new features</li>
+                  <li>Bug fixes and security patches</li>
+                  <li>Technical support during the maintenance period</li>
+                </ul>
+                <p>
+                  If you choose not to renew your annual maintenance, you retain
+                  the right to use the last version you received under your
+                  perpetual license. However, you will no longer receive updates,
+                  bug fixes, or technical support until you renew.
                 </p>
                 <p>
                   <strong className="text-foreground">
@@ -245,7 +256,40 @@ export default function TermsPage() {
 
             <Card className="border-2 border-border p-8">
               <h2 className="mb-4 text-2xl font-bold">
-                8. Limitation of Liability
+                8. Warranty Disclaimer
+              </h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  The Services and Lexon AI product are provided &quot;as is&quot;
+                  and &quot;as available&quot; without any warranties of any kind,
+                  either express or implied, including but not limited to:
+                </p>
+                <ul className="list-inside list-disc space-y-2">
+                  <li>
+                    Implied warranties of merchantability or fitness for a
+                    particular purpose
+                  </li>
+                  <li>
+                    Warranties of accuracy, completeness, or reliability of
+                    analysis results
+                  </li>
+                  <li>
+                    Warranties that the Services will be uninterrupted,
+                    error-free, or secure
+                  </li>
+                </ul>
+                <p>
+                  {COMPANY.name} does not warrant that the AI analysis will
+                  identify all legal risks or issues in any contract. The
+                  product is designed as a decision support tool and should not
+                  be relied upon as the sole basis for legal decisions.
+                </p>
+              </div>
+            </Card>
+
+            <Card className="border-2 border-border p-8">
+              <h2 className="mb-4 text-2xl font-bold">
+                9. Limitation of Liability
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -281,7 +325,7 @@ export default function TermsPage() {
             </Card>
 
             <Card className="border-2 border-border p-8">
-              <h2 className="mb-4 text-2xl font-bold">9. Indemnification</h2>
+              <h2 className="mb-4 text-2xl font-bold">10. Indemnification</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   You agree to indemnify, defend, and hold harmless{" "}
@@ -300,12 +344,53 @@ export default function TermsPage() {
                   <li>
                     Any contracts or agreements you analyze using the Services
                   </li>
+                  <li>
+                    Your use of external AI providers with the Lexon AI product
+                  </li>
                 </ul>
               </div>
             </Card>
 
             <Card className="border-2 border-border p-8">
-              <h2 className="mb-4 text-2xl font-bold">10. Data and Privacy</h2>
+              <h2 className="mb-4 text-2xl font-bold">
+                11. External AI Providers
+              </h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  Lexon AI is designed to support various AI inference
+                  configurations, including local models and external API
+                  providers. When you configure the product to use external AI
+                  providers (such as OpenAI, Anthropic, or others):
+                </p>
+                <ul className="list-inside list-disc space-y-2">
+                  <li>
+                    You are responsible for reviewing and agreeing to the
+                    provider&apos;s terms of service and privacy policy
+                  </li>
+                  <li>
+                    Your contract data sent to external providers is subject to
+                    their data handling practices
+                  </li>
+                  <li>
+                    {COMPANY.name} is not responsible for any data shared with
+                    third-party AI providers
+                  </li>
+                  <li>
+                    You are responsible for ensuring compliance with applicable
+                    data protection regulations when using external providers
+                  </li>
+                </ul>
+                <p>
+                  We recommend using local AI inference for maximum data
+                  privacy and control.
+                </p>
+              </div>
+            </Card>
+
+            <Card className="border-2 border-border p-8">
+              <h2 className="mb-4 text-2xl font-bold">
+                12. Data and Privacy
+              </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   Your use of the Services is also governed by our Privacy
@@ -320,14 +405,15 @@ export default function TermsPage() {
                   With respect to the Lexon AI product deployed locally, all
                   contract data processing occurs on your infrastructure, and{" "}
                   {COMPANY.name} has no access to your documents or analysis
-                  results.
+                  results. The deployed software does not collect telemetry,
+                  analytics, or transmit any data to {COMPANY.name}.
                 </p>
               </div>
             </Card>
 
             <Card className="border-2 border-border p-8">
               <h2 className="mb-4 text-2xl font-bold">
-                11. Modifications to Service
+                13. Modifications to Service
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -344,7 +430,7 @@ export default function TermsPage() {
             </Card>
 
             <Card className="border-2 border-border p-8">
-              <h2 className="mb-4 text-2xl font-bold">12. Governing Law</h2>
+              <h2 className="mb-4 text-2xl font-bold">14. Governing Law</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   These Terms shall be governed by and construed in accordance
@@ -360,9 +446,9 @@ export default function TermsPage() {
               </div>
             </Card>
 
-            <Card className="border-2 border-border p-8">
+            <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-chart-2/5 p-8">
               <h2 className="mb-4 text-2xl font-bold">
-                13. Contact Information
+                15. Contact Information
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -372,6 +458,26 @@ export default function TermsPage() {
                 <div className="space-y-2">
                   <p>
                     <strong className="text-foreground">{COMPANY.name}</strong>
+                  </p>
+                  <p>
+                    <span className="text-sm text-muted-foreground">
+                      {COMPANY.structure.aiDivision} is the AI division of{" "}
+                      {COMPANY.structure.company}.{" "}
+                      {COMPANY.structure.product} is the legal AI product built
+                      by {COMPANY.structure.aiDivision}.
+                    </span>
+                  </p>
+                  <p className="text-sm">
+                    Registered by: {COMPANY.registration.owner}
+                  </p>
+                  <p className="text-sm">
+                    {COMPANY.registration.authority}
+                  </p>
+                  <p className="text-sm">
+                    Registration No: {COMPANY.registration.regNo}
+                  </p>
+                  <p className="text-sm">
+                    Reference No: {COMPANY.registration.refNo}
                   </p>
                   <p>{COMPANY.address}</p>
                   <p>
@@ -383,7 +489,28 @@ export default function TermsPage() {
                       {COMPANY.email}
                     </a>
                   </p>
-                  <p>Website: {COMPANY.website}</p>
+                  <p>
+                    Website:{" "}
+                    <a
+                      href={COMPANY.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline"
+                    >
+                      {COMPANY.website}
+                    </a>
+                  </p>
+                  <p>
+                    Company Privacy Policy:{" "}
+                    <a
+                      href={COMPANY.privacyPolicy}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline"
+                    >
+                      {COMPANY.privacyPolicy}
+                    </a>
+                  </p>
                 </div>
               </div>
             </Card>

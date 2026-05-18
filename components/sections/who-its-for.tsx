@@ -43,22 +43,8 @@ export function WhoItsFor() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* <motion.div
-            className="mb-6 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-2"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="text-sm font-medium text-primary">
-              {security?.title || "Security & Compliance"}
-            </span>
-          </motion.div> */}
           <h2 className="mb-6 text-3xl font-bold md:text-4xl">
             {content?.title || "Security built"}
-            {/* <br /> */}
-            {/* <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
-              {security?.tagline || "into every layer"}
-            </span> */}
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
             {content?.subtitle ||

@@ -3,6 +3,18 @@ export const COMPANY = {
   address: "Pakistan",
   email: "lexon@p9ix.com",
   website: "https://lexon.p9ix.com",
+  registration: {
+    owner: "Khan Muhammad Mohsin",
+    authority: "Tax Office FBR",
+    regNo: "3410187334611",
+    refNo: "3815532-0",
+  },
+  privacyPolicy: "https://www.kr8v.agency/privacy",
+  structure: {
+    company: "Kr8v",
+    aiDivision: "P9ix",
+    product: "Lexon AI",
+  },
 } as const
 
 export const PRODUCT = {
@@ -11,9 +23,8 @@ export const PRODUCT = {
   domain: "https://lexon.p9ix.com",
 } as const
 
-export const CALENDLY = {
-  url: "https://calendly.com/kr8vcompany/30min",
-  companySlug: "kr8vcompany",
+export const ZOHO_BOOKINGS = {
+  url: "https://bookings.zoho.com/book/kr8vcompany",
 } as const
 
 export const COOKIE_CONSENT = {
