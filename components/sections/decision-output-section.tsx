@@ -161,7 +161,7 @@ export function DecisionOutputSection() {
           </h3>
           <p className="mb-6 text-lg text-muted-foreground">
             {decisionData?.highlight?.description ||
-              "Most tools give you analysis. KR8V gives you a decision."}
+              "Most tools give you analysis. Lexon AI gives you a decision."}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
             {decisionData?.highlight?.benefits?.map((benefit, index) => (

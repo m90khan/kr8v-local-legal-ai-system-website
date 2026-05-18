@@ -29,7 +29,7 @@ export function BeforeAfterSection() {
           </h2>
           <p className="text-md mx-auto max-w-2xl text-muted-foreground">
             {beforeAfterData?.subtitle ||
-              "Without structured review, risky clauses slip through unnoticed. KR8V turns unstructured NDAs into clear, actionable decisions."}
+              "Without structured review, risky clauses slip through unnoticed. Lexon AI turns unstructured NDAs into clear, actionable decisions."}
           </p>
         </motion.div>
 
@@ -44,7 +44,7 @@ export function BeforeAfterSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <X className="mx-auto mb-3 h-8 w-8 text-destructive" />
-              <h3 className="text-2xl font-bold">Without KR8V</h3>
+              <h3 className="text-2xl font-bold">Without Lexon AI</h3>
             </motion.div>
             <motion.div
               className="rounded-2xl border-2 border-primary/30 bg-primary/10 p-6 text-center"
@@ -53,7 +53,7 @@ export function BeforeAfterSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <Check className="mx-auto mb-3 h-8 w-8 text-primary" />
-              <h3 className="text-2xl font-bold">With KR8V</h3>
+              <h3 className="text-2xl font-bold">With Lexon AI</h3>
             </motion.div>
           </div>
 

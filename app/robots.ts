@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://ndaagent.com/sitemap.xml',
+    sitemap: 'https://lexon.p9ix.com/sitemap.xml',
   };
 }

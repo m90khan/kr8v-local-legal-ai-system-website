@@ -2,15 +2,15 @@ import { Metadata } from "next"
 import { Navigation } from "@/components/sections/navigation"
 
 export const metadata: Metadata = {
-  title: "Terms of Service | KR8V - Private AI NDA Analysis",
+  title: "Terms of Service | Lexon AI - Private Legal AI Automation",
   description:
-    "KR8V Terms of Service - Read our terms governing your use of the NDA Agent AI analysis tool. AI-assisted review, not legal advice.",
+    "Lexon AI Terms of Service - Governing your use of our private legal AI automation system. AI-assisted review, not legal advice.",
   keywords: [
     "terms of service",
     "terms and conditions",
-    "NDA analysis terms",
-    "KR8V terms",
-    "AI legal tool terms",
+    "legal AI terms",
+    "Lexon AI terms",
+    "AI contract review terms",
     "software terms",
   ],
   alternates: {
@@ -19,19 +19,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ndaagent.com/terms",
-    title: "Terms of Service | KR8V - Private AI NDA Analysis",
+    url: "https://lexon.p9ix.com/terms",
+    title: "Terms of Service | Lexon AI - Private Legal AI Automation",
     description:
-      "KR8V Terms of Service - Governing your use of the NDA Agent AI analysis tool.",
-    siteName: "NDA Agent",
+      "Lexon AI Terms of Service - Governing your use of our private legal AI automation system.",
+    siteName: "Lexon AI",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "KR8V Terms of Service",
+        alt: "Lexon AI Terms of Service",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | Lexon AI - Private Legal AI Automation",
+    description:
+      "Lexon AI Terms of Service - Governing your use of our private legal AI automation system.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

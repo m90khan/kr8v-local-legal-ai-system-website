@@ -181,7 +181,7 @@ export async function POST(req: NextRequest) {
 
     // Send notification email to admin
     await resend.emails.send({
-      from: "LEXON AI <lexon@p9ix.com>",
+      from: "Lexon AI <lexon@p9ix.com>",
       to: ["lexon@p9ix.com"],
       subject: `New ${inquiryLabel} inquiry from ${body.name}`,
       html: `
@@ -194,7 +194,7 @@ export async function POST(req: NextRequest) {
           </head>
           <body>
             <div class="container">
-              <a href="https://lexon.p9ix.com" class="logo">LEXON AI</a>
+              <a href="https://lexon.p9ix.com" class="logo">Lexon AI</a>
 
               <div class="section-title">New Contact Form Submission</div>
               <div class="header">${inquiryLabel} Inquiry</div>
@@ -229,9 +229,9 @@ export async function POST(req: NextRequest) {
 
     // Send auto-reply email to user
     await resend.emails.send({
-      from: "LEXON AI <lexon@p9ix.com>",
+      from: "Lexon AI <lexon@p9ix.com>",
       to: [body.email],
-      subject: "Message Received - LEXON AI",
+      subject: "Message Received - Lexon AI",
       html: `
         <!DOCTYPE html>
         <html>
@@ -242,12 +242,12 @@ export async function POST(req: NextRequest) {
           </head>
           <body>
             <div class="container">
-              <a href="https://lexon.p9ix.com" class="logo">LEXON AI</a>
+              <a href="https://lexon.p9ix.com" class="logo">Lexon AI</a>
 
               <div class="header">Hi ${body.name},</div>
 
               <div class="body-text">
-                Thank you for reaching out to <span class="highlight-accent">LEXON AI</span>. We've received your inquiry regarding <span class="highlight">${inquiryLabel}</span>.
+                Thank you for reaching out to <span class="highlight-accent">Lexon AI</span>. We've received your inquiry regarding <span class="highlight">${inquiryLabel}</span>.
               </div>
 
               <div class="body-text">

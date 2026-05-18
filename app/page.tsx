@@ -20,11 +20,11 @@ export default function LandingPageV3() {
   const jsonLdProduct = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "NDA Agent",
+    name: "Lexon AI",
     description:
-      "An AI tool for reviewing NDAs and identifying legal risks securely on your local machine.",
+      "Private legal AI automation system for NDA review, contract analysis, policy validation, and enterprise compliance.",
     applicationCategory: "BusinessApplication",
-    operatingSystem: "Web",
+    operatingSystem: "Windows, Linux",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -41,7 +41,7 @@ export default function LandingPageV3() {
         name: "Is this legally reliable? Can I trust the AI's analysis?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "KR8V uses advanced NLP models trained on thousands of NDAs to identify risk patterns. However, we're clear: this is decision support, not legal advice.",
+          text: "Lexon AI uses advanced NLP models trained on thousands of contracts to identify risk patterns. However, we're clear: this is decision support, not legal advice.",
         },
       },
       {
@@ -63,7 +63,7 @@ export default function LandingPageV3() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://ndaagent.com/",
+        item: "https://lexon.p9ix.com/",
       },
     ],
   }

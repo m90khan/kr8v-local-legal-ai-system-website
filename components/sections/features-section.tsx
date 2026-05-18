@@ -191,7 +191,7 @@ export function FeaturesSection() {
                 Built for Legal Teams, Secured by Design
               </h3>
               <p className="text-lg text-muted-foreground">
-                KR8V combines the power of modern AI with the security and
+                Lexon AI combines the power of modern AI with the security and
                 control your legal team demands. No compromises, no cloud
                 dependencies, no data exposure.
               </p>

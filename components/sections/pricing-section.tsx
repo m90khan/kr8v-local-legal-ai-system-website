@@ -192,7 +192,7 @@ export function PricingSection() {
             </h3>
             <p className="mb-4 text-muted-foreground">
               {pricingData?.trust_note?.description ||
-                "KR8V helps surface potential risks in contracts so teams can review faster and make more informed decisions."}
+                "Lexon AI helps surface potential risks in contracts so teams can review faster and make more informed decisions."}
             </p>
             <div className="grid grid-cols-2 items-center justify-center gap-4 text-sm">
               {pricingData?.trust_note?.badges?.map((item, i) => (

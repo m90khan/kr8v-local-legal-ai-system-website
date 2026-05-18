@@ -34,11 +34,11 @@ export default function TermsPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  By accessing or using the {COMPANY.name} website, NDA Agent
-                  product, or any related services (collectively, the
-                  &quot;Services&quot;), you agree to be bound by these Terms of
-                  Service (&quot;Terms&quot;). If you do not agree to these
-                  Terms, please do not use our Services.
+                  By accessing or using the Lexon AI website, product, or any
+                  related services (collectively, the &quot;Services&quot;), you
+                  agree to be bound by these Terms of Service (&quot;Terms&quot;).
+                  If you do not agree to these Terms, please do not use our
+                  Services.
                 </p>
                 <p>
                   These Terms constitute a legally binding agreement between you
@@ -56,14 +56,13 @@ export default function TermsPage() {
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   <strong className="text-foreground">
-                    {COMPANY.name} NDA Agent
+                    Lexon AI
                   </strong>{" "}
                   is an AI-powered contract analysis tool designed to help users
-                  review and analyze Non-Disclosure Agreements (NDAs) for
-                  potential legal risks.
+                  review and analyze legal documents for potential risks.
                 </p>
                 <p>
-                  The NDA Agent product is deployed locally on the user&apos;s
+                  The Lexon AI product is deployed locally on the user&apos;s
                   infrastructure. All contract processing occurs entirely on the
                   user&apos;s device or servers, and no contract data is
                   transmitted to {COMPANY.name}&apos;s systems.
@@ -113,7 +112,7 @@ export default function TermsPage() {
                   <li>
                     Attempt to reverse engineer, decompile, disassemble, or
                     otherwise discover the source code or underlying algorithms
-                    of the NDA Agent product
+                    of the Lexon AI product
                   </li>
                   <li>
                     Bypass any security measures or access controls put in place
@@ -151,7 +150,7 @@ export default function TermsPage() {
                   <strong className="text-foreground">
                     {COMPANY.name} IP:
                   </strong>{" "}
-                  The NDA Agent product, website, and all related software,
+                  The Lexon AI product, website, and all related software,
                   designs, text, graphics, logos, and other content provided
                   through the Services are the exclusive property of{" "}
                   {COMPANY.name} or its licensors and are protected by
@@ -172,20 +171,20 @@ export default function TermsPage() {
               <div className="space-y-4 text-muted-foreground">
                 <div className="rounded-lg border-2 border-destructive/30 bg-destructive/5 p-4">
                   <p className="font-bold text-destructive">
-                    Legal Disclaimer: NDA Agent Provides Decision Support, NOT
+                    Legal Disclaimer: Lexon AI Provides Decision Support, NOT
                     Legal Advice
                   </p>
                 </div>
                 <p>
                   <strong className="text-foreground">
-                    NDA Agent is designed as a decision support tool
+                    Lexon AI is designed as a decision support tool
                   </strong>
                   , not a replacement for professional legal counsel. The
                   analysis, recommendations, and risk assessments provided by
-                  NDA Agent are intended to assist you in reviewing contracts,
+                  Lexon AI are intended to assist you in reviewing contracts,
                   not to provide legal advice.
                 </p>
-                <p>By using NDA Agent, you acknowledge and agree that:</p>
+                <p>By using Lexon AI, you acknowledge and agree that:</p>
                 <ul className="list-inside list-disc space-y-2">
                   <li>
                     The output from NDA Agent should not be construed as legal
@@ -224,7 +223,7 @@ export default function TermsPage() {
                 <p>
                   <strong className="text-foreground">Company License:</strong>{" "}
                   The Company License is a one-time purchase that grants you the
-                  right to deploy and use NDA Agent within your organization.
+                  right to deploy and use Lexon AI within your organization.
                   Pricing and features are as published on our website.
                 </p>
                 <p>
@@ -318,7 +317,7 @@ export default function TermsPage() {
                   data.
                 </p>
                 <p>
-                  With respect to the NDA Agent product deployed locally, all
+                  With respect to the Lexon AI product deployed locally, all
                   contract data processing occurs on your infrastructure, and{" "}
                   {COMPANY.name} has no access to your documents or analysis
                   results.

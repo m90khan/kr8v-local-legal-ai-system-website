@@ -17,23 +17,26 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ndaagent.com"),
+  metadataBase: new URL("https://lexon.p9ix.com"),
   title: {
-    default: "NDA Agent | AI NDA Analysis & Contract Review AI",
-    template: "%s | NDA Agent",
+    default: "Lexon AI | Private Legal AI Automation System",
+    template: "%s | Lexon AI",
   },
   description:
-    "Private, local AI NDA review tool. Analyze contracts and identify legal risks securely without data leaving your system.",
+    "Private, on-premise legal AI for NDA review, contract analysis, policy validation, and enterprise compliance. Deploy fully offline on your infrastructure.",
   keywords: [
-    "NDA review tool",
-    "AI NDA analysis",
-    "contract review AI",
-    "legal AI tool",
-    "NDA risk analysis",
-    "review NDA online",
-    "analyze contract AI",
-    "private AI legal tools",
-    "local AI for contracts",
+    "private legal AI",
+    "on-premise legal AI",
+    "offline contract analysis",
+    "NDA review AI",
+    "legal intelligence platform",
+    "contract risk analysis",
+    "policy compliance engine",
+    "AI contract review",
+    "air-gapped AI",
+    "enterprise legal AI",
+    "procurement risk analysis",
+    "private AI infrastructure",
   ],
   alternates: {
     canonical: "/",
@@ -41,25 +44,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ndaagent.com",
-    title: "NDA Agent | AI Contract & NDA Risk Analysis Tool",
+    url: "https://lexon.p9ix.com",
+    title: "Lexon AI | Private Legal AI Automation",
     description:
-      "Instant, private AI NDA review. Runs locally to detect legal risks securely.",
-    siteName: "NDA Agent",
+      "Private, on-premise legal AI for NDA review, contract analysis, policy validation, and enterprise compliance.",
+    siteName: "Lexon AI",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "NDA Agent - Local AI NDA Analysis Tool",
+        alt: "Lexon AI - Private Legal AI Automation System",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NDA Agent | Private AI NDA Review Tool",
+    title: "Lexon AI | Private Legal AI Automation",
     description:
-      "Instant, private AI NDA review. Runs locally to detect legal risks securely.",
+      "Private, on-premise legal AI for NDA review, contract analysis, and enterprise compliance.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -73,6 +76,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  other: {
+    "theme-color": "#6B5CE7",
+  },
 }
 
 export default function RootLayout({
@@ -80,6 +86,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLdOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Kr8v",
+    url: "https://lexon.p9ix.com",
+    email: "lexon@p9ix.com",
+    makesOffer: {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "SoftwareApplication",
+        name: "Lexon AI",
+        description: "Private legal AI automation system for NDA review, contract analysis, and enterprise compliance.",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Windows, Linux",
+      },
+    },
+  }
+
+  const jsonLdWebSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Lexon AI",
+    url: "https://lexon.p9ix.com",
+    publisher: {
+      "@type": "Organization",
+      name: "Kr8v",
+    },
+  }
+
   return (
     <html
       lang="en"
@@ -92,6 +127,16 @@ export default function RootLayout({
       )}
     >
       <head>
+        <Script
+          id="schema-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
+        />
+        <Script
+          id="schema-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
+        />
         <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}

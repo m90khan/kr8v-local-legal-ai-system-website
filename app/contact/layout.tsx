@@ -2,14 +2,14 @@ import { Metadata } from "next"
 import { Navigation } from "@/components/sections/navigation"
 
 export const metadata: Metadata = {
-  title: "Contact Us | KR8V - Private AI NDA Analysis",
+  title: "Contact Us | Lexon AI - Private Legal AI Automation",
   description:
-    "Contact KR8V to book a demo, ask about pricing, or inquire about partnerships for our private AI NDA analysis tool.",
+    "Contact Lexon AI to book a demo, ask about pricing, or inquire about partnerships for our private legal AI automation system.",
   keywords: [
-    "contact KR8V",
-    "NDA analysis demo",
-    "AI contract review pricing",
-    "private AI legal tool contact",
+    "contact Lexon AI",
+    "legal AI demo",
+    "contract analysis pricing",
+    "private legal AI contact",
   ],
   alternates: {
     canonical: "/contact",
@@ -17,19 +17,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ndaagent.com/contact",
-    title: "Contact Us | KR8V - Private AI NDA Analysis",
+    url: "https://lexon.p9ix.com/contact",
+    title: "Contact Us | Lexon AI - Private Legal AI Automation",
     description:
-      "Contact KR8V to book a demo or learn more about our private AI NDA analysis tool.",
-    siteName: "NDA Agent",
+      "Contact Lexon AI to book a demo or learn more about our private legal AI automation system.",
+    siteName: "Lexon AI",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Contact KR8V",
+        alt: "Contact Lexon AI",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Lexon AI - Private Legal AI Automation",
+    description:
+      "Contact Lexon AI to book a demo or learn more about our private legal AI automation system.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

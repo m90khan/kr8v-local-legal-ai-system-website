@@ -90,7 +90,7 @@ export function DifferentiatorSection() {
             Unlike cloud AI tools,
             <br />
             <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
-              KR8V never sends your contracts outside your control
+              Lexon AI never sends your contracts outside your control
             </span>
           </h2> */}
           <motion.h1
@@ -127,7 +127,7 @@ export function DifferentiatorSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Server className="mx-auto mb-2 h-8 w-8 text-primary" />
-              <h3 className="text-lg font-bold">KR8V</h3>
+              <h3 className="text-lg font-bold">Lexon AI</h3>
             </motion.div>
           </div>
 
@@ -164,7 +164,7 @@ export function DifferentiatorSection() {
                   </motion.div>
                 </div>
 
-                {/* KR8V */}
+                {/* Lexon AI */}
                 <div className="flex justify-center">
                   <motion.div
                     whileHover={{ scale: 1.2 }}
@@ -193,7 +193,7 @@ export function DifferentiatorSection() {
             </h3>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               Most AI tools require sending your contracts to external servers.
-              KR8V keeps everything inside your infrastructure.
+              Lexon AI keeps everything inside your infrastructure.
             </p>
           </motion.div>
         </div>
@@ -207,7 +207,7 @@ export function DifferentiatorSection() {
         >
            <div className="relative rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-card to-muted/30 p-12">
             <h4 className="mb-8 text-center text-xl font-bold">
-              Traditional vs KR8V Data Flow
+              Traditional vs Lexon AI Data Flow
             </h4>
 
             <div className="grid gap-12 md:grid-cols-2">
@@ -242,7 +242,7 @@ export function DifferentiatorSection() {
           
               <div className="space-y-4">
                 <div className="mb-4 text-center text-sm font-medium text-muted-foreground">
-                  KR8V
+                  Lexon AI
                 </div>
                 <div className="flex flex-col gap-3">
                   {[

@@ -262,7 +262,7 @@ export function CtaSection() {
           </div>
           <p>
             {ctaData?.footer?.copyright ||
-              "© 2024 KR8V. Private AI for legal contract intelligence."}
+              "© 2024 Lexon AI. Private AI for legal contract intelligence."}
           </p>
         </motion.footer>
       </div>

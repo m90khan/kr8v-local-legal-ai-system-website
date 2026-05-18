@@ -190,7 +190,7 @@ export function SecuritySection() {
           </h3>
           <p className="mx-auto mb-6 max-w-2xl text-lg text-muted-foreground">
             {trustStatement?.description ||
-              "KR8V is built for environments where sensitive documents cannot be exposed."}
+              "Lexon AI is built for environments where sensitive documents cannot be exposed."}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">
             {trustStatement?.markers?.map((feature, index) => (
@@ -218,7 +218,7 @@ export function SecuritySection() {
           </h3>
           <p className="mx-auto mb-6 max-w-2xl text-lg text-muted-foreground">
             {trustStatement?.description ||
-              "KR8V is built for environments where sensitive documents cannot be exposed."}
+              "Lexon AI is built for environments where sensitive documents cannot be exposed."}
           </p>
         <div className="flex flex-wrap items-center justify-center gap-6">
             {trustStatement?.markers?.map((feature, index) => (

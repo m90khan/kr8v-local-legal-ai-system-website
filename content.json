@@ -108,7 +108,7 @@
   "decision_output_section": {
     "badge": "Decision Intelligence",
     "title": "Get structured risk decisions with clear reasoning",
-    "subtitle": "KR8V does not just analyze contracts — it helps you decide what to do next.",
+    "subtitle": "Lexon AI does not just analyze contracts — it helps you decide what to do next.",
     "decisions": [
       {
         "status": "Lower Observed Risk",
@@ -138,7 +138,7 @@
     ],
     "highlight": {
       "title": "This is not just analysis — it's decision support",
-      "description": "Most tools highlight text. KR8V provides structured recommendations, reasoning, and next steps so you can act faster with confidence.",
+      "description": "Most tools highlight text. Lexon AI provides structured recommendations, reasoning, and next steps so you can act faster with confidence.",
       "benefits": [
         "Suggested decisions",
         "Transparent reasoning",
@@ -189,10 +189,10 @@
     ]
   },
   "screenshot_annotation_section": {
-    "title": "Inside the KR8V workflow",
+    "title": "Inside the Lexon AI workflow",
     "image": {
       "url": "/images/annotated_screenshot.png",
-      "alt": "Annotated screenshot of KR8V contract analysis interface"
+      "alt": "Annotated screenshot of Lexon AI contract analysis interface"
     },
     "annotations": [
       {
@@ -214,7 +214,7 @@
     ]
   },
   "trust_explainer": {
-    "title": "How KR8V generates decisions",
+    "title": "How Lexon AI generates decisions",
     "points": [
       "Clause-level parsing of contract structure",
       "Comparison against common NDA patterns",
@@ -259,9 +259,9 @@
   },
 
   "differentiator": {
-    "title": "Why KR8V LEGAL is different",
+    "title": "Why Lexon AI LEGAL is different",
     "subtitle": "Designed for private, controlled contract analysis",
-    "comparison_headers": ["Typical AI Tools", "KR8V"],
+    "comparison_headers": ["Typical AI Tools", "Lexon AI"],
     "items": [
       {
         "feature": "Data stays within your environment",
@@ -293,7 +293,7 @@
       }
     ],
     "data_flow": {
-      "title": "Traditional vs KR8V Data Flow",
+      "title": "Traditional vs Lexon AI Data Flow",
       "cloud_flow": [
         "Your Data",
         "→ Internet",
@@ -309,7 +309,7 @@
     },
     "bottom_highlight": {
       "title": "Your Data, Your Infrastructure, Your Control",
-      "description": "Most AI tools require sending your contracts to external servers. KR8V keeps everything inside your infrastructure."
+      "description": "Most AI tools require sending your contracts to external servers. Lexon AI keeps everything inside your infrastructure."
     }
   },
 
@@ -317,7 +317,7 @@
     "security": {
       "title": "Security & Compliance",
       "subtitle": "Built for privacy-first environments",
-      "tagline": "KR8V is designed for teams that require visibility, control, and private document processing.",
+      "tagline": "Lexon AI is designed for teams that require visibility, control, and private document processing.",
       "features": [
         {
           "title": "Encrypted Document Storage",
@@ -353,11 +353,11 @@
     },
     "compliance_note": {
       "title": "Security Alignment Positioning",
-      "description": "KR8V implements security-focused controls related to access management, encrypted storage, audit logging, and request hardening. KR8V is not currently SOC 2 certified, ISO 27001 certified, or GDPR certified."
+      "description": "Lexon AI implements security-focused controls related to access management, encrypted storage, audit logging, and request hardening. Lexon AI is not currently SOC 2 certified, ISO 27001 certified, or GDPR certified."
     },
     "trust_statement": {
       "title": "Built for Sensitive Documents",
-      "description": "KR8V is designed for teams that require visibility, control, and private document processing.",
+      "description": "Lexon AI is designed for teams that require visibility, control, and private document processing.",
       "markers": [
         "Local or self-hosted deployment",
         "Encrypted storage",
@@ -368,7 +368,7 @@
   },
 
   "who_its_for": {
-    "title": "Who KR8V is designed for",
+    "title": "Who Lexon AI is designed for",
     "subtitle": "Built for teams reviewing sensitive agreements inside controlled environments.",
     "groups": [
       {
@@ -395,7 +395,7 @@
   },
   "use_cases": {
     "title": "Use Cases",
-    "subtitle": "How teams use KR8V",
+    "subtitle": "How teams use Lexon AI",
     "description": "Support faster and more consistent NDA review inside private internal workflows.",
     "cases": [
       {
@@ -439,10 +439,10 @@
   "pricing": {
     "title": "Pricing",
     "subtitle": "Private contract intelligence for internal teams",
-    "description": "Deploy KR8V within your environment with flexible licensing and optional support services.",
+    "description": "Deploy Lexon AI within your environment with flexible licensing and optional support services.",
     "plans": [
       {
-        "name": "KR8V License",
+        "name": "Lexon AI License",
         "description": "Private AI contract review deployed inside your infrastructure",
         "price": "From $899",
         "period": "Annual license",
@@ -472,7 +472,7 @@
     },
     "trust_note": {
       "title": "AI-assisted review, not legal replacement",
-      "description": "KR8V helps teams identify potential contract risks faster through structured analysis and policy-aware review. Final legal decisions should always involve appropriate human judgment.",
+      "description": "Lexon AI helps teams identify potential contract risks faster through structured analysis and policy-aware review. Final legal decisions should always involve appropriate human judgment.",
       "badges": [
         "Local-first processing",
         "Self-hosted deployment",
@@ -487,23 +487,23 @@
     "items": [
       {
         "question": "Where is contract data processed?",
-        "answer": "KR8V is designed for self-hosted and local deployment. In standard deployments, contracts remain within customer-controlled infrastructure."
+        "answer": "Lexon AI is designed for self-hosted and local deployment. In standard deployments, contracts remain within customer-controlled infrastructure."
       },
       {
-        "question": "Does KR8V require external AI APIs?",
-        "answer": "No. KR8V is designed to support local AI inference without requiring mandatory external AI services."
+        "question": "Does Lexon AI require external AI APIs?",
+        "answer": "No. Lexon AI is designed to support local AI inference without requiring mandatory external AI services."
       },
       {
-        "question": "How should teams use KR8V?",
-        "answer": "KR8V is designed for AI-assisted first-pass NDA review, clause analysis, workflow management, and structured internal review support."
+        "question": "How should teams use Lexon AI?",
+        "answer": "Lexon AI is designed for AI-assisted first-pass NDA review, clause analysis, workflow management, and structured internal review support."
       },
       {
-        "question": "Can KR8V replace legal counsel?",
-        "answer": "No. KR8V is designed as review-support software to help teams identify potentially important clauses and accelerate review workflows."
+        "question": "Can Lexon AI replace legal counsel?",
+        "answer": "No. Lexon AI is designed as review-support software to help teams identify potentially important clauses and accelerate review workflows."
       },
       {
         "question": "What contract types are supported?",
-        "answer": "KR8V is currently optimized for NDAs and confidentiality agreements."
+        "answer": "Lexon AI is currently optimized for NDAs and confidentiality agreements."
       },
       {
         "question": "Do you support other contract types?",
@@ -512,7 +512,7 @@
     ],
     "bottom_cta": {
       "title": "Explore private AI-assisted NDA review",
-      "description": "Discuss deployment models, workflows, and infrastructure requirements with the KR8V team.",
+      "description": "Discuss deployment models, workflows, and infrastructure requirements with the Lexon AI team.",
       "cta": "Request Demo"
     }
   },
@@ -540,7 +540,7 @@
         { "label": "Contact", "url": "/contact" },
         { "label": "Vision", "url": "/vision" }
       ],
-      "copyright": "© 2026 KR8V. Private AI-assisted NDA review infrastructure."
+      "copyright": "© 2026 Lexon AI. Private AI-assisted NDA review infrastructure."
     }
   }
 }

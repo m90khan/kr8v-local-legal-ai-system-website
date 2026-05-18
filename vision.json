@@ -1,7 +1,7 @@
 {
   "seo": {
     "metadata": {
-      "title": "KR8V Legal Intelligence Platform | Private On-Premise AI for Contract & NDA Review",
+      "title": "Lexon AI Legal Intelligence Platform | Private On-Premise AI for Contract & NDA Review",
       "description": "Private legal AI platform for NDA review, contract analysis, policy validation, redline recommendations, and procurement risk intelligence. Deploy fully offline on your infrastructure with no external API dependency.",
       "keywords": [
         "private legal AI",
@@ -21,20 +21,20 @@
         "redline recommendation AI"
       ],
       "openGraph": {
-        "title": "KR8V Legal Intelligence Platform",
+        "title": "Lexon AI Legal Intelligence Platform",
         "description": "Private on-premise legal AI for NDA review, contract intelligence, policy validation, and enterprise compliance.",
         "type": "website"
       },
       "twitter": {
         "card": "summary_large_image",
-        "title": "KR8V Legal Intelligence Platform",
+        "title": "Lexon AI Legal Intelligence Platform",
         "description": "Offline legal AI infrastructure for enterprises and sensitive organizations."
       }
     },
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "KR8V Legal Intelligence Platform",
+      "name": "Lexon AI Legal Intelligence Platform",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Windows, Linux",
       "description": "Private on-premise legal AI platform for NDA review, contract intelligence, policy compliance, redline recommendations, and vendor risk analysis.",

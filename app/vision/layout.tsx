@@ -2,9 +2,9 @@ import { Metadata } from "next"
 import { Navigation } from "@/components/sections/navigation"
 
 export const metadata: Metadata = {
-  title: "Our Vision | Private Legal AI Infrastructure",
+  title: "Our Vision | Lexon AI - Private Legal AI Infrastructure",
   description:
-    "The future of legal decisions is private, local, and intelligent. Explore how KR8V is building the infrastructure for private legal intelligence - from NDA review to complete contract lifecycle management.",
+    "The future of legal decisions is private, local, and intelligent. Explore how Lexon AI is building the infrastructure for private legal intelligence.",
   keywords: [
     "legal AI vision",
     "private AI legal",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "AI contract lifecycle management",
     "on-premise legal AI",
     "data privacy legal AI",
-    "NDA review AI future",
+    "legal AI roadmap",
   ],
   alternates: {
     canonical: "/vision",
@@ -22,25 +22,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ndaagent.com/vision",
-    title: "Our Vision | Private Legal AI Infrastructure",
+    url: "https://lexon.p9ix.com/vision",
+    title: "Our Vision | Lexon AI - Private Legal AI Infrastructure",
     description:
-      "The future of legal decisions is private, local, and intelligent. Explore how KR8V is building the infrastructure for private legal intelligence.",
-    siteName: "NDA Agent",
+      "The future of legal decisions is private, local, and intelligent. Explore how Lexon AI is building the infrastructure for private legal intelligence.",
+    siteName: "Lexon AI",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "KR8V Vision - Private Legal AI Infrastructure",
+        alt: "Lexon AI Vision - Private Legal AI Infrastructure",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Vision | Private Legal AI Infrastructure",
+    title: "Our Vision | Lexon AI - Private Legal AI Infrastructure",
     description:
-      "The future of legal decisions is private, local, and intelligent. Explore how KR8V is building the infrastructure for private legal intelligence.",
+      "The future of legal decisions is private, local, and intelligent. Explore how Lexon AI is building the infrastructure for private legal intelligence.",
     images: ["/og-image.png"],
   },
   robots: {

@@ -64,13 +64,15 @@ export default function PrivacyPage() {
                 </p>
                 <p>
                   When you deploy{" "}
-                  <strong className="text-foreground">NDA Agent</strong> locally
-                  on your infrastructure,{" "}
+                  <strong className="text-foreground">
+                    Lexon AI
+                  </strong>{" "}
+                  locally on your infrastructure,{" "}
                   <strong className="text-foreground">
                     ALL contract processing occurs entirely on YOUR device or
                     servers
                   </strong>
-                  . KR8V does NOT have access to, collect, store, or transmit
+                  . Kr8v does NOT have access to, collect, store, or transmit
                   any of your contract data.
                 </p>
                 <ul className="list-inside list-disc space-y-2">
@@ -87,8 +89,8 @@ export default function PrivacyPage() {
                 <p>
                   This means the privacy protections described in this policy
                   apply primarily to the data we collect through our website and
-                  contact form, NOT to your contract data when using the NDA
-                  Agent product.
+                  contact form, NOT to your contract data when using the Lexon
+                  AI product.
                 </p>
               </div>
             </Card>
@@ -129,7 +131,7 @@ export default function PrivacyPage() {
                     <br />
                     <span className="text-xs">
                       Cookies: <code>_ga</code>, <code>_gid</code>,{" "}
-                      <code>_gat_gtag_G-JW*</code>
+                      <code>_gat_gtag_G-SLV*</code>
                     </span>
                   </p>
                 </div>
@@ -293,7 +295,7 @@ export default function PrivacyPage() {
                   alteration, disclosure, or destruction.
                 </p>
                 <p>
-                  For our local product (NDA Agent), security is handled
+                  For our local product (Lexon AI), security is handled
                   entirely by your organization&apos;s infrastructure. We
                   recommend following best practices for self-hosted
                   applications.
