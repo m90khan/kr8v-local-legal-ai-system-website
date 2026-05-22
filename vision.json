@@ -118,10 +118,41 @@
   ],
   "roadmap": [
     {
+      "icon": "FileSearch",
+      "title": "NDA Review Engine",
+      "description": "Analyze clauses, obligations, restrictions, and legal risks in NDAs within seconds.",
+      "phaseLabel": "Phase 1 — NDA Review Engine",
+      "phaseOrder": 1,
+      "built": true,
+      "priority": "high",
+      "color": "from-primary to-chart-2"
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": "Risk Detection Engine",
+      "description": "Identify problematic clauses, negotiation risks, and policy violations with high accuracy.",
+      "phaseLabel": "Phase 1 — NDA Review Engine",
+      "phaseOrder": 1,
+      "built": true,
+      "priority": "high",
+      "color": "from-primary to-chart-2"
+    },
+    {
+      "icon": "BrainCircuit",
+      "title": "Decision Intelligence",
+      "description": "Generate explainable Safe, Review, and High-Risk recommendations for every clause.",
+      "phaseLabel": "Phase 1 — NDA Review Engine",
+      "phaseOrder": 1,
+      "built": true,
+      "priority": "high",
+      "color": "from-primary to-chart-2"
+    },
+    {
       "icon": "BookOpenCheck",
       "title": "Contract Playbook Engine",
       "description": "Validate agreements against approved legal playbooks, fallback clauses, and company standards.",
-      "phase": "Legal Intelligence",
+      "phaseLabel": "Phase 1 — NDA Review Engine",
+      "phaseOrder": 1,
       "built": true,
       "priority": "high",
       "color": "from-primary to-chart-2"
@@ -130,7 +161,8 @@
       "icon": "FilePenLine",
       "title": "Redline Recommendation System",
       "description": "Suggest safer clause replacements and negotiation-ready fallback language.",
-      "phase": "Legal Intelligence",
+      "phaseLabel": "Phase 2 — Legal Workspace",
+      "phaseOrder": 2,
       "built": true,
       "priority": "high",
       "color": "from-chart-2 to-chart-3"
@@ -139,108 +171,96 @@
       "icon": "Scale",
       "title": "Policy-to-Contract Validation",
       "description": "Detect conflicts between contracts, procurement rules, privacy requirements, and internal policies.",
-      "phase": "Compliance Intelligence",
-      "built": true,
+      "phaseLabel": "Phase 2 — Legal Workspace",
+      "phaseOrder": 2,
+      "built": false,
       "priority": "high",
-      "color": "from-chart-3 to-chart-4"
+      "color": "from-chart-2 to-chart-3"
+    },
+    {
+      "icon": "GitCompareArrows",
+      "title": "Multi-Document Reasoning",
+      "description": "Compare NDAs, vendor agreements, DPAs, MSAs, and related contracts simultaneously.",
+      "phaseLabel": "Phase 2 — Legal Workspace",
+      "phaseOrder": 2,
+      "built": false,
+      "priority": "high",
+      "color": "from-chart-2 to-chart-3"
     },
     {
       "icon": "Workflow",
       "title": "Approval Workflow Intelligence",
       "description": "Automatically route agreements to legal, finance, procurement, or compliance reviewers.",
-      "phase": "Operational Intelligence",
-      "built": false,
-      "priority": "high",
-      "color": "from-chart-4 to-chart-5"
-    },
-    {
-      "icon": "LibraryBig",
-      "title": "Clause Library & Precedent Search",
-      "description": "Search historical agreements, approved clauses, and legal precedents across the organization.",
-      "phase": "Knowledge Intelligence",
-      "built": false,
-      "priority": "high",
-      "color": "from-chart-5 to-primary"
-    },
-    {
-      "icon": "BadgeCheck",
-      "title": "Approved Contract Validation",
-      "description": "Compare incoming agreements against previously approved contracts and negotiation standards.",
-      "phase": "Knowledge Intelligence",
+      "phaseLabel": "Phase 2 — Legal Workspace",
+      "phaseOrder": 2,
       "built": true,
       "priority": "high",
-      "color": "from-primary to-chart-3"
-    },
-    {
-      "icon": "GitCompareArrows",
-      "title": "Multi-Document Reasoning",
-      "description": "Compare NDAs, MSAs, amendments, procurement standards, and related agreements simultaneously.",
-      "phase": "Advanced Intelligence",
-      "built": false,
-      "priority": "high",
-      "color": "from-chart-2 to-chart-4"
+      "color": "from-chart-2 to-chart-3"
     },
     {
       "icon": "ClipboardList",
       "title": "Obligation Extraction & Tracking",
       "description": "Extract deadlines, renewals, deliverables, payment terms, and compliance obligations automatically.",
-      "phase": "Operational Intelligence",
+      "phaseLabel": "Phase 3 — Obligation & Vendor Intelligence",
+      "phaseOrder": 3,
       "built": false,
       "priority": "high",
-      "color": "from-chart-3 to-chart-5"
+      "color": "from-chart-3 to-chart-4"
     },
     {
       "icon": "ShieldAlert",
       "title": "Vendor Risk Intelligence",
       "description": "Analyze liability exposure, procurement risks, jurisdiction conflicts, indemnity terms, and data obligations.",
-      "phase": "Risk Intelligence",
+      "phaseLabel": "Phase 3 — Obligation & Vendor Intelligence",
+      "phaseOrder": 3,
       "built": false,
       "priority": "high",
-      "color": "from-chart-4 to-primary"
+      "color": "from-chart-3 to-chart-4"
     },
     {
       "icon": "Network",
       "title": "Legal Knowledge Graph",
       "description": "Connect vendors, clauses, obligations, departments, and risks into searchable legal intelligence.",
-      "phase": "Knowledge Infrastructure",
+      "phaseLabel": "Phase 3 — Obligation & Vendor Intelligence",
+      "phaseOrder": 3,
       "built": false,
       "priority": "medium",
-      "color": "from-primary to-chart-2"
+      "color": "from-chart-3 to-chart-4"
     },
+    {
+      "icon": "Webhook",
+      "title": "Integration Platform",
+      "description": "Process and review contracts within daily communication tools — messaging platforms, email workflows, and procurement systems.",
+      "phaseLabel": "Phase 4 — Integration Platform",
+      "phaseOrder": 4,
+      "built": false,
+      "priority": "medium",
+      "color": "from-chart-4 to-primary"
+    }
+  ],
+  "foundation": [
     {
       "icon": "LockKeyhole",
       "title": "Air-Gapped Enterprise Deployment",
       "description": "Fully isolated deployment for banking, healthcare, government, and defense environments.",
-      "phase": "Enterprise Infrastructure",
-      "built": true,
-      "priority": "high",
       "color": "from-chart-5 to-chart-2"
     },
     {
       "icon": "FileClock",
       "title": "Audit Trails & Decision History",
       "description": "Track AI reasoning, reviewer approvals, policy violations, and contract decision history.",
-      "phase": "Governance",
-      "built": true,
-      "priority": "medium",
       "color": "from-chart-2 to-primary"
     },
     {
       "icon": "UsersRound",
       "title": "Role-Based Legal Access",
       "description": "Department-specific access controls for legal, procurement, finance, compliance, and executive teams.",
-      "phase": "Enterprise Infrastructure",
-      "built": true,
-      "priority": "medium",
       "color": "from-chart-3 to-chart-5"
     },
     {
       "icon": "MessagesSquare",
       "title": "Private Legal Copilot",
       "description": "Internal AI assistant for contract Q&A, policy interpretation, clause reasoning, and legal guidance.",
-      "phase": "AI Intelligence Layer",
-      "built": true,
-      "priority": "medium",
       "color": "from-chart-4 to-primary"
     }
   ],
@@ -292,19 +312,19 @@
   },
   "use_cases": [
     {
-      "scenario": "VC diligence with confidential startup agreements",
-      "outcome": "Accelerated legal review without exposing sensitive documents externally",
-      "metric": "Reduced review time"
+      "scenario": "Vendor onboarding with MSA + DPA review",
+      "outcome": "Automated multi-document analysis before procurement approval",
+      "metric": "Faster vendor cycles"
     },
     {
-      "scenario": "Enterprise vendor onboarding",
-      "outcome": "Automated procurement and compliance validation before approval",
-      "metric": "Shorter contract cycles"
+      "scenario": "Procurement team reviewing vendor agreements at scale",
+      "outcome": "Policy-aware risk detection across NDAs, MSAs, and vendor contracts",
+      "metric": "Reduced legal bottlenecks"
     },
     {
-      "scenario": "Internal policy enforcement",
-      "outcome": "Detected non-compliant clauses before signature",
-      "metric": "Reduced legal risk"
+      "scenario": "Obligation tracking across active contracts",
+      "outcome": "Automatic extraction of deadlines, renewals, and compliance obligations",
+      "metric": "No missed renewals"
     }
   ],
   "features": [

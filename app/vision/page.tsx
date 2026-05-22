@@ -7,15 +7,7 @@ import { CtaSection } from "@/components/sections/cta-section"
 import visionData from "../../vision.json"
 import {
   FileText,
-  Brain,
   Shield,
-  Layers,
-  GitBranch,
-  Target,
-  Zap,
-  Lock,
-  Users,
-  TrendingUp,
   ShieldAlert,
   CloudOff,
   Layers3,
@@ -26,40 +18,27 @@ import {
   FilePenLine,
   Scale,
   Workflow,
-  LibraryBig,
-  BadgeCheck,
   GitCompareArrows,
   ClipboardList,
   Network,
+  Webhook,
   LockKeyhole,
   FileClock,
   UsersRound,
   MessagesSquare,
   Check,
+  Lock,
+  Brain,
+  Target,
+  FileText as FileTextIcon,
 } from "lucide-react"
 
 function IconRenderer({ name }: { name: string }) {
   switch (name) {
     case "FileText":
       return <FileText className="h-8 w-8" />
-    case "Brain":
-      return <Brain className="h-8 w-8" />
     case "Shield":
       return <Shield className="h-8 w-8" />
-    case "Layers":
-      return <Layers className="h-8 w-8" />
-    case "GitBranch":
-      return <GitBranch className="h-8 w-8" />
-    case "Target":
-      return <Target className="h-8 w-8" />
-    case "Zap":
-      return <Zap className="h-8 w-8" />
-    case "Lock":
-      return <Lock className="h-8 w-8" />
-    case "Users":
-      return <Users className="h-8 w-8" />
-    case "TrendingUp":
-      return <TrendingUp className="h-8 w-8" />
     case "ShieldAlert":
       return <ShieldAlert className="h-8 w-8" />
     case "CloudOff":
@@ -80,16 +59,14 @@ function IconRenderer({ name }: { name: string }) {
       return <Scale className="h-8 w-8" />
     case "Workflow":
       return <Workflow className="h-8 w-8" />
-    case "LibraryBig":
-      return <LibraryBig className="h-8 w-8" />
-    case "BadgeCheck":
-      return <BadgeCheck className="h-8 w-8" />
     case "GitCompareArrows":
       return <GitCompareArrows className="h-8 w-8" />
     case "ClipboardList":
       return <ClipboardList className="h-8 w-8" />
     case "Network":
       return <Network className="h-8 w-8" />
+    case "Webhook":
+      return <Webhook className="h-8 w-8" />
     case "LockKeyhole":
       return <LockKeyhole className="h-8 w-8" />
     case "FileClock":
@@ -100,123 +77,26 @@ function IconRenderer({ name }: { name: string }) {
       return <MessagesSquare className="h-8 w-8" />
     case "Check":
       return <Check className="h-8 w-8" />
+    case "Lock":
+      return <Lock className="h-8 w-8" />
+    case "Brain":
+      return <Brain className="h-8 w-8" />
+    case "Target":
+      return <Target className="h-8 w-8" />
     default:
-      return <FileText className="h-8 w-8" />
+      return <FileTextIcon className="h-8 w-8" />
   }
 }
 
-const roadmap = [
-  {
-    icon: Brain,
-    title: "Multi-Document Reasoning",
-    description: "Compare NDAs against master agreements and related contracts",
-    phase: "Intelligence Expansion",
-    color: "from-primary to-chart-2",
-  },
-  {
-    icon: Target,
-    title: "Policy Compliance Engine",
-    description:
-      "Automated compliance checks across regulations and company policy",
-    phase: "Intelligence Expansion",
-    color: "from-chart-2 to-chart-3",
-  },
-  {
-    icon: Layers,
-    title: "Contract Lifecycle Management",
-    description: "Track contracts from draft to signature to renewal",
-    phase: "System Integration",
-    color: "from-chart-3 to-chart-4",
-  },
-  {
-    icon: GitBranch,
-    title: "Workflow Automation",
-    description: "Automatic routing, approvals, and stakeholder notifications",
-    phase: "System Integration",
-    color: "from-chart-4 to-chart-5",
-  },
-  {
-    icon: Users,
-    title: "AI Legal Assistant",
-    description: "Natural language contract queries and clause explanations",
-    phase: "AI Interface",
-    color: "from-chart-5 to-primary",
-  },
-
-  {
-    icon: "ClipboardList",
-    title: "Obligation Extraction & Tracking",
-    description:
-      "Extract deadlines, renewals, deliverables, payment terms, and compliance obligations",
-    phase: "Operational Intelligence",
-    priority: "high",
-    color: "from-chart-2 to-chart-3",
-  },
-  {
-    icon: "ShieldAlert",
-    title: "Vendor Risk Intelligence",
-    description:
-      "Analyze procurement, liability, jurisdiction, indemnity, and data security risks",
-    phase: "Risk Intelligence",
-    priority: "high",
-    color: "from-chart-3 to-chart-4",
-  },
-  {
-    icon: "Network",
-    title: "Legal Knowledge Graph",
-    description:
-      "Connect vendors, clauses, obligations, departments, and risks into searchable legal intelligence",
-    phase: "Knowledge Infrastructure",
-    priority: "medium",
-    color: "from-chart-4 to-chart-5",
-  },
-  {
-    icon: "Lock",
-    title: "Air-Gapped Enterprise Deployment",
-    description:
-      "Fully isolated deployment for government, healthcare, banking, and defense organizations",
-    phase: "Enterprise Infrastructure",
-    priority: "high",
-    color: "from-chart-5 to-primary",
-  },
-  {
-    icon: "FileAudit",
-    title: "Audit Trails & Decision History",
-    description:
-      "Track AI reasoning, approvals, policy violations, and reviewer decisions",
-    phase: "Governance",
-    priority: "medium",
-    color: "from-primary to-chart-3",
-  },
-  {
-    icon: "Users",
-    title: "Role-Based Legal Access",
-    description:
-      "Department-specific access controls for legal, procurement, finance, and compliance teams",
-    phase: "Enterprise Infrastructure",
-    priority: "medium",
-    color: "from-chart-2 to-chart-5",
-  },
-  {
-    icon: "BrainCircuit",
-    title: "Private Legal Copilot",
-    description:
-      "Internal AI assistant for legal Q&A, policy interpretation, contract comparison, and clause reasoning",
-    phase: "AI Intelligence Layer",
-    priority: "medium",
-    color: "from-chart-4 to-primary",
-  },
-]
-
-export default function VisionPageV3() {
+export default function VisionPage() {
   const heroRef = useRef<HTMLDivElement>(null)
   const problemsRef = useRef<HTMLDivElement>(null)
   const startRef = useRef<HTMLDivElement>(null)
   const roadmapRef = useRef<HTMLDivElement>(null)
+  const foundationRef = useRef<HTMLDivElement>(null)
   const principlesRef = useRef<HTMLDivElement>(null)
   const securityRef = useRef<HTMLDivElement>(null)
   const useCasesRef = useRef<HTMLDivElement>(null)
-  const featuresRef = useRef<HTMLDivElement>(null)
 
   const problemsInView = useInView(problemsRef, {
     once: true,
@@ -224,6 +104,10 @@ export default function VisionPageV3() {
   })
   const startInView = useInView(startRef, { once: true, margin: "-100px" })
   const roadmapInView = useInView(roadmapRef, { once: true, margin: "-100px" })
+  const foundationInView = useInView(foundationRef, {
+    once: true,
+    margin: "-100px",
+  })
   const principlesInView = useInView(principlesRef, {
     once: true,
     margin: "-100px",
@@ -236,17 +120,14 @@ export default function VisionPageV3() {
     once: true,
     margin: "-100px",
   })
-  const featuresInView = useInView(featuresRef, {
-    once: true,
-    margin: "-100px",
-  })
 
   const vision = visionData
+  const phases = [1, 2, 3, 4]
 
   return (
     <>
       <main className="relative min-h-screen bg-background">
-        {/* Vision Hero (data-driven) */}
+        {/* Vision Hero */}
         <section ref={heroRef} className="relative overflow-hidden px-6 py-32">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />
 
@@ -263,15 +144,10 @@ export default function VisionPageV3() {
                 </span>
               </div>
               <h1 className="mb-6 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl">
-                {vision.hero.headline || "The future of legal decisions is"}
-                {/* <br />
-                <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
-                  {vision.hero.subhead || "private, local, and intelligent"}
-                </span> */}
+                {vision.hero.headline}
               </h1>
               <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-muted-foreground">
-                {vision.hero.subhead ||
-                  "We started with NDAs. We're building the infrastructure for private legal intelligence."}
+                {vision.hero.subhead}
               </p>
               <motion.div
                 className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-4 py-2"
@@ -314,11 +190,9 @@ export default function VisionPageV3() {
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                 >
                   <Card className="h-full border-2 border-border p-6">
-                    {
-                      <IconRenderer
-                        name={typeof p.icon === "string" ? p.icon : ""}
-                      />
-                    }
+                    <IconRenderer
+                      name={typeof p.icon === "string" ? p.icon : ""}
+                    />
                     <h3 className="mb-3 text-xl font-bold">{p.title}</h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">
                       {p.description}
@@ -345,7 +219,7 @@ export default function VisionPageV3() {
           </div>
         </section>
 
-        {/* Vision-driven Start Section */}
+        {/* Where It Starts */}
         <section ref={startRef} className="px-6 py-32">
           <div className="container mx-auto max-w-7xl">
             <motion.div
@@ -374,11 +248,9 @@ export default function VisionPageV3() {
                   <Card className="h-full border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-transparent p-6">
                     <div className="mb-4 flex items-start justify-between">
                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20">
-                        {
-                          <IconRenderer
-                            name={typeof s.icon === "string" ? s.icon : ""}
-                          />
-                        }
+                        <IconRenderer
+                          name={typeof s.icon === "string" ? s.icon : ""}
+                        />
                       </div>
                       <div className="flex flex-col items-end gap-1">
                         <span className="rounded-full bg-primary/20 px-3 py-1 text-xs font-bold text-primary">
@@ -420,53 +292,174 @@ export default function VisionPageV3() {
               </p>
             </motion.div>
 
-            <div className="space-y-4">
-              {vision?.roadmap?.map((r: any, index: number) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -40 }}
-                  animate={roadmapInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                >
-                  <Card className="group border-2 border-border p-6 transition-colors hover:border-primary/30">
-                    <div className="flex items-start gap-6">
-                      <div
-                        className={`h-14 w-14 rounded-xl bg-gradient-to-br ${r.color} flex flex-shrink-0 items-center justify-center`}
+            {/* Strategic Positioning Banner */}
+            <motion.div
+              className="mb-12 rounded-xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-chart-2/5 p-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={roadmapInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="mb-6">
+                <h3 className="mb-2 text-2xl font-bold">
+                  Target: Procurement + Vendor Contract Review
+                </h3>
+                <p className="text-muted-foreground">
+                  NDAs → Vendor Agreements → DPAs → MSAs → Procurement
+                  Workflows
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="rounded-lg border border-border/50 bg-card/50 p-4">
+                  <p className="text-sm font-bold text-primary">NDA Agent</p>
+                  <p className="text-xs text-muted-foreground">
+                    Entry Feature
+                  </p>
+                </div>
+                <div className="rounded-lg border border-border/50 bg-card/50 p-4">
+                  <p className="text-sm font-bold text-primary">
+                    Legal Workspace
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Operating System
+                  </p>
+                </div>
+                <div className="rounded-lg border border-border/50 bg-card/50 p-4">
+                  <p className="text-sm font-bold text-primary">
+                    Obligation Tracking
+                  </p>
+                  <p className="text-xs text-muted-foreground">Value Engine</p>
+                </div>
+                <div className="rounded-lg border border-border/50 bg-card/50 p-4">
+                  <p className="text-sm font-bold text-primary">Integrations</p>
+                  <p className="text-xs text-muted-foreground">
+                    Distribution Layer
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Phase Groups */}
+            {phases.map((phaseNum) => {
+              const phaseItems =
+                vision?.roadmap?.filter(
+                  (r: any) => r.phaseOrder === phaseNum
+                ) || []
+              const phaseLabel = phaseItems[0]?.phaseLabel || `Phase ${phaseNum}`
+
+              return (
+                <div key={phaseNum} className="mb-10 last:mb-0">
+                  <motion.h3
+                    className="mb-4 flex items-center gap-3 text-lg font-bold text-muted-foreground"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={roadmapInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.5, delay: phaseNum * 0.1 }}
+                  >
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-sm font-bold text-primary">
+                      {phaseNum}
+                    </span>
+                    {phaseLabel}
+                  </motion.h3>
+                  <div className="space-y-4 pl-2">
+                    {phaseItems.map((r: any, index: number) => (
+                      <motion.div
+                        key={r.title}
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={roadmapInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{
+                          duration: 0.6,
+                          delay: phaseNum * 0.1 + index * 0.1,
+                        }}
                       >
-                        {
-                          <IconRenderer
-                            name={typeof r.icon === "string" ? r.icon : ""}
-                          />
-                        }
-                      </div>
-                      <div className="flex-1">
-                        <div className="mb-2 flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <h3 className="text-2xl font-bold transition-colors group-hover:text-primary">
-                              {r.title}
-                            </h3>
-                            {r.built && (
-                              <span className="flex items-center gap-1 rounded-full bg-primary/20 px-2 py-0.5 text-xs font-bold text-primary">
-                                <Check className="h-3 w-3" />
-                                Built
-                              </span>
-                            )}
+                        <Card className="group border-2 border-border p-6 transition-colors hover:border-primary/30">
+                          <div className="flex items-start gap-6">
+                            <div
+                              className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${r.color}`}
+                            >
+                              <IconRenderer
+                                name={typeof r.icon === "string" ? r.icon : ""}
+                              />
+                            </div>
+                            <div className="flex-1">
+                              <div className="mb-2 flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                  <h3 className="text-xl font-bold transition-colors group-hover:text-primary">
+                                    {r.title}
+                                  </h3>
+                                  {r.built && (
+                                    <span className="flex items-center gap-1 rounded-full bg-primary/20 px-2 py-0.5 text-xs font-bold text-primary">
+                                      <Check className="h-3 w-3" />
+                                      Live
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                              <p className="leading-relaxed text-muted-foreground">
+                                {r.description}
+                              </p>
+                            </div>
                           </div>
-                          <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium">
-                            {r.phase}
-                          </span>
-                        </div>
-                        <p className="leading-relaxed text-muted-foreground">
-                          {r.description}
-                        </p>
-                      </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </section>
+
+        {/* Enterprise Foundation */}
+        {vision?.foundation && vision.foundation.length > 0 && (
+          <section ref={foundationRef} className="px-6 py-32">
+            <div className="container mx-auto max-w-7xl">
+              <motion.div
+                className="mb-12 text-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={foundationInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+                  Enterprise Foundation
+                </h2>
+                <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
+                  Capabilities that span every phase — security, governance, and
+                  access control built in from day one.
+                </p>
+              </motion.div>
+
+              <div className="grid gap-6 md:grid-cols-2">
+                {vision.foundation.map((f: any, index: number) => (
+                  <motion.div
+                    key={f.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={foundationInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <Card className="group h-full border-2 border-border p-6 transition-colors hover:border-primary/30">
+                      <div className="flex items-start gap-4">
+                        <div
+                          className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${f.color}`}
+                        >
+                          <IconRenderer
+                            name={typeof f.icon === "string" ? f.icon : ""}
+                          />
+                        </div>
+                        <div>
+                          <h3 className="mb-2 text-lg font-bold transition-colors group-hover:text-primary">
+                            {f.title}
+                          </h3>
+                          <p className="text-sm leading-relaxed text-muted-foreground">
+                            {f.description}
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Principles Behind the System */}
         <section ref={principlesRef} className="px-6 py-32">
@@ -573,6 +566,10 @@ export default function VisionPageV3() {
                 <h2 className="mb-4 text-3xl font-bold md:text-4xl">
                   Use Cases
                 </h2>
+                <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
+                  How teams use Lexon AI for procurement and vendor contract
+                  review.
+                </p>
               </motion.div>
               <div className="grid gap-6 md:grid-cols-2">
                 {vision.use_cases.map((uc: any, i: number) => (
@@ -590,34 +587,6 @@ export default function VisionPageV3() {
             </div>
           </section>
         )}
-
-        {/* Features */}
-        {/* {vision?.features && vision.features.length > 0 && (
-          <section ref={featuresRef} className="bg-muted/30 px-6 py-32">
-            <div className="container mx-auto max-w-7xl">
-              <motion.div
-                className="mb-16 text-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={featuresInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-                  Features
-                </h2>
-              </motion.div>
-              <div className="grid gap-6 md:grid-cols-3">
-                {vision.features.map((f: any, i: number) => (
-                  <Card key={i} className="border-2 border-border p-6">
-                    <h3 className="mb-3 text-lg font-bold">{f.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {f.description}
-                    </p>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section>
-        )} */}
 
         {/* CTA */}
         <CtaSection />
