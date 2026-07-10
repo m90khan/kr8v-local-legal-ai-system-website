@@ -1,7 +1,7 @@
 {
   "hero": {
-    "headline": "Stop spending hours on every NDA. Identify potential contract risks in seconds.",
-    "subhead": "Deploy on your network. Analyze contracts with local AI. Keep full control over sensitive documents. Designed for teams that need private, transparent contract analysis without external dependencies.",
+    "headline": "Contract risks hide in every document. Identify them in seconds.",
+    "subhead": "Start with NDA review. Scale to vendor agreements, DPAs, and procurement workflows. Deploy on your network with local AI.",
     "data_flow": "Runs locally. Your data stays within your environment.",
     "trust_badges": [
       { "text": "SOC 2-Aligned Controls" },
@@ -35,12 +35,12 @@
       "Runs locally or self-hosted",
       "Designed for sensitive documents"
     ],
-    "cta": [{ "label": "Book a Demo" }, { "label": "View Workflow" }]
+    "cta": [{ "label": "Book a Demo" }, { "label": "See the Vision" }]
   },
   "problem_section": {
-    "title": "NDAs hide risk",
+    "title": "Every contract hides risk",
     "subtitle": "in plain English",
-    "description": "Instantly identify high-risk clauses, missing protections, and deviations from your standards.",
+    "description": "NDAs, vendor agreements, DPAs, MSAs — every contract has clauses that can expose your organization. Identify them instantly.",
     "real_nda": {
       "title": "Standard Mutual NDA",
       "pages": "12",
@@ -114,7 +114,7 @@
         "status": "Lower Observed Risk",
         "mode": "low",
         "description": "Standard clauses with limited deviations detected",
-        "example": "Balanced mutual NDA with defined confidentiality obligations and standard disclosure terms",
+        "example": "Standard vendor NDA with balanced liability and mutual confidentiality provisions",
         "action": "Proceed through standard internal review workflow",
         "confidence": "Moderate"
       },
@@ -123,7 +123,7 @@
         "mode": "medium",
 
         "description": "Potentially unclear or non-standard clauses identified",
-        "example": "Ambiguous liability language or missing confidentiality survival provisions",
+        "example": "Broad indemnity clauses or non-standard liability exposure in a vendor agreement",
         "action": "Escalate flagged sections for additional review",
         "confidence": "Moderate"
       },
@@ -131,7 +131,7 @@
         "status": "Elevated Risk Signals",
         "mode": "high",
         "description": "Potentially imbalanced or higher-risk clauses detected",
-        "example": "Broad liability exposure or one-sided confidentiality obligations",
+        "example": "Unlimited liability cap or one-sided IP assignment in a procurement contract",
         "action": "Request revisions before approval",
         "confidence": "Moderate"
       }
@@ -153,7 +153,7 @@
       {
         "title": "Upload",
         "icon": "Upload",
-        "description": "Import NDA files securely",
+        "description": "Import contract files securely",
         "detail": "Supports PDF, DOCX, and TXT documents processed within your environment."
       },
       {
@@ -411,7 +411,7 @@
   "use_cases": {
     "title": "Use Cases",
     "subtitle": "How teams use Lexon AI",
-    "description": "Support faster and more consistent NDA review inside private internal workflows.",
+    "description": "From NDA review to vendor onboarding — faster, more consistent contract workflows.",
     "cases": [
       {
         "scenario": "Reviewing a vendor NDA before procurement approval",
@@ -421,17 +421,17 @@
         "gradient": "from-primary to-chart-2"
       },
       {
-        "scenario": "Handling high NDA volume across internal teams",
-        "outcome": "Automatically surfaced agreements with elevated risk signals for additional review",
+        "scenario": "Procurement team reviewing vendor agreements at scale",
+        "outcome": "Policy-aware risk detection across NDAs, MSAs, and vendor contracts",
         "icon": "layers",
-        "metric": "Reduced repetitive review workload",
+        "metric": "Reduced legal bottlenecks in vendor onboarding",
         "gradient": "from-chart-2 to-chart-3"
       },
       {
-        "scenario": "Reviewing agreements from trusted partners",
-        "outcome": "Identified non-standard clauses embedded within otherwise familiar contract language",
+        "scenario": "Obligation tracking across active vendor contracts",
+        "outcome": "Automatic extraction of deadlines, renewals, and compliance obligations",
         "icon": "search",
-        "metric": "Earlier visibility into hidden risk",
+        "metric": "No missed renewals or compliance deadlines",
         "gradient": "from-chart-3 to-chart-4"
       },
       {
@@ -464,12 +464,12 @@
         "features": [
           "Unlimited internal users",
           "Local or self-hosted deployment",
-          "Local AI-assisted NDA review",
+          "Local AI-assisted contract review",
           "Workflow and audit capabilities",
           "Clause-level analysis",
           "Policy-aware review guidance",
           "Product updates during active license period",
-          "Free Deployment Support for the first time"
+          "Free deployment support included"
         ],
         "cta": "Book a Demo",
         "popular": true
@@ -518,15 +518,15 @@
       },
       {
         "question": "What contract types are supported?",
-        "answer": "Lexon AI is currently optimized for NDAs and confidentiality agreements."
+        "answer": "Lexon AI currently supports NDAs and confidentiality agreements, with vendor agreements, DPAs, and MSAs on the roadmap."
       },
       {
         "question": "Do you support other contract types?",
-        "answer": "Currently focused on NDAs; roadmap for broader contracts. visit our vision page for more details."
+        "answer": "Yes — vendor agreements, DPAs, MSAs, and procurement contracts are planned. Visit our vision page for the full roadmap."
       }
     ],
     "bottom_cta": {
-      "title": "Explore private AI-assisted NDA review",
+      "title": "Explore private AI-assisted contract review",
       "description": "Discuss deployment models, workflows, and infrastructure requirements with the Lexon AI team.",
       "cta": "Request Demo"
     }
@@ -534,11 +534,11 @@
   "cta": {
     "headline": "Instantly analyze contract ",
     "subHeadline": "risks in seconds",
-    "subhead": "Upload an NDA and receive structured risk analysis, clause-level breakdowns, and review guidance in seconds.",
+    "subhead": "Upload a contract and receive structured risk analysis, clause-level breakdowns, and review guidance in seconds.",
     "tagline": "Self-hosted. Local-first. Designed for sensitive legal workflows.",
     "cta": [{ "label": "Book a Demo" }, { "label": "Watch Demo Video" }],
     "metrics": [
-      { "metric": "< 100 sec", "label": "Typical NDA analysis" },
+      { "metric": "< 100 sec", "label": "Typical contract analysis" },
       { "metric": "Local-first", "label": "No external API calls" },
       { "metric": "Deployable", "label": "On-prem & private systems" }
     ],
@@ -555,7 +555,7 @@
         { "label": "Contact", "url": "/contact" },
         { "label": "Vision", "url": "/vision" }
       ],
-      "copyright": "© 2026 Lexon AI. Private AI-assisted NDA review infrastructure."
+      "copyright": "© 2026 Lexon AI. Private contract intelligence platform."
     }
   }
 }

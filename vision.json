@@ -2,7 +2,7 @@
   "seo": {
     "metadata": {
       "title": "Lexon AI Legal Intelligence Platform | Private On-Premise AI for Contract & NDA Review",
-      "description": "Private legal AI platform for NDA review, contract analysis, policy validation, redline recommendations, and procurement risk intelligence. Deploy fully offline on your infrastructure with no external API dependency.",
+      "description": "Private legal AI platform for NDA review, contract analysis, vendor agreement review, policy validation, redline recommendations, and procurement risk intelligence. Deploy fully offline on your infrastructure with no external API dependency.",
       "keywords": [
         "private legal AI",
         "on-premise legal AI",
@@ -15,6 +15,7 @@
         "air-gapped AI",
         "enterprise legal AI",
         "procurement risk analysis",
+        "vendor contract review",
         "private AI infrastructure",
         "legal AI assistant",
         "contract playbook engine",
@@ -22,7 +23,7 @@
       ],
       "openGraph": {
         "title": "Lexon AI Legal Intelligence Platform",
-        "description": "Private on-premise legal AI for NDA review, contract intelligence, policy validation, and enterprise compliance.",
+        "description": "Private on-premise legal AI for NDA review, vendor agreement review, contract intelligence, policy validation, and enterprise compliance.",
         "type": "website"
       },
       "twitter": {
@@ -37,7 +38,7 @@
       "name": "Lexon AI Legal Intelligence Platform",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Windows, Linux",
-      "description": "Private on-premise legal AI platform for NDA review, contract intelligence, policy compliance, redline recommendations, and vendor risk analysis.",
+      "description": "Private on-premise legal AI platform for NDA review, contract intelligence, vendor agreement review, policy compliance, redline recommendations, and vendor risk analysis.",
       "offers": {
         "@type": "Offer",
         "price": "Custom",
@@ -70,7 +71,7 @@
   },
   "hero": {
     "headline": "Private Legal AI for Enterprise Contracts",
-    "subhead": "Offline, on-premise legal intelligence for NDA review, contract analysis, policy compliance, and enterprise risk detection.",
+    "subhead": "Offline, on-premise legal intelligence for NDA review, contract analysis, vendor agreement review, policy compliance, and procurement risk detection.",
     "cta": ["Book a Demo", "Watch Demo"]
   },
   "problems": [
@@ -97,7 +98,7 @@
       "description": "Analyze clauses, obligations, restrictions, and legal risks in seconds.",
       "status": "Live",
       "metric": "10 sec avg",
-      "layer": "Layer 1"
+      "layer": "Now"
     },
     {
       "icon": "ShieldCheck",
@@ -105,7 +106,7 @@
       "description": "Identify problematic clauses, negotiation risks, and policy violations.",
       "status": "Live",
       "metric": "95% accuracy",
-      "layer": "Layer 2"
+      "layer": "Now"
     },
     {
       "icon": "BrainCircuit",
@@ -113,7 +114,7 @@
       "description": "Generate explainable Safe, Review, and High-Risk recommendations.",
       "status": "Live",
       "metric": "3 decision levels",
-      "layer": "Layer 3"
+      "layer": "Now"
     }
   ],
   "roadmap": [
