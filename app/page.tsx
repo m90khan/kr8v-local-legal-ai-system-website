@@ -1,8 +1,6 @@
 import Script from "next/script"
 import { HeroSection } from "@/components/sections/hero-section"
 import { ProblemSection } from "@/components/sections/problem-section"
-import { ScreenshotAnnotationSection } from "@/components/sections/screenshot-annotation-section"
-import { FeaturesSection } from "@/components/sections/features-section"
 import { DifferentiatorSection } from "@/components/sections/differentiator-section"
 import { SecuritySection } from "@/components/sections/security-section"
 import { UseCasesSection } from "@/components/sections/use-cases-section"
@@ -17,11 +15,7 @@ import { WhoItsFor } from "@/components/sections/who-its-for"
 // New Pipeline Section
 import { SeeItInAction } from "@/components/sections/see-it-in-action"
 
-// Cinematic Storytelling Sections
-import { InsideAIBrain } from "@/components/sections/inside-ai-brain"
-import { ProcurementIntelligence } from "@/components/sections/procurement-intelligence"
 import { PrivateDeployment } from "@/components/sections/private-deployment"
-import { WorkspaceTransition } from "@/components/sections/workspace-transition"
 
 export default function LandingPageV3() {
   const jsonLdProduct = {
@@ -102,18 +96,18 @@ export default function LandingPageV3() {
         <SeeItInAction />
 
         {/* Cinematic Storytelling Sections */}
-        <InsideAIBrain />
-        <ProcurementIntelligence />
+        {/* <InsideAIBrain />
+        <ProcurementIntelligence /> */}
         <PrivateDeployment />
         {/* <HumanReviewWorkflow /> */}
-        <WorkspaceTransition />
+        {/* <WorkspaceTransition /> */}
 
         {/* Existing Sections (preserved) */}
         <ProblemSection />
         {/* <DecisionOutputSection /> */}
         {/* <HowItWorksHorizontal /> */}
-        <ScreenshotAnnotationSection />
-        <FeaturesSection />
+        {/* <ScreenshotAnnotationSection /> */}
+        {/* <FeaturesSection /> */}
         <DifferentiatorSection />
         <SecuritySection />
         <WhoItsFor />

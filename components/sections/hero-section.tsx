@@ -2,20 +2,11 @@
 import { useState } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
 import { Button } from "@/components/ui/button"
-import {
-  ArrowRight,
-  Shield,
-  Server,
-  Eye,
-  CheckCircle,
-  AlertTriangle,
-  XCircle,
-  Play,
-  Calendar,
-} from "lucide-react"
+import { ArrowRight, Shield, Server, Eye, Play, Calendar } from "lucide-react"
 import { useRef } from "react"
 import { VideoModal } from "@/components/shared/video-modal"
 import { getHeroContent } from "@/lib/content"
+import Image from "next/image"
 
 export function HeroSection() {
   const content = getHeroContent()
@@ -44,26 +35,7 @@ export function HeroSection() {
       {/* Animated Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.15),rgba(255,255,255,0))]" />
-        <motion.div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, hsl(var(--primary) / 0.05) 1px, transparent 1px),
-              linear-gradient(to bottom, hsl(var(--primary) / 0.05) 1px, transparent 1px)
-            `,
-            backgroundSize: "80px 80px",
-          }}
-          animate={{
-            backgroundPosition: ["0px 0px", "80px 80px"],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
       </div>
-
       <motion.div
         className="relative z-10 container mx-auto max-w-7xl px-6 text-center"
         style={{ y, opacity }}
@@ -124,7 +96,7 @@ export function HeroSection() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="mb-20 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -152,137 +124,29 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Decision Output Preview */}
+        {/* Hero Image */}
         <motion.div
           className="relative mx-auto max-w-5xl"
-          initial={{ opacity: 0, y: 60, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 80 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="relative overflow-hidden rounded-2xl border-2 border-primary/20 bg-card shadow-2xl">
-            {/* Browser Chrome */}
-            <div className="flex items-center gap-2 border-b border-border bg-muted/50 px-4 py-3">
-              <div className="flex gap-2">
-                <div className="h-3 w-3 rounded-full bg-red-500/70" />
-                <div className="h-3 w-3 rounded-full bg-yellow-500/70" />
-                <div className="h-3 w-3 rounded-full bg-green-500/70" />
-              </div>
-              <div className="flex flex-1 items-center justify-center">
-                <div className="rounded-md bg-background/50 px-4 py-1 text-xs text-muted-foreground">
-                  localhost:3000/analyze
-                </div>
-              </div>
-            </div>
-
-            {/* Decision Cards */}
-            <div className="bg-gradient-to-br from-background via-background to-muted/30 p-8">
-              <h3 className="mb-6 text-left text-sm text-muted-foreground">
-                {content.decision_preview?.title || "Analysis Results"}
-              </h3>
-
-              <div className="grid gap-4 md:grid-cols-3">
-                {content.decision_preview?.decisions?.map((decision, index) => (
-                  <motion.div
-                    key={index}
-                    className={`group relative overflow-hidden rounded-xl border-2 p-6 transition-colors ${
-                      decision.status === "Safe to Sign"
-                        ? "border-green-500/20 bg-green-500/5 hover:border-green-500/40"
-                        : decision.status === "Needs Review"
-                          ? "border-yellow-500/30 bg-yellow-500/5 hover:border-yellow-500/50"
-                          : "border-destructive/30 bg-destructive/5 hover:border-destructive/50"
-                    }`}
-                    whileHover={{ y: -4 }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                    {decision.status === "Safe to Sign" && (
-                      <CheckCircle className="mb-4 h-12 w-12 text-green-500" />
-                    )}
-                    {decision.status === "Needs Review" && (
-                      <AlertTriangle className="mb-4 h-12 w-12 text-yellow-500" />
-                    )}
-                    {decision.status === "Higher Risk" && (
-                      <XCircle className="mb-4 h-12 w-12 text-destructive" />
-                    )}
-                    <div className="relative">
-                      <h4
-                        className={`mb-2 text-2xl font-bold ${
-                          decision.status === "Safe to Sign"
-                            ? "text-green-600 dark:text-green-400"
-                            : decision.status === "Needs Review"
-                              ? "text-yellow-600 dark:text-yellow-400"
-                              : "text-destructive"
-                        }`}
-                      >
-                        {decision.status}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {decision.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="mt-6 border-t border-border pt-6 text-center">
-                <p className="text-sm text-muted-foreground">
-                  {content.decision_preview?.footer ||
-                    "Clear decision + specific reasoning + suggested fixes"}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Floating Stats */}
-          {content.floating_stats?.[0] && (
-            <motion.div
-              className="absolute -bottom-4 -left-4 rounded-2xl border-2 border-primary/20 bg-card px-6 py-4 shadow-xl backdrop-blur-sm"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="mb-1 text-3xl font-bold">
-                {content.floating_stats[0].value}
-              </div>
-              <div className="text-sm text-muted-foreground">
-                {content.floating_stats[0].label}
-              </div>
-            </motion.div>
-          )}
-
-          {content.floating_stats?.[1] && (
-            <motion.div
-              className="absolute -right-4 -bottom-4 rounded-2xl border-2 border-chart-2/20 bg-card px-6 py-4 shadow-xl backdrop-blur-sm"
-              animate={{ y: [0, 10, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5,
-              }}
-            >
-              <div className="mb-1 text-3xl font-bold">
-                {content.floating_stats[1].value}
-              </div>
-              <div className="text-sm text-muted-foreground">
-                {content.floating_stats[1].label}
-              </div>
-            </motion.div>
-          )}
+          {/* Glow Orb 1 - Primary */}
+          <div className="absolute -inset-20 -z-10 -rotate-30 rounded-full bg-gradient-to-r from-primary/20 to-primary/60 opacity-20 blur-[100px]" />
+          {/* Glow Orb 2 - Green */}
+          <div className="absolute -inset-20 -z-10 -rotate-30 rounded-full bg-gradient-to-r from-blue-400/60 to-blue-600/10 opacity-10 blur-[100px]" />
+          <Image
+            src="/images/lexon-dash.png"
+            alt="Lexon AI Dashboard"
+            width={1200}
+            height={800}
+            className="w-full rounded-xl border border-white/10"
+          />
         </motion.div>
+
+        {/* Decision Output Preview */}
 
         {/* Micro-trust signals */}
-        <motion.div
-          className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-        >
-          {content.micro_signals?.map((signal, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span>{signal}</span>
-            </div>
-          ))}
-        </motion.div>
       </motion.div>
 
       <VideoModal isOpen={showVideo} onClose={() => setShowVideo(false)} />

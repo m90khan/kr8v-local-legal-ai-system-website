@@ -5,7 +5,7 @@ import { ReactNode } from "react"
 
 interface SectionHeaderProps {
   label: string
-  heading: string
+  heading: ReactNode
   subtitle: string
   labelVariant?: "primary" | "green"
   labelIcon?: ReactNode

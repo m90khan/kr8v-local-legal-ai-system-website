@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from "motion/react"
-import { useRef } from "react"
+import { useRef, useId } from "react"
 
 interface FlowingParticlesProps {
   path: string
@@ -27,7 +27,8 @@ export function FlowingParticles({
   const ref = useRef<SVGSVGElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
 
-  const pathId = `particle-path-${Math.random().toString(36).slice(2, 9)}`
+  const id = useId()
+  const pathId = `particle-path-${id}`
 
   return (
     <svg
