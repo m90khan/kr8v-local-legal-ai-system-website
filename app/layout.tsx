@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import { CookieConsent } from "@/components/shared/cookie-consent"
 import { GA_MEASUREMENT_ID } from "@/lib/constants"
 import { LenisProvider } from "@/components/providers/LenisProvider"
+import { GlowFilter } from "@/components/shared/glow-filter"
 
 const roboto = Roboto({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -158,7 +159,10 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
-          <LenisProvider>{children}</LenisProvider>
+          <LenisProvider>
+            <GlowFilter />
+            {children}
+          </LenisProvider>
         </ThemeProvider>
         <CookieConsent />
       </body>

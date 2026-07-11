@@ -1,115 +1,84 @@
 {
   "hero": {
-    "badge": "Private Contract Intelligence",
-    "headline": "Private Contract Intelligence for Enterprise Legal & Procurement Teams",
-    "subhead": "Analyze NDAs, DPAs, MSAs, vendor agreements and procurement contracts using local AI, policy-aware review, workflow automation, and complete infrastructure control.",
-    "data_flow": "Self-hosted. Local AI. Your contracts never leave your environment.",
+    "headline": "Contract risks hide in every document. Identify them in seconds.",
+    "subhead": "Start with NDA review. Scale to vendor agreements, DPAs, and procurement workflows. Deploy on your network with local AI.",
+    "data_flow": "Runs locally. Your data stays within your environment.",
     "trust_badges": [
-      {
-        "text": "Private Deployment"
-      },
-      {
-        "text": "Local AI Processing"
-      },
-      {
-        "text": "SOC 2-Aligned Controls"
-      },
-      {
-        "text": "Encrypted Document Storage"
-      }
+      { "text": "SOC 2-Aligned Controls" },
+      { "text": "Local AI Deployment" },
+      { "text": "Encrypted storage" }
     ],
     "decision_preview": {
-      "title": "Contract Intelligence Results",
-      "summary": "Structured contract analysis with policy-aware recommendations and clause-level reasoning.",
+      "title": "Analysis Results",
       "decisions": [
         {
-          "status": "Proceed",
-          "description": "Contract aligns with company policy and approved standards."
+          "status": "Safe to Sign",
+          "description": "Standard clauses, minimal identifiable risk"
         },
         {
-          "status": "Review Required",
-          "description": "Potentially non-standard clauses detected that require legal or procurement review."
+          "status": "Needs Review",
+          "description": "Specific clauses require attention"
         },
         {
-          "status": "Revision Recommended",
-          "description": "Higher-risk terms identified with suggested clause rewrites and supporting rationale."
+          "status": "Higher Risk",
+          "description": "Potentially risky terms detected"
         }
       ],
-      "footer": "Risk scoring • Policy evaluation • Clause rewrites • Workflow recommendations"
+      "footer": "Suggested decision + reasoning + clause-level insights"
     },
     "floating_stats": [
-      {
-        "value": "5+",
-        "label": "Contract types supported"
-      },
-      {
-        "value": "Local AI",
-        "label": "No mandatory external AI APIs"
-      },
-      {
-        "value": "Private",
-        "label": "Customer-controlled deployment"
-      }
+      { "value": "Seconds", "label": "Typical analysis time" },
+      { "value": "Local-first", "label": "Private processing" }
     ],
     "micro_signals": [
-      "NDAs, DPAs, MSAs, Vendor & Procurement Contracts",
-      "Policy-aware contract intelligence",
-      "Cross-document vendor intelligence",
-      "Review workflows with audit trails",
-      "Deploy on-premises or within your private network"
+      "No data leaves your environment",
+      "Runs locally or self-hosted",
+      "Designed for sensitive documents"
     ],
-    "cta": [
-      {
-        "label": "Book a Demo"
-      },
-      {
-        "label": "Explore the Platform"
-      }
-    ]
+    "cta": [{ "label": "Book a Demo" }, { "label": "See the Vision" }]
   },
-
   "problem_section": {
-    "title": "Contract review shouldn't slow your business",
-    "subtitle": "but manual review often does",
-    "description": "Legal and procurement teams review hundreds of agreements every year. NDAs, DPAs, MSAs, vendor agreements, and procurement contracts all require careful review against company policy. Manual processes are slow, inconsistent, and make it difficult to identify risk across your contract portfolio.",
-    "real_contract": {
-      "title": "Vendor Master Services Agreement",
-      "pages": "28",
-      "source": "New software supplier",
-      "time_to_review": "60+ minutes",
-      "page_indicator": "Clause 18 of 28"
+    "title": "Every contract hides risk",
+    "subtitle": "in plain English",
+    "description": "NDAs, vendor agreements, DPAs, MSAs — every contract has clauses that can expose your organization. Identify them instantly.",
+    "real_nda": {
+      "title": "Standard Mutual NDA",
+      "pages": "12",
+      "source": "Received from investor",
+      "time_to_read": "45 minutes",
+      "page_indicator": "Page 7 of 12"
     },
     "snippet": [
       {
-        "section": "12.4",
-        "text": "Supplier may modify pricing with thirty (30) days written notice."
+        "section": "6.1",
+        "text": "The Receiving Party agrees that all Confidential Information shall remain the exclusive property of the Disclosing Party."
       },
       {
-        "section": "18.2",
-        "text": "Customer grants Supplier a perpetual license to use operational data for internal product improvement."
+        "section": "6.3",
+        "text": "Each party acknowledges that unauthorized disclosure may cause irreparable harm."
       },
       {
-        "section": "21.5",
-        "text": "Supplier liability shall be limited except for claims arising from gross negligence or willful misconduct."
+        "section": "6.4",
+        "text": "This Agreement shall be governed by the laws of Delaware without regard to conflicts of law principles."
       }
     ],
-    "bottom_note": "...and dozens of additional clauses requiring review",
+    "bottom_note": "... and 6 more pages of legal text",
     "stats": [
       {
-        "stat": "Manual reviews",
-        "label": "Hours spent reviewing contracts one document at a time"
+        "stat": "Hidden risk",
+        "label": "Identify risky clauses and missing protections instantly"
       },
       {
-        "stat": "Policy inconsistency",
-        "label": "Different reviewers can reach different conclusions on similar agreements"
+        "stat": "Reduced workload",
+
+        "label": "Reduce manual contract review time significantly"
       },
       {
-        "stat": "Hidden vendor risk",
-        "label": "Important contract patterns remain difficult to identify across multiple agreements"
+        "stat": "Consistent evaluation",
+        "label": "Standardize approvals based on your internal policy"
       }
     ]
   },
-
   "before_after_section": {
     "title": "Stop relying on unstructured contract review",
     "subtitle": "Turn dense legal text into clear, structured decisions",
@@ -136,51 +105,47 @@
       }
     ]
   },
-
   "decision_output_section": {
-    "badge": "Contract Decision Intelligence",
-    "title": "Move from contract analysis to confident decisions",
-    "subtitle": "Lexon AI combines AI-assisted analysis, company policy, and workflow logic to help legal and procurement teams review contracts consistently.",
+    "badge": "Decision Intelligence",
+    "title": "Get structured risk decisions with clear reasoning",
+    "subtitle": "Lexon AI does not just analyze contracts — it helps you decide what to do next.",
     "decisions": [
       {
-        "status": "Proceed",
+        "status": "Lower Observed Risk",
         "mode": "low",
-        "description": "The agreement aligns closely with company policy and approved contract language.",
-        "example": "A standard mutual NDA with balanced confidentiality, liability, and governing law provisions.",
-        "action": "Continue through the standard approval workflow.",
-        "confidence": "High"
+        "description": "Standard clauses with limited deviations detected",
+        "example": "Standard vendor NDA with balanced liability and mutual confidentiality provisions",
+        "action": "Proceed through standard internal review workflow",
+        "confidence": "Moderate"
       },
       {
-        "status": "Review Required",
+        "status": "Review Recommended",
         "mode": "medium",
-        "description": "Potentially non-standard clauses or policy deviations require legal or procurement review.",
-        "example": "A vendor agreement containing broader indemnification terms or modified termination conditions.",
-        "action": "Assign to a reviewer with highlighted clauses and supporting rationale.",
-        "confidence": "Medium"
+
+        "description": "Potentially unclear or non-standard clauses identified",
+        "example": "Broad indemnity clauses or non-standard liability exposure in a vendor agreement",
+        "action": "Escalate flagged sections for additional review",
+        "confidence": "Moderate"
       },
       {
-        "status": "Revision Recommended",
+        "status": "Elevated Risk Signals",
         "mode": "high",
-        "description": "Higher-risk provisions have been identified together with policy-aware rewrite suggestions.",
-        "example": "A procurement contract with unlimited liability, one-sided intellectual property ownership, or missing confidentiality protections.",
-        "action": "Request revisions before approval and review the suggested clause replacements.",
-        "confidence": "Medium"
+        "description": "Potentially imbalanced or higher-risk clauses detected",
+        "example": "Unlimited liability cap or one-sided IP assignment in a procurement contract",
+        "action": "Request revisions before approval",
+        "confidence": "Moderate"
       }
     ],
     "highlight": {
-      "title": "More than AI contract analysis",
-      "description": "Lexon AI combines local AI, configurable policy rules, reference documents, and review workflows to produce structured contract decisions—not just highlighted text.",
+      "title": "This is not just analysis — it's decision support",
+      "description": "Most tools highlight text. Lexon AI provides structured recommendations, reasoning, and next steps so you can act faster with confidence.",
       "benefits": [
-        "Policy-aware recommendations",
-        "Clause-level explanations",
-        "Suggested rewrites",
-        "Review workflow guidance",
+        "Suggested decisions",
         "Transparent reasoning",
-        "Audit-ready decision history"
+        "Clause-level explanations"
       ]
     }
   },
-
   "how_it_works": {
     "title": "How It Works",
     "subtitle": "From upload to, structured decision",

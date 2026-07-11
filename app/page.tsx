@@ -1,7 +1,6 @@
 import Script from "next/script"
 import { HeroSection } from "@/components/sections/hero-section"
 import { ProblemSection } from "@/components/sections/problem-section"
-import { HowItWorksHorizontal } from "@/components/sections/how-it-works-horizontal"
 import { ScreenshotAnnotationSection } from "@/components/sections/screenshot-annotation-section"
 import { FeaturesSection } from "@/components/sections/features-section"
 import { DifferentiatorSection } from "@/components/sections/differentiator-section"
@@ -13,8 +12,16 @@ import { CtaSection } from "@/components/sections/cta-section"
 import { CustomCursor } from "@/components/shared/custom-cursor"
 import { ScrollProgress } from "@/components/shared/scroll-progress"
 import { Navigation } from "@/components/sections/navigation"
-import { DecisionOutputSection } from "@/components/sections/decision-output-section"
 import { WhoItsFor } from "@/components/sections/who-its-for"
+
+// New Pipeline Section
+import { SeeItInAction } from "@/components/sections/see-it-in-action"
+
+// Cinematic Storytelling Sections
+import { InsideAIBrain } from "@/components/sections/inside-ai-brain"
+import { ProcurementIntelligence } from "@/components/sections/procurement-intelligence"
+import { PrivateDeployment } from "@/components/sections/private-deployment"
+import { WorkspaceTransition } from "@/components/sections/workspace-transition"
 
 export default function LandingPageV3() {
   const jsonLdProduct = {
@@ -22,7 +29,7 @@ export default function LandingPageV3() {
     "@type": "SoftwareApplication",
     name: "Lexon AI",
     description:
-      "Private legal AI automation system for NDA review, contract analysis, policy validation, and enterprise compliance.",
+      "Private contract intelligence platform for NDA review, vendor agreement analysis, procurement contract review, and enterprise compliance.",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Windows, Linux",
     offers: {
@@ -38,18 +45,18 @@ export default function LandingPageV3() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Is this legally reliable? Can I trust the AI's analysis?",
+        name: "Where is contract data processed?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Lexon AI uses advanced NLP models trained on thousands of contracts to identify risk patterns. However, we're clear: this is decision support, not legal advice.",
+          text: "Lexon AI is designed for self-hosted and local deployment. In standard deployments, contracts remain within customer-controlled infrastructure.",
         },
       },
       {
         "@type": "Question",
-        name: "Where does my data go? Who can see my contracts?",
+        name: "Does Lexon AI require external AI APIs?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Nowhere. Your contracts are processed entirely on your infrastructure using local AI models. We don't have external API calls.",
+          text: "No. Lexon AI is designed to support local AI inference without requiring mandatory external AI services.",
         },
       },
     ],
@@ -90,43 +97,29 @@ export default function LandingPageV3() {
         <ScrollProgress />
         <Navigation />
 
-        {/* Hero with Decision Preview */}
+        {/* Hero + Pipeline */}
         <HeroSection />
+        <SeeItInAction />
 
-        {/* Problem with Real NDA Snippet */}
+        {/* Cinematic Storytelling Sections */}
+        <InsideAIBrain />
+        <ProcurementIntelligence />
+        <PrivateDeployment />
+        {/* <HumanReviewWorkflow /> */}
+        <WorkspaceTransition />
+
+        {/* Existing Sections (preserved) */}
         <ProblemSection />
-
-        {/* Before/After Comparison */}
-        {/* <BeforeAfterSection /> */}
-
-        {/* Decision Output Feature (NEW - Hook Feature) */}
-        <DecisionOutputSection />
-
-        {/* How It Works (Horizontal Scroll) */}
-        <HowItWorksHorizontal />
-
-        {/* Screenshot with Annotations (Visual Variety) */}
+        {/* <DecisionOutputSection /> */}
+        {/* <HowItWorksHorizontal /> */}
         <ScreenshotAnnotationSection />
-
-        {/* Features (Cards - but different from others) */}
         <FeaturesSection />
-
-        {/* Differentiator */}
         <DifferentiatorSection />
-
-        {/* Security */}
         <SecuritySection />
         <WhoItsFor />
-        {/* Testimonials (Ultra-Specific) */}
         <UseCasesSection />
-
-        {/* Pricing (Safe Copy) */}
         <PricingSection />
-
-        {/* FAQ */}
         <FaqSection />
-
-        {/* CTA (Aggressive Action) */}
         <CtaSection />
       </main>
     </>

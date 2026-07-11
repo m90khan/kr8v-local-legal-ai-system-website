@@ -48,29 +48,29 @@ export function ProblemSection() {
                 </div>
                 <div>
                   <h3 className="font-bold">
-                    {problemData?.real_nda?.title || "Standard Mutual NDA"}
+                    {problemData?.real_contract?.title || "Standard Mutual NDA"}
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    {problemData?.real_nda?.pages || "12"} pages ·{" "}
-                    {problemData?.real_nda?.source || "Received from investor"}
+                    {problemData?.real_contract?.pages || "12"} pages ·{" "}
+                    {problemData?.real_contract?.source || "Received from investor"}
                   </p>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="text-sm text-muted-foreground">
-                  Time to read properly
+                <div className="text-right">
+                  <div className="text-sm text-muted-foreground">
+                    Time to review
+                  </div>
+                  <div className="text-2xl font-bold">
+                    {problemData?.real_contract?.time_to_review || "45 minutes"}
+                  </div>
                 </div>
-                <div className="text-2xl font-bold">
-                  {problemData?.real_nda?.time_to_read || "45 minutes"}
-                </div>
-              </div>
             </div>
 
             {/* NDA Snippet with Highlighted Risks */}
             <div className="relative overflow-hidden rounded-2xl border-2 border-border bg-card p-8">
               {/* Page indicator */}
               <div className="absolute top-4 right-4 text-xs text-muted-foreground">
-                {problemData?.real_nda?.page_indicator || "Page 7 of 12"}
+                {problemData?.real_contract?.page_indicator || "Page 7 of 12"}
               </div>
 
               <div className="space-y-2 font-mono text-sm leading-relaxed">

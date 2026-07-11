@@ -116,6 +116,19 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@keyframes dashflow {
+  from {
+    stroke-dashoffset: 16;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-dashflow {
+  animation: dashflow 1s linear infinite;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
