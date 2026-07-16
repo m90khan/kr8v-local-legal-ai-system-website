@@ -174,7 +174,7 @@
       "description": "Detect conflicts between contracts, procurement rules, privacy requirements, and internal policies.",
       "phaseLabel": "Phase 2 — Legal Workspace",
       "phaseOrder": 2,
-      "built": false,
+      "built": true,
       "priority": "high",
       "color": "from-chart-2 to-chart-3"
     },
@@ -184,7 +184,7 @@
       "description": "Compare NDAs, vendor agreements, DPAs, MSAs, and related contracts simultaneously.",
       "phaseLabel": "Phase 2 — Legal Workspace",
       "phaseOrder": 2,
-      "built": false,
+      "built": true,
       "priority": "high",
       "color": "from-chart-2 to-chart-3"
     },
@@ -214,7 +214,7 @@
       "description": "Analyze liability exposure, procurement risks, jurisdiction conflicts, indemnity terms, and data obligations.",
       "phaseLabel": "Phase 3 — Obligation & Vendor Intelligence",
       "phaseOrder": 3,
-      "built": false,
+      "built": true,
       "priority": "high",
       "color": "from-chart-3 to-chart-4"
     },
