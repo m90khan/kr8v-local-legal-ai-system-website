@@ -44,8 +44,8 @@ export function getUseCasesContent(): Content["use_cases"] {
   return content.use_cases
 }
 
-export function getPricingContent(): Content["pricing"] {
-  return content.pricing
+export function getLicensingContent(): Content["licensing"] {
+  return content.licensing
 }
 
 export function getFaqContent(): Content["faq"] {

@@ -2,62 +2,19 @@
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
 import content from "@/content.json"
-
-// const securityFeatures = [
-//   {
-//     icon: Shield,
-//     title: "Encrypted Storage",
-//     description: "Contracts are encrypted at rest to protect sensitive data.",
-//   },
-//   {
-//     icon: Lock,
-//     title: "Access Control",
-//     description: "Role-based permissions and secure authentication.",
-//   },
-//   {
-//     icon: ClipboardList,
-//     title: "Audit Logging",
-//     description: "Track reviews, edits, and decisions with full history.",
-//   },
-//   {
-//     icon: Database,
-//     title: "Local Deployment",
-//     description: "Run within your own infrastructure or private network.",
-//   },
-//   {
-//     icon: Server,
-//     title: "Private Processing",
-//     description: "No external API dependency for standard deployments.",
-//   },
-//   {
-//     icon: Settings,
-//     title: "Policy-Based Workflows",
-//     description:
-//       "Control review flows based on internal rules and permissions.",
-//   },
-// ]
 import {
   LockKeyhole,
   ShieldCheck,
   ScrollText,
-  ServerCog,
-  Cookie,
-  ShieldAlert,
+  ClipboardList,
+  Settings,
 } from "lucide-react"
 
-const featureIconMap = {
-  LockKeyhole,
-  ShieldCheck,
-  ScrollText,
-  ServerCog,
-  Cookie,
-  ShieldAlert,
-}
+const featureIconMap = { LockKeyhole, ShieldCheck, ScrollText, ClipboardList, Settings }
+
 export function SecuritySection() {
   const securityData = content.security_section
   const security = securityData?.security
-  const compliance = securityData?.compliance_note
-  const trustStatement = securityData?.trust_statement
 
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
@@ -93,7 +50,7 @@ export function SecuritySection() {
             transition={{ duration: 0.5 }}
           >
             <span className="text-sm font-medium text-primary">
-              {security?.title || "Security & Compliance"}
+              {security?.title || "Enterprise Operations"}
             </span>
           </motion.div>
 
@@ -109,44 +66,81 @@ export function SecuritySection() {
             </span>
           </motion.h1>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            {security?.tagline ||
-              "Your data security is our foundation, not an afterthought"}
+            {security?.tagline}
           </p>
         </motion.div>
 
-        {/* Security Features Grid */}
-        <div className="mb-20 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {security.features.map((feature, index) => {
-            const Icon =
-              featureIconMap[feature.icon as keyof typeof featureIconMap]
+        {/* Bento Grid — 2 large top, 3 small bottom */}
+        <div className="space-y-6">
+          {/* Row 1 — 2 large cards */}
+          <div className="grid gap-6 md:grid-cols-2">
+            {security.features.slice(0, 2).map((feature, index) => {
+              const Icon =
+                featureIconMap[feature.icon as keyof typeof featureIconMap]
 
-            return (
-              <motion.div
-                key={index}
-                className="rounded-2xl border-2 border-border bg-background p-6 transition-colors duration-300 hover:border-primary/50"
-                initial={{ opacity: 0, y: 40 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1 + 0.3,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                whileHover={{ y: -4 }}
-              >
+              return (
                 <motion.div
-                  className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/20 bg-primary/10"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
+                  key={index}
+                  className="rounded-2xl border-2 border-border bg-background p-6 transition-colors duration-300 hover:border-primary/50"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1 + 0.3,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  whileHover={{ y: -4 }}
                 >
-                  {Icon && <Icon className="h-6 w-6 text-primary" />}
+                  <motion.div
+                    className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/20 bg-primary/10"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {Icon && <Icon className="h-6 w-6 text-primary" />}
+                  </motion.div>
+                  <h3 className="mb-2 text-lg font-bold">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {feature.description}
+                  </p>
                 </motion.div>
-                <h3 className="mb-2 text-lg font-bold">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {feature.description}
-                </p>
-              </motion.div>
-            )
-          })}
+              )
+            })}
+          </div>
+
+          {/* Row 2 — 3 small cards */}
+          <div className="grid gap-6 md:grid-cols-3">
+            {security.features.slice(2, 5).map((feature, index) => {
+              const Icon =
+                featureIconMap[feature.icon as keyof typeof featureIconMap]
+
+              return (
+                <motion.div
+                  key={index + 2}
+                  className="rounded-2xl border-2 border-border bg-background p-6 transition-colors duration-300 hover:border-primary/50"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{
+                    duration: 0.6,
+                    delay: (index + 2) * 0.1 + 0.3,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  whileHover={{ y: -4 }}
+                >
+                  <motion.div
+                    className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/20 bg-primary/10"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {Icon && <Icon className="h-6 w-6 text-primary" />}
+                  </motion.div>
+                  <h3 className="mb-2 text-lg font-bold">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>

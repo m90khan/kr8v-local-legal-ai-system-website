@@ -1,21 +1,21 @@
 {
   "hero": {
     "badge": "Private Contract Intelligence",
-    "headline": "Private Contract Intelligence for Enterprise Legal & Procurement Teams",
-    "subhead": "Analyze NDAs, DPAs, MSAs, vendor agreements and procurement contracts using local AI, policy-aware review, workflow automation, and complete infrastructure control.",
+    "headline": "Private Contract Intelligence for Enterprise Legal Teams.",
+    "subhead": "Review NDAs, DPAs, MSAs, vendor agreements, and procurement contracts against your organization's policies, playbooks, and clause library all within your own infrastructure.",
     "data_flow": "Self-hosted. Local AI. Your contracts never leave your environment.",
     "trust_badges": [
-      {
-        "text": "Private Deployment"
-      },
       {
         "text": "Local AI Processing"
       },
       {
-        "text": "SOC 2-Aligned Controls"
+        "text": "Policy-Aware Reviews"
       },
       {
-        "text": "Encrypted Document Storage"
+        "text": "Self-Hosted Deployment"
+      },
+      {
+        "text": "Enterprise Security"
       }
     ],
     "decision_preview": {
@@ -69,9 +69,9 @@
   },
 
   "problem_section": {
-    "title": "Contract review shouldn't slow your business",
-    "subtitle": "but manual review often does",
-    "description": "Legal and procurement teams review hundreds of agreements every year. NDAs, DPAs, MSAs, vendor agreements, and procurement contracts all require careful review against company policy. Manual processes are slow, inconsistent, and make it difficult to identify risk across your contract portfolio.",
+    "title": "Review Contracts. ",
+    "subtitle": "Make Decisions.",
+    "description": "Experience how legal teams review agreements with Lexon. Explore AI recommendations, validate policies, accept or reject clause rewrites, and see the contract update in real time.",
     "real_contract": {
       "title": "Vendor Master Services Agreement",
       "pages": "28",
@@ -365,81 +365,62 @@
 
   "security_section": {
     "security": {
-      "title": "Security & Compliance",
-      "subtitle": "Built for, privacy-first environments",
-      "tagline": "Lexon AI is designed for teams that require visibility, control, and private document processing.",
+      "title": "Enterprise Operations",
+      "subtitle": "Built for, Enterprise Operations",
+      "tagline": "Everything your legal and procurement teams need to deploy, govern and scale contract intelligence.",
       "features": [
         {
-          "title": "Encrypted Document Storage",
-          "icon": "LockKeyhole",
-          "description": "Uploaded documents are encrypted at rest using AES-256-GCM."
-        },
-        {
-          "title": "Role-Based Access Control",
-          "icon": "ShieldCheck",
-          "description": "Restrict access using role-aware authentication and permissions."
-        },
-        {
-          "title": "Audit Logging",
-          "icon": "ScrollText",
-          "description": "Track sensitive review actions and document activity."
-        },
-        {
           "title": "Private Deployment",
-          "icon": "ServerCog",
-          "description": "Deploy within customer-controlled infrastructure or internal networks."
+          "icon": "LockKeyhole",
+          "description": "Run entirely inside your infrastructure."
         },
         {
-          "title": "Secure Session Handling",
-          "icon": "Cookie",
-          "description": "Supports secure cookie handling, expiration, and session validation."
+          "title": "Role-Based Access",
+          "icon": "ShieldCheck",
+          "description": "Control who reviews, approves and administers."
         },
         {
-          "title": "Security Hardening",
-          "icon": "ShieldAlert",
-          "description": "Implements validation, upload restrictions, and baseline request hardening."
+          "title": "Complete Audit Trail",
+          "icon": "ScrollText",
+          "description": "Every review, decision and approval is traceable."
+        },
+        {
+          "title": "Organization Policies",
+          "icon": "ClipboardList",
+          "description": "Standardize every review across your company."
+        },
+        {
+          "title": "Workflow Automation",
+          "icon": "Settings",
+          "description": "Move contracts through review and approval faster."
         }
-      ]
-    },
-    "compliance_note": {
-      "title": "Security Alignment Positioning",
-      "description": "Lexon AI implements security-focused controls related to access management, encrypted storage, audit logging, and request hardening. Lexon AI is not currently SOC 2 certified, ISO 27001 certified, or GDPR certified."
-    },
-    "trust_statement": {
-      "title": "Built for Sensitive Documents",
-      "description": "Lexon AI is designed for teams that require visibility, control, and private document processing.",
-      "markers": [
-        "Local or self-hosted deployment",
-        "Encrypted storage",
-        "Traceable review history",
-        "No external API dependency"
       ]
     }
   },
 
   "who_its_for": {
-    "title": "Who Lexon AI is designed for",
-    "subtitle": "Built for teams reviewing sensitive agreements inside controlled environments.",
-    "groups": [
+    "title": "One Platform. Every Team.",
+    "subtitle": "One review workflow. Different responsibilities. Shared decisions.",
+    "teams": [
       {
-        "title": "Internal Legal Teams",
+        "title": "Legal",
         "icon": "Scale",
-        "description": "Accelerate routine NDA review while maintaining human oversight and review consistency."
+        "roles": ["Review", "Approve", "Playbooks"]
       },
       {
-        "title": "Procurement & Vendor Teams",
+        "title": "Procurement",
         "icon": "BriefcaseBusiness",
-        "description": "Identify non-standard terms and policy deviations before agreements move forward."
+        "roles": ["Negotiate", "Suppliers", "Terms"]
       },
       {
-        "title": "Security-Conscious Organizations",
+        "title": "Compliance",
         "icon": "Shield",
-        "description": "Keep sensitive agreements within private infrastructure and internal review workflows."
+        "roles": ["Validate", "Policies", "Audit"]
       },
       {
-        "title": "Operations & Compliance Teams",
+        "title": "Operations",
         "icon": "ClipboardList",
-        "description": "Reduce repetitive contract review work while maintaining audit visibility and process control."
+        "roles": ["Approve", "Track Flow", "Reporting"]
       }
     ]
   },
@@ -486,86 +467,75 @@
       ]
     }
   },
-  "pricing": {
-    "title": "Pricing",
-    "subtitle": "Private contract intelligence for internal teams",
-    "description": "Deploy Lexon AI within your environment with flexible licensing and optional support services.",
-    "plans": [
-      {
-        "name": "Lexon AI License",
-        "description": "Private AI contract review deployed inside your infrastructure",
-        "price": "From $899",
-        "period": "Annual license",
-        "features": [
-          "Unlimited internal users",
-          "Local or self-hosted deployment",
-          "Local AI-assisted contract review",
-          "Workflow and audit capabilities",
-          "Clause-level analysis",
-          "Policy-aware review guidance",
-          "Product updates during active license period",
-          "Free deployment support included"
-        ],
-        "cta": "Book a Demo",
-        "popular": true
-      }
+  "licensing": {
+    "title": "Enterprise Licensing",
+    "subtitle": "Your contracts. Your infrastructure. Your rules.",
+    "description": "Private contract intelligence licensed for your organization.",
+    "price": "From $899",
+    "period": "Annual license",
+    "highlights": [
+      "Unlimited Internal Users",
+      "Private Deployment",
+      "Local AI",
+      "Organization Knowledge",
+      "Policy-Aware Review",
+      "Deployment Support Included"
     ],
-    "support": {
-      "title": "Optional Support",
-      "description": "onboarding, customization, and priority support are available separately based on your environment and requirements.",
-      "items": [
-        "Migration Deployment assistance",
-        "Infrastructure setup",
-        "Custom policy configuration",
-        "Workflow customization"
-      ]
-    },
-    "trust_note": {
-      "title": "AI-assisted review, not legal replacement",
-      "description": "Lexon AI helps teams identify potential contract risks faster through structured analysis and policy-aware review. Final legal decisions should always involve appropriate human judgment.",
-      "badges": [
-        "Local-first processing",
-        "Self-hosted deployment",
-        "No external API dependency",
-        "Audit-ready workflows"
-      ]
-    }
+    "journey": [
+      "Book Demo",
+      "Technical Discovery",
+      "Private Deployment",
+      "Knowledge Base Setup",
+      "Team Onboarding",
+      "Go Live"
+    ],
+    "trust": [
+      "Annual License",
+      "No Usage-Based Pricing",
+      "Enterprise Support",
+      "Self-Managed Infrastructure"
+    ],
+    "cta": "Book Enterprise Demo"
   },
+
   "faq": {
-    "title": "FAQ",
-    "subtitle": "Questions about deployment, licensing, and review workflows",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know before deploying Lexon AI.",
+
     "items": [
       {
-        "question": "Where is contract data processed?",
-        "answer": "Lexon AI is designed for self-hosted and local deployment. In standard deployments, contracts remain within customer-controlled infrastructure."
+        "question": "How is Lexon AI licensed?",
+        "answer": "Lexon AI is licensed annually for organizations and includes unlimited internal users, local deployment, product updates, and deployment assistance."
       },
       {
-        "question": "Does Lexon AI require external AI APIs?",
-        "answer": "No. Lexon AI is designed to support local AI inference without requiring mandatory external AI services."
+        "question": "Can Lexon AI be deployed entirely within our infrastructure?",
+        "answer": "Yes. Lexon AI is designed for self-hosted deployments, allowing contract data, AI models, embeddings, and document storage to remain inside your environment."
       },
       {
-        "question": "How should teams use Lexon AI?",
-        "answer": "Lexon AI is designed for AI-assisted first-pass NDA review, clause analysis, workflow management, and structured internal review support."
+        "question": "How does Lexon AI review contracts?",
+        "answer": "Lexon AI compares every contract against your organization's uploaded policies, legal playbooks, clause library, and previous review guidance to generate consistent, policy-aware recommendations."
       },
       {
-        "question": "Can Lexon AI replace legal counsel?",
-        "answer": "No. Lexon AI is designed as review-support software to help teams identify potentially important clauses and accelerate review workflows."
+        "question": "Can we customize review policies and clause libraries?",
+        "answer": "Yes. Organizations can upload internal policies, preferred clause language, legal playbooks, and historical guidance to create a knowledge base tailored to their review process."
       },
       {
-        "question": "What contract types are supported?",
-        "answer": "Lexon AI currently supports NDAs and confidentiality agreements, with vendor agreements, DPAs, and MSAs on the roadmap."
+        "question": "Does Lexon AI require cloud AI services?",
+        "answer": "No. Lexon AI supports local AI inference and private deployments without requiring mandatory third-party AI APIs."
       },
       {
-        "question": "Do you support other contract types?",
-        "answer": "Yes — vendor agreements, DPAs, MSAs, and procurement contracts are planned. Visit our vision page for the full roadmap."
+        "question": "What happens after purchasing a license?",
+        "answer": "Our team assists with deployment, environment configuration, knowledge base setup, and onboarding so your organization can begin reviewing contracts using its own legal knowledge."
       }
     ],
+
     "bottom_cta": {
-      "title": "Explore private AI-assisted contract review",
-      "description": "Discuss deployment models, workflows, and infrastructure requirements with the Lexon AI team.",
-      "cta": "Request Demo"
+      "title": "Ready to deploy private contract intelligence?",
+      "description": "Schedule a demo to discuss deployment options, infrastructure, and how Lexon AI can fit into your organization's review workflow.",
+      "cta": "Book a Demo"
     }
   },
+
   "cta": {
     "headline": "Instantly analyze contract ",
     "subHeadline": "risks in seconds",

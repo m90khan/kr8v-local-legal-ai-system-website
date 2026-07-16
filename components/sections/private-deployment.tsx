@@ -1,5 +1,4 @@
 "use client"
-
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
 import {
@@ -15,7 +14,6 @@ import {
   Zap,
   ShieldCheck,
 } from "lucide-react"
-import { easing } from "@/lib/animation"
 import { BlurReveal } from "@/components/shared/blur-reveal"
 import { DashflowLine } from "@/components/shared/dashflow-line"
 import { AmbientOrb } from "@/components/shared/ambient-orb"
@@ -287,7 +285,7 @@ export function PrivateDeployment() {
         </div>
 
         {/* Bottom Banner */}
-        <BlurReveal delay={1.0} duration={0.6}>
+        {/* <BlurReveal delay={1.0} duration={0.6}>
           <div className="mx-auto mt-16 max-w-3xl">
             <div className="flex items-center justify-center gap-3 rounded-2xl border border-primary/20 bg-primary/10 py-5">
               <Shield className="text-primary" />
@@ -297,7 +295,7 @@ export function PrivateDeployment() {
               </p>
             </div>
           </div>
-        </BlurReveal>
+        </BlurReveal> */}
       </div>
     </section>
   )

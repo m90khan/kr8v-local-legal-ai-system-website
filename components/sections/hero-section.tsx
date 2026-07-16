@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, Server, Eye, Play, Calendar } from "lucide-react"
+import { ArrowRight, Shield, Server, Eye, Play, Calendar, FileCheck } from "lucide-react"
 import { useRef } from "react"
 import { VideoModal } from "@/components/shared/video-modal"
 import { getHeroContent } from "@/lib/content"
@@ -21,9 +21,10 @@ export function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   const getBadgeIcon = (text: string) => {
-    if (text.includes("SOC")) return Shield
     if (text.includes("Local")) return Server
-    if (text.includes("No") || text.includes("Zero")) return Eye
+    if (text.includes("Policy")) return FileCheck
+    if (text.includes("Self-Hosted")) return Server
+    if (text.includes("Enterprise")) return Shield
     return Shield
   }
 

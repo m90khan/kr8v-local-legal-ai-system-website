@@ -12,7 +12,7 @@ export default function TermsPage() {
   return (
     <main
       ref={containerRef}
-      className="relative min-h-screen bg-background px-6 py-32"
+      className="relative flex min-h-screen items-center justify-center bg-background px-6 py-32"
     >
       <div className="container mx-auto max-w-5xl">
         <motion.div

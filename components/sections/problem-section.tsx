@@ -52,18 +52,19 @@ export function ProblemSection() {
                   </h3>
                   <p className="text-sm text-muted-foreground">
                     {problemData?.real_contract?.pages || "12"} pages ·{" "}
-                    {problemData?.real_contract?.source || "Received from investor"}
+                    {problemData?.real_contract?.source ||
+                      "Received from investor"}
                   </p>
                 </div>
               </div>
-                <div className="text-right">
-                  <div className="text-sm text-muted-foreground">
-                    Time to review
-                  </div>
-                  <div className="text-2xl font-bold">
-                    {problemData?.real_contract?.time_to_review || "45 minutes"}
-                  </div>
+              <div className="text-right">
+                <div className="text-sm text-muted-foreground">
+                  Time to review
                 </div>
+                <div className="text-2xl font-bold">
+                  {problemData?.real_contract?.time_to_review || "45 minutes"}
+                </div>
+              </div>
             </div>
 
             {/* NDA Snippet with Highlighted Risks */}
@@ -114,7 +115,7 @@ export function ProblemSection() {
         </motion.div>
 
         {/* Real Statistics */}
-        <motion.div
+        {/* <motion.div
           className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -149,7 +150,7 @@ export function ProblemSection() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

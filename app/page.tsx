@@ -1,21 +1,19 @@
 import Script from "next/script"
 import { HeroSection } from "@/components/sections/hero-section"
 import { ProblemSection } from "@/components/sections/problem-section"
-import { DifferentiatorSection } from "@/components/sections/differentiator-section"
 import { SecuritySection } from "@/components/sections/security-section"
-import { UseCasesSection } from "@/components/sections/use-cases-section"
 import { PricingSection } from "@/components/sections/pricing-section"
 import { FaqSection } from "@/components/sections/faq-section"
 import { CtaSection } from "@/components/sections/cta-section"
 import { CustomCursor } from "@/components/shared/custom-cursor"
 import { ScrollProgress } from "@/components/shared/scroll-progress"
-import { Navigation } from "@/components/sections/navigation"
 import { WhoItsFor } from "@/components/sections/who-its-for"
 
 // New Pipeline Section
 import { SeeItInAction } from "@/components/sections/see-it-in-action"
 
 import { PrivateDeployment } from "@/components/sections/private-deployment"
+import { DifferentiatorSection } from "@/components/sections/differentiator-section"
 
 export default function LandingPageV3() {
   const jsonLdProduct = {
@@ -89,11 +87,12 @@ export default function LandingPageV3() {
       <main className="relative bg-background">
         <CustomCursor />
         <ScrollProgress />
-        <Navigation />
+        {/* <Navigation /> */}
 
         {/* Hero + Pipeline */}
         <HeroSection />
         <SeeItInAction />
+        <DifferentiatorSection />
 
         {/* Cinematic Storytelling Sections */}
         {/* <InsideAIBrain />
@@ -108,10 +107,9 @@ export default function LandingPageV3() {
         {/* <HowItWorksHorizontal /> */}
         {/* <ScreenshotAnnotationSection /> */}
         {/* <FeaturesSection /> */}
-        <DifferentiatorSection />
         <SecuritySection />
         <WhoItsFor />
-        <UseCasesSection />
+        {/* <UseCasesSection /> */}
         <PricingSection />
         <FaqSection />
         <CtaSection />
