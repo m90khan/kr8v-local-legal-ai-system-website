@@ -2,7 +2,14 @@
 import { useState } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, Server, Eye, Play, Calendar, FileCheck } from "lucide-react"
+import {
+  ArrowRight,
+  Shield,
+  Server,
+  Play,
+  Calendar,
+  FileCheck,
+} from "lucide-react"
 import { useRef } from "react"
 import { VideoModal } from "@/components/shared/video-modal"
 import { getHeroContent } from "@/lib/content"
@@ -42,26 +49,16 @@ export function HeroSection() {
         style={{ y, opacity }}
       >
         {/* Trust Badges */}
+
         <motion.div
-          className="mb-8 flex flex-wrap items-center justify-center gap-4"
+          className="mb-12 inline-flex items-center gap-2 rounded-sm border border-primary/20 bg-primary/10 px-4 py-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
         >
-          {content.trust_badges?.map((badge, i) => {
-            const BadgeIcon = getBadgeIcon(badge.text)
-            return (
-              <div
-                key={i}
-                className="flex items-center gap-2 rounded-sm border border-primary/20 bg-card px-4 py-2 text-sm"
-              >
-                <BadgeIcon className="h-4 w-4 text-primary" />
-                <span className="font-medium">{badge.text}</span>
-              </div>
-            )
-          })}
+          <Server className="h-4 w-4 text-primary" />
+          <span className="text-sm font-medium">{content.badge}</span>
         </motion.div>
-
         {/* Pain-Driven Headline */}
         <motion.h1
           className="mb-6 text-3xl leading-[1.1] font-bold tracking-tight md:text-4xl lg:text-5xl"
@@ -84,15 +81,24 @@ export function HeroSection() {
         >
           {content.subhead}
         </motion.p>
-
         <motion.div
-          className="mb-12 inline-flex items-center gap-2 rounded-sm border border-primary/20 bg-primary/10 px-4 py-2"
+          className="mb-8 flex flex-wrap items-center justify-center gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Server className="h-4 w-4 text-primary" />
-          <span className="text-sm font-medium">{content.data_flow}</span>
+          {content.trust_badges?.map((badge, i) => {
+            const BadgeIcon = getBadgeIcon(badge.text)
+            return (
+              <div
+                key={i}
+                className="flex items-center gap-2 rounded-sm border border-primary/20 bg-card px-4 py-2 text-sm"
+              >
+                <BadgeIcon className="h-4 w-4 text-primary" />
+                <span className="font-medium">{badge.text}</span>
+              </div>
+            )
+          })}
         </motion.div>
 
         {/* CTA Buttons */}

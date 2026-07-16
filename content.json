@@ -1,21 +1,21 @@
 {
   "hero": {
-    "badge": "Private Contract Intelligence",
-    "headline": "Private Contract Intelligence for Enterprise Legal Teams.",
-    "subhead": "Review NDAs, DPAs, MSAs, vendor agreements, and procurement contracts against your organization's policies, playbooks, and clause library all within your own infrastructure.",
+    "badge": "ENTERPRISE CONTRACT REVIEW",
+    "headline": "Private Contract Intelligence for Enterprise Legal & Procurement Teams",
+    "subhead": "Analyze contracts against your organization's policies, legal playbooks, and clause library using private AI—deployed entirely within your infrastructure.",
     "data_flow": "Self-hosted. Local AI. Your contracts never leave your environment.",
     "trust_badges": [
       {
         "text": "Local AI Processing"
       },
       {
-        "text": "Policy-Aware Reviews"
+        "text": "Organization Knowledge"
       },
       {
-        "text": "Self-Hosted Deployment"
+        "text": "Self-Hosted "
       },
       {
-        "text": "Enterprise Security"
+        "text": "Unlimited Internal Users"
       }
     ],
     "decision_preview": {
@@ -71,7 +71,7 @@
   "problem_section": {
     "title": "Review Contracts. ",
     "subtitle": "Make Decisions.",
-    "description": "Experience how legal teams review agreements with Lexon. Explore AI recommendations, validate policies, accept or reject clause rewrites, and see the contract update in real time.",
+    "description": "Experience how legal teams review agreements with LEXON AI. Explore AI recommendations, validate policies, accept or reject clause rewrites, and see the contract update in real time.",
     "real_contract": {
       "title": "Vendor Master Services Agreement",
       "pages": "28",
@@ -85,11 +85,11 @@
         "text": "Supplier may modify pricing with thirty (30) days written notice."
       },
       {
-        "section": "18.2",
+        "section": "12.6",
         "text": "Customer grants Supplier a perpetual license to use operational data for internal product improvement."
       },
       {
-        "section": "21.5",
+        "section": "12.7",
         "text": "Supplier liability shall be limited except for claims arising from gross negligence or willful misconduct."
       }
     ],

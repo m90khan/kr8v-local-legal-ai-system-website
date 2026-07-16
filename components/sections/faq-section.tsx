@@ -7,10 +7,18 @@ import { getFaqContent } from "@/lib/content"
 export function FaqSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const [openIndices, setOpenIndices] = useState<Set<number>>(new Set([0]))
   const content = getFaqContent()
   const toggleFaq = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
+    setOpenIndices((prev) => {
+      const next = new Set(prev)
+      if (next.has(index)) {
+        next.delete(index)
+      } else {
+        next.add(index)
+      }
+      return next
+    })
   }
 
   return (
@@ -68,10 +76,10 @@ export function FaqSection() {
                   <h3 className="flex-1 text-lg font-bold">{faq.question}</h3>
                   <motion.div
                     className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-sm bg-primary/10"
-                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                    animate={{ rotate: openIndices.has(index) ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {openIndex === index ? (
+                    {openIndices.has(index) ? (
                       <Minus className="h-4 w-4 text-primary" />
                     ) : (
                       <Plus className="h-4 w-4 text-primary" />
@@ -81,7 +89,7 @@ export function FaqSection() {
 
                 {/* Answer Panel */}
                 <AnimatePresence initial={false}>
-                  {openIndex === index && (
+                  {openIndices.has(index) && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}

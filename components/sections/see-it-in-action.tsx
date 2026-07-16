@@ -18,6 +18,7 @@ import {
   listItemVariants,
   rowContainerVariants,
 } from "@/components/shared/pipeline-node"
+import { ArrowRightIcon, FileEditIcon } from "lucide-react"
 
 // ─── Icons ───────────────────────────────────────────────────────────────────
 
@@ -249,9 +250,9 @@ const STAGES: Stage[] = [
         <div className="grid grid-cols-1 gap-x-2 gap-y-1">
           {[
             { value: "147", label: "Clauses" },
-            { value: "12", label: "Obligations" },
-            { value: "8", label: "Entities" },
-            { value: "3", label: "Laws" },
+            { value: "32", label: "Chunks" },
+            { value: "6", label: "Metadata Fields" },
+            { value: "147", label: "Embeddings" },
           ].map((item) => (
             <motion.div
               key={item.label}
@@ -263,7 +264,7 @@ const STAGES: Stage[] = [
                   transition: { type: "spring", stiffness: 300, damping: 20 },
                 },
               }}
-              className="grid grid-cols-[.3fr_.1.5fr] items-center justify-start gap-5 rounded bg-white/[0.04] px-1.5 py-1 text-center"
+              className="grid grid-cols-[0.3fr_1.5fr] items-center justify-start gap-5 rounded bg-white/[0.04] px-1.5 py-1 text-center"
             >
               <p className="text-[12px] font-medium text-white/90">
                 {item.value}
@@ -301,11 +302,10 @@ const STAGES: Stage[] = [
           <span className="text-[10px] text-white/60">Policies checked</span>
         </motion.div>
         {[
-          "Company Policies",
-          "Reference Agreements",
-          "Laws",
-          "Vendor History",
-          "Templates",
+          "Company Policy",
+          "Reference Corpus",
+          "Per-Type Rules",
+          "Rewrite Templates",
         ].map((item) => (
           <AnimatedListItem key={item} icon={<CheckCircle />} label={item} />
         ))}
@@ -372,6 +372,7 @@ const STAGES: Stage[] = [
         animate="visible"
         className="space-y-1.5"
       >
+        {/* Decision badge */}
         <motion.div
           variants={{
             hidden: { opacity: 0, scale: 0.8 },
@@ -388,18 +389,33 @@ const STAGES: Stage[] = [
         >
           <span className="text-[10px] text-amber-400">Review Required</span>
         </motion.div>
+
+        {/* Issue summary */}
         <motion.p
           variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
           className="text-[11px] text-white/60"
         >
-          8 Issues Found
+          8 issues · 2 blocking
         </motion.p>
+
+        {/* Confidence */}
         <motion.p
           variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
           className="text-[10px] text-white/40"
         >
           Confidence: High
         </motion.p>
+
+        {/* Next action */}
+        <motion.div
+          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+          className="flex items-center gap-1"
+        >
+          <ArrowRightIcon className="size-3 text-white/30" />
+          <span className="text-[10px] text-white/40">
+            Review rewrites to proceed
+          </span>
+        </motion.div>
       </motion.div>
     ),
   },
@@ -428,6 +444,22 @@ const STAGES: Stage[] = [
           <CheckIcon className="text-emerald-400" />
           <span className="text-[10px] text-white/60">Analysis complete</span>
         </motion.div>
+
+        {/* Safety Score */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, x: -10 },
+            visible: { opacity: 1, x: 0 },
+          }}
+          className="flex items-center gap-2"
+        >
+          <span className="text-[11px] font-medium text-white/80">
+            Safety Score
+          </span>
+          <span className="font-mono text-[11px] text-emerald-400">72/100</span>
+        </motion.div>
+
+        {/* Severity breakdown */}
         <div className="space-y-1">
           {[
             {
@@ -465,6 +497,17 @@ const STAGES: Stage[] = [
             </motion.div>
           ))}
         </div>
+
+        {/* Rewrite indicator */}
+        <motion.div
+          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+          className="flex items-center gap-1"
+        >
+          <FileEditIcon className="size-3 text-sky-400" />
+          <span className="text-[10px] text-white/50">
+            8 rewrites generated
+          </span>
+        </motion.div>
       </motion.div>
     ),
   },

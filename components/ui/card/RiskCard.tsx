@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion, useScroll, useTransform } from "motion/react"
+import { useState } from "react"
+import { motion } from "motion/react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { FileText, Loader2 } from "lucide-react"
@@ -91,7 +91,11 @@ const content = {
   },
 }
 
-export function ProblemSectionV2Interactive() {
+export function ProblemSectionV2Interactive({
+  onAccept,
+}: {
+  onAccept?: () => void
+}) {
   const [risk, setRisk] = useState<RiskLevel>("high")
 
   const [clauseState, setClauseState] = useState<ClauseState>("initial")
@@ -103,27 +107,6 @@ export function ProblemSectionV2Interactive() {
 
   const [showEvidence, setShowEvidence] = useState(false)
   const [loadingEvidence, setLoadingEvidence] = useState(false)
-
-  const { scrollYProgress } = useScroll()
-  const riskFromScroll = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    ["low", "medium", "high"]
-  )
-
-  useEffect(() => {
-    const unsub = riskFromScroll.on("change", (v) => {
-      const newRisk = v as RiskLevel
-      setRisk(newRisk)
-
-      // Reset state when risk changes
-      setClauseState("initial")
-      setRewriteHistory([content[newRisk].fix])
-      setCurrentRewriteIndex(0)
-      setShowEvidence(false)
-    })
-    return () => unsub()
-  }, [riskFromScroll])
 
   const c = content[risk]
   const currentRewrite = rewriteHistory[currentRewriteIndex]
@@ -151,6 +134,7 @@ export function ProblemSectionV2Interactive() {
 
   const handleAccept = () => {
     setClauseState("accepted")
+    onAccept?.()
   }
 
   const handleReject = () => {
@@ -177,7 +161,7 @@ export function ProblemSectionV2Interactive() {
 
       {clauseState === "accepted" && (
         <p className="text-muted-foreground">
-          <span className="text-foreground/50">6.2 </span>
+          <span className="text-foreground/50">12.5 </span>
           {currentRewrite}
         </p>
       )}
@@ -200,13 +184,13 @@ export function ProblemSectionV2Interactive() {
           <p className="text-xs font-semibold text-muted-foreground uppercase">
             Clause
           </p>
-          <p className="text-sm whitespace-pre-wrap">{c.clause}</p>
+          <p className="text-xs whitespace-pre-wrap">{c.clause}</p>
         </div>
 
         {/* ISSUE */}
         <div className="border-t pt-2">
           <p className="text-xs font-semibold text-red-600 uppercase">Issue</p>
-          <p className="text-sm">{c.issue}</p>
+          <p className="text-xs">{c.issue}</p>
         </div>
 
         {/* IMPACT */}
@@ -214,7 +198,7 @@ export function ProblemSectionV2Interactive() {
           <p className="text-xs font-semibold text-amber-500 uppercase">
             Why this matters
           </p>
-          <p className="text-sm text-muted-foreground">{c.impact}</p>
+          <p className="text-xs text-muted-foreground">{c.impact}</p>
         </div>
 
         {/* REWRITE */}
@@ -222,7 +206,7 @@ export function ProblemSectionV2Interactive() {
           <p className="text-xs font-semibold text-green-600 uppercase">
             AI Suggested Rewrite
           </p>
-          <p className="mt-2 text-sm">{currentRewrite}</p>
+          <p className="mt-2 text-xs">{currentRewrite}</p>
         </div>
 
         {/* EVIDENCE */}
@@ -233,7 +217,7 @@ export function ProblemSectionV2Interactive() {
                 Evidence
               </p>
               {c.evidence.map((e, i) => (
-                <p key={i} className="text-sm text-muted-foreground">
+                <p key={i} className="text-xs text-muted-foreground">
                   • {e}
                 </p>
               ))}
@@ -263,7 +247,7 @@ export function ProblemSectionV2Interactive() {
 
         {/* ACCEPTED */}
         {clauseState === "accepted" && (
-          <div className="rounded-md border border-green-500/30 bg-green-50 p-3 text-sm text-green-800 dark:bg-green-900/20 dark:text-green-100">
+          <div className="rounded-md border border-green-500/30 bg-green-50 p-3 text-xs text-green-800 dark:bg-green-900/20 dark:text-green-100">
             ✔ Fix accepted and applied to clause
           </div>
         )}
@@ -279,7 +263,7 @@ export function ProblemSectionV2Interactive() {
           variant={clauseState === "accepted" ? "outline" : "default"}
           disabled={clauseState === "accepted"}
           onClick={handleAccept}
-          className="text-[12px]"
+          className={`text-[12px] ${clauseState !== "accepted" ? "animate-pulse-glow" : ""}`}
         >
           Accept Fix
         </Button>

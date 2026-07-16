@@ -14,6 +14,7 @@ import { SeeItInAction } from "@/components/sections/see-it-in-action"
 
 import { PrivateDeployment } from "@/components/sections/private-deployment"
 import { DifferentiatorSection } from "@/components/sections/differentiator-section"
+import { Navigation } from "@/components/sections/navigation"
 
 export default function LandingPageV3() {
   const jsonLdProduct = {
@@ -87,7 +88,7 @@ export default function LandingPageV3() {
       <main className="relative bg-background">
         <CustomCursor />
         <ScrollProgress />
-        {/* <Navigation /> */}
+        <Navigation />
 
         {/* Hero + Pipeline */}
         <HeroSection />
