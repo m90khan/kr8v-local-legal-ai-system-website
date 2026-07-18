@@ -233,7 +233,7 @@ export function ProblemSectionV2Interactive({
 
           <Button
             variant="outline"
-            className="mt-2 text-[12px]"
+            className="mt-2 rounded-md text-[12px]"
             onClick={handleEvidence}
           >
             {loadingEvidence ? (
@@ -263,7 +263,7 @@ export function ProblemSectionV2Interactive({
           variant={clauseState === "accepted" ? "outline" : "default"}
           disabled={clauseState === "accepted"}
           onClick={handleAccept}
-          className={`text-[12px] ${clauseState !== "accepted" ? "animate-pulse-glow" : ""}`}
+          className={`rounded-md text-[12px] ${clauseState !== "accepted" ? "animate-pulse-glow" : ""}`}
         >
           Accept Fix
         </Button>
@@ -272,7 +272,7 @@ export function ProblemSectionV2Interactive({
           variant="destructive"
           disabled={clauseState === "accepted"}
           onClick={handleReject}
-          className="text-[12px]"
+          className="rounded-md text-[12px]"
         >
           Reject & Flag Risk
         </Button>
@@ -281,7 +281,7 @@ export function ProblemSectionV2Interactive({
           variant="secondary"
           disabled={clauseState === "accepted"}
           onClick={handleSuggestRewrite}
-          className="text-[12px]"
+          className="rounded-md text-[12px]"
         >
           Suggest New Rewrite
         </Button>

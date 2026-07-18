@@ -52,7 +52,7 @@ function KnowledgeCard({ revealed }: { revealed: boolean }) {
       animate={revealed ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
       transition={{ duration: 0.6, ease: easing }}
     >
-      <div className="mb-1 font-mono text-[10px] font-medium tracking-wider text-muted-foreground">
+      <div className="mb-4 font-mono text-[10px] font-medium tracking-wider text-muted-foreground">
         COMPANY KNOWLEDGE
       </div>
 
@@ -159,11 +159,7 @@ function OutcomesCard({
     <motion.div
       className="rounded-2xl border border-border bg-card p-5"
       initial={{ opacity: 0, x: 30 }}
-      animate={
-        revealed
-          ? { opacity: 1, x: 0 }
-          : { opacity: 0, x: 30 }
-      }
+      animate={revealed ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
       transition={{ duration: 0.6, ease: easing }}
     >
       <div className="mb-4 font-mono text-[10px] font-medium tracking-wider text-muted-foreground">
@@ -213,7 +209,7 @@ function ContractCard({ revealed }: { revealed: boolean }) {
 
   return (
     <motion.div
-      className="rounded-2xl border border-border bg-card px-6 py-4 w-full max-w-[280px]"
+      className="w-full max-w-[280px] rounded-2xl border border-border bg-card px-6 py-4"
       initial={{ opacity: 0, y: 30 }}
       animate={revealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.6, ease: easing }}
@@ -257,14 +253,14 @@ function PhasePill({ flowPhase }: { flowPhase: number }) {
     <AnimatePresence>
       {show && (
         <motion.div
-          className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
+          className="absolute top-18 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.4, ease: easing }}
         >
           <div className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
-            <span className="whitespace-nowrap text-[10px] font-medium text-primary">
+            <span className="text-[10px] font-medium whitespace-nowrap text-primary">
               {text}
             </span>
           </div>
@@ -295,15 +291,15 @@ export function DifferentiatorSection() {
     if (!revealed) return
 
     const timers = [
-      setTimeout(() => setFlowPhase(1), 300),    // Knowledge line draws
-      setTimeout(() => setFlowPhase(2), 1200),   // Pill: Knowledge Ready
-      setTimeout(() => setFlowPhase(3), 3000),   // Contract line draws
-      setTimeout(() => setFlowPhase(4), 4000),   // Lexon layers highlight
-      setTimeout(() => setFlowPhase(5), 5000),   // Outcomes line draws
+      setTimeout(() => setFlowPhase(1), 300), // Knowledge line draws
+      setTimeout(() => setFlowPhase(2), 1200), // Pill: Knowledge Ready
+      setTimeout(() => setFlowPhase(3), 3000), // Contract line draws
+      setTimeout(() => setFlowPhase(4), 4000), // Lexon layers highlight
+      setTimeout(() => setFlowPhase(5), 5000), // Outcomes line draws
       setTimeout(() => {
         setFlowPhase(0)
         setLoopKey((k) => k + 1)
-      }, LOOP_DURATION),                          // Reset and loop
+      }, LOOP_DURATION), // Reset and loop
     ]
 
     return () => timers.forEach(clearTimeout)
@@ -352,7 +348,7 @@ export function DifferentiatorSection() {
             </p>
 
             {/* 3-Column Layout */}
-            <div className="relative grid grid-cols-1 items-center gap-4 md:grid-cols-[1fr_80px_1.2fr_80px_1fr]">
+            <div className="relative grid grid-cols-1 items-center gap-4 md:grid-cols-[1fr_100px_1fr_100px_1fr]">
               {/* Legal Knowledge Base */}
               <KnowledgeCard revealed={revealed} />
 
@@ -361,12 +357,12 @@ export function DifferentiatorSection() {
                 <svg
                   width="80"
                   height="80"
-                  className="absolute left-0 top-0 overflow-visible"
+                  className="absolute top-0 left-0 overflow-visible"
                 >
                   <line
                     x1="0"
                     y1="40"
-                    x2="80"
+                    x2="105"
                     y2="40"
                     stroke={
                       flowPhase >= 1
@@ -389,12 +385,12 @@ export function DifferentiatorSection() {
                 <svg
                   width="80"
                   height="80"
-                  className="absolute left-0 top-0 overflow-visible"
+                  className="absolute top-0 left-0 overflow-visible"
                 >
                   <line
                     x1="0"
                     y1="40"
-                    x2="80"
+                    x2="105"
                     y2="40"
                     stroke={
                       flowPhase >= 4
@@ -416,11 +412,7 @@ export function DifferentiatorSection() {
             <div className="relative mt-8 flex justify-center">
               {/* Vertical Line: Contract → Lexon */}
               <div className="absolute -top-8 left-1/2 -translate-x-1/2">
-                <svg
-                  width="2"
-                  height="32"
-                  className="overflow-visible"
-                >
+                <svg width="2" height="32" className="overflow-visible">
                   <line
                     x1="1"
                     y1="0"

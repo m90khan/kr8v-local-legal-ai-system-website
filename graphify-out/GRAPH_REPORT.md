@@ -1,14 +1,17 @@
-# Graph Report - .  (2026-05-16)
+# Graph Report - . (2026-05-16)
 
 ## Corpus Check
+
 - Corpus is ~28,491 words - fits in a single context window. You may not need a graph.
 
 ## Summary
+
 - 199 nodes · 325 edges · 17 communities (13 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
+
 - [[_COMMUNITY_Landing Page Components|Landing Page Components]]
 - [[_COMMUNITY_Contact Form & Tabs|Contact Form & Tabs]]
 - [[_COMMUNITY_Static Pages (PrivacyTermsVision)|Static Pages (Privacy/Terms/Vision)]]
@@ -24,6 +27,7 @@
 - [[_COMMUNITY_Floating Particles|Floating Particles]]
 
 ## God Nodes (most connected - your core abstractions)
+
 1. `cn()` - 35 edges
 2. `Button()` - 11 edges
 3. `Card()` - 9 edges
@@ -36,61 +40,73 @@
 10. `SelectItem()` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `RootLayout()` --calls--> `cn()`  [EXTRACTED]
+
+- `RootLayout()` --calls--> `cn()` [EXTRACTED]
   app/layout.tsx → lib/utils.ts
-- `ContactForm()` --calls--> `cn()`  [EXTRACTED]
+- `ContactForm()` --calls--> `cn()` [EXTRACTED]
   app/contact/page.tsx → lib/utils.ts
-- `Tabs()` --calls--> `cn()`  [EXTRACTED]
+- `Tabs()` --calls--> `cn()` [EXTRACTED]
   components/ui/tabs.tsx → lib/utils.ts
-- `TabsTrigger()` --calls--> `cn()`  [EXTRACTED]
+- `TabsTrigger()` --calls--> `cn()` [EXTRACTED]
   components/ui/tabs.tsx → lib/utils.ts
-- `TabsContent()` --calls--> `cn()`  [EXTRACTED]
+- `TabsContent()` --calls--> `cn()` [EXTRACTED]
   components/ui/tabs.tsx → lib/utils.ts
 
 ## Communities (17 total, 4 thin omitted)
 
 ### Community 0 - "Landing Page Components"
+
 Cohesion: 0.06
 Nodes (24): Content, getDifferentiatorContent(), getFaqContent(), getHowItWorksContent(), getUseCasesContent(), getWhoItsFor(), DecisionOutputSection(), comparisons (+16 more)
 
 ### Community 1 - "Contact Form & Tabs"
+
 Cohesion: 0.11
 Nodes (29): ContactForm(), INQUIRY_TYPES, cn(), Window, ZohoEmbed(), ZohoEmbedProps, CardAction(), CardContent() (+21 more)
 
 ### Community 2 - "Static Pages (Privacy/Terms/Vision)"
+
 Cohesion: 0.13
 Nodes (10): CALENDLY, COMPANY, CtaSection(), CalendlyEmbedProps, CalendlyModal(), CalendlyModalProps, VideoModal(), VideoModalProps (+2 more)
 
 ### Community 3 - "Layout Wrappers"
+
 Cohesion: 0.17
 Nodes (6): metadata, metadata, Navigation(), ThemeToggle(), metadata, metadata
 
 ### Community 4 - "Root Layout & Theme"
+
 Cohesion: 0.15
 Nodes (9): fontMono, metadata, roboto, RootLayout(), LenisContext, LenisProvider(), COOKIE_CONSENT, CookieConsent() (+1 more)
 
 ### Community 5 - "Button & Hero UI"
+
 Cohesion: 0.24
 Nodes (7): getHeroContent(), HeroSection(), PricingSection(), buttonVariants, MagneticButtonProps, Button(), buttonVariants
 
 ### Community 6 - "Badge & Risk Display"
+
 Cohesion: 0.27
 Nodes (7): ClauseState, content, ProblemSectionV2Interactive(), RiskLevel, ProblemSection(), Badge(), badgeVariants
 
 ### Community 7 - "Reveal Text Animation"
+
 Cohesion: 0.33
 Nodes (3): ElementType, RevealLinesProps, RevealTextProps
 
 ### Community 10 - "Contact API Route"
+
 Cohesion: 0.4
 Nodes (3): ratelimit, redis, resend
 
 ## Knowledge Gaps
+
 - **40 isolated node(s):** `roboto`, `fontMono`, `metadata`, `metadata`, `INQUIRY_TYPES` (+35 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4 thin communities (<3 nodes) omitted from report** - run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
+
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Contact Form & Tabs` to `Static Pages (Privacy/Terms/Vision)`, `Root Layout & Theme`, `Button & Hero UI`, `Badge & Risk Display`?**

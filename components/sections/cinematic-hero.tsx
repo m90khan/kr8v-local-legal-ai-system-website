@@ -192,7 +192,7 @@ export function CinematicHero() {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <motion.a
               href="/contact?activeTab=demo"
-              className="inline-flex items-center gap-2 rounded-sm bg-gradient-to-r from-primary to-chart-2 px-6 py-3 text-sm font-medium text-white shadow-lg transition-transform hover:scale-105"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-chart-2 px-6 py-3 text-sm font-medium text-white shadow-lg transition-transform hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -200,7 +200,7 @@ export function CinematicHero() {
             </motion.a>
             <motion.a
               href="/vision"
-              className="inline-flex items-center gap-2 rounded-sm border-2 border-border px-6 py-3 text-sm font-medium transition-colors hover:border-primary/50"
+              className="inline-flex items-center gap-2 border-2 border-border px-6 py-3 text-sm font-medium transition-colors hover:border-primary/50"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

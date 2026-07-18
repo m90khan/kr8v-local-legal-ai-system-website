@@ -3,10 +3,10 @@
 import { motion, useInView } from "motion/react"
 import { useRef, useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
-import { Check, ArrowRight } from "lucide-react"
+import { Check, ArrowRight, Calendar } from "lucide-react"
 import { getLicensingContent } from "@/lib/content"
 import { easing, stagger } from "@/lib/animation"
-import Link from "next/link"
+import { ZohoModal } from "@/components/shared/zoho-modal"
 
 const containerVariants = {
   hidden: {},
@@ -31,6 +31,7 @@ export function PricingSection() {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
   const [activeStep, setActiveStep] = useState(0)
   const [offsets, setOffsets] = useState<string[]>([])
+  const [showZoho, setShowZoho] = useState(false)
 
   // Measure horizontal center positions of each journey block
   const measureOffsets = useCallback(() => {
@@ -171,15 +172,13 @@ export function PricingSection() {
               transition={{ delay: 1.1, duration: 0.5 }}
             >
               <Button
-                variant="outline"
                 size="lg"
-                className="rounded-full px-8"
-                asChild
+                onClick={() => setShowZoho(true)}
+                className="rounded-xl bg-gradient-to-r from-primary to-chart-2 px-8 py-6 text-base font-semibold"
               >
-                <Link href="/contact">
-                  {content.cta}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                <Calendar className="mr-2 h-5 w-5" />
+                {content.cta}
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
           </div>
@@ -284,7 +283,7 @@ export function PricingSection() {
                       variants={itemVariants}
                     >
                       {i === 0 ? (
-                        <Link href="/contact">
+                        <button onClick={() => setShowZoho(true)}>
                           <motion.div
                             className="group flex cursor-pointer flex-col items-center justify-center"
                             whileHover={{ scale: 1.1 }}
@@ -330,7 +329,7 @@ export function PricingSection() {
                               {step}
                             </span>
                           </motion.div>
-                        </Link>
+                        </button>
                       ) : (
                         <div className="group flex flex-col items-center justify-center">
                           <div
@@ -385,7 +384,7 @@ export function PricingSection() {
                     </div>
 
                     {i === 0 ? (
-                      <Link href="/contact">
+                      <button onClick={() => setShowZoho(true)}>
                         <div
                           className={`cursor-pointer rounded-lg p-3 transition-colors ${
                             isActive
@@ -401,7 +400,7 @@ export function PricingSection() {
                             {step}
                           </span>
                         </div>
-                      </Link>
+                      </button>
                     ) : (
                       <div
                         className={`rounded-lg p-3 transition-colors ${
@@ -426,6 +425,7 @@ export function PricingSection() {
           </div>
         </motion.div>
       </div>
+      <ZohoModal open={showZoho} onClose={() => setShowZoho(false)} />
     </section>
   )
 }

@@ -3,7 +3,6 @@ import { Geist_Mono, Roboto } from "next/font/google"
 import Script from "next/script"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/providers/ThemeProvider"
 import { cn } from "@/lib/utils"
 import { CookieConsent } from "@/components/shared/cookie-consent"
 import { GA_MEASUREMENT_ID } from "@/lib/constants"
@@ -98,7 +97,8 @@ export default function RootLayout({
       itemOffered: {
         "@type": "SoftwareApplication",
         name: "Lexon AI",
-        description: "Private legal AI automation system for NDA review, contract analysis, and enterprise compliance.",
+        description:
+          "Private legal AI automation system for NDA review, contract analysis, and enterprise compliance.",
         applicationCategory: "BusinessApplication",
         operatingSystem: "Windows, Linux",
       },
@@ -119,8 +119,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={cn(
+        "dark",
         "antialiased",
         fontMono.variable,
         "font-sans",
@@ -131,7 +131,9 @@ export default function RootLayout({
         <Script
           id="schema-organization"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdOrganization),
+          }}
         />
         <Script
           id="schema-website"
@@ -158,12 +160,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThemeProvider>
-          <LenisProvider>
-            <GlowFilter />
-            {children}
-          </LenisProvider>
-        </ThemeProvider>
+        <LenisProvider>
+          <GlowFilter />
+          {children}
+        </LenisProvider>
         <CookieConsent />
       </body>
     </html>

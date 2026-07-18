@@ -135,7 +135,7 @@ export function CtaSection() {
                   <Button
                     size="lg"
                     onClick={() => router.push("/contact?activeTab=demo")}
-                    className="group rounded-sm bg-gradient-to-r from-primary to-chart-2 px-12 py-8 text-lg text-white shadow-xl"
+                    className="group bg-gradient-to-r from-primary to-chart-2 px-12 py-8 text-lg text-white shadow-xl"
                   >
                     <Calendar className="mr-2 h-6 w-6" />
                     {ctaData?.cta?.[0]?.label || "Book a Demo"}
@@ -150,7 +150,7 @@ export function CtaSection() {
                     size="lg"
                     variant="outline"
                     onClick={() => setShowVideo(true)}
-                    className="group rounded-sm px-12 py-8 text-lg"
+                    className="group px-12 py-8 text-lg"
                   >
                     <Play className="mr-2 h-6 w-6" />
                     {ctaData?.cta?.[1]?.label || "Watch Demo Video"}

@@ -9,7 +9,7 @@ const initialBlockingIssues = [
   {
     clauseId: "clause_6_2",
     reason:
-      "Uncapped liability clause — Recipient liable for all damages including indirect, incidental, and consequential, regardless of foreseeability",
+      "Uncapped liability clause - Recipient liable for all damages including indirect, incidental, and consequential, regardless of foreseeability",
     policyRef: "CONF-001",
     policyTitle: "Liability Cap Policy",
     evidence: [
@@ -69,7 +69,7 @@ export function ProblemSection() {
 
         {/* Document Info Block */}
         <motion.div
-          className="mx-auto mb-8 grid max-w-2xl items-center gap-6 lg:grid-cols-[auto_1fr_auto]"
+          className="mx-auto mb-8 grid max-w-2xl items-center gap-4 lg:grid-cols-[auto_1fr_auto]"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -94,8 +94,8 @@ export function ProblemSection() {
         </motion.div>
 
         {/* 2-Column Layout */}
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_1.2fr]">
-          {/* Left Column — DocumentHeaderSection (sticky on desktop) */}
+        <div className="mx-auto grid max-w-7xl gap-4 lg:grid-cols-[1fr_1.2fr]">
+          {/* Left Column - DocumentHeaderSection (sticky on desktop) */}
           <motion.div
             className="h-full lg:sticky lg:top-8"
             initial={{ opacity: 0, x: -40 }}
@@ -115,7 +115,7 @@ export function ProblemSection() {
             />
           </motion.div>
 
-          {/* Right Column — NDA Document Snippet */}
+          {/* Right Column - NDA Document Snippet */}
           <motion.div
             className="h-full"
             initial={{ opacity: 0, x: 40 }}
@@ -164,7 +164,7 @@ export function ProblemSection() {
                 {/* Bottom note */}
                 <div className="mt-8 border-t border-border pt-6 text-center text-sm text-muted-foreground">
                   {fixApplied
-                    ? "Fix applied — contract ready for approval"
+                    ? "Fix applied - contract ready for approval"
                     : problemData?.bottom_note ||
                       "... and 21 more pages of legal text"}
                 </div>

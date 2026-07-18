@@ -134,7 +134,7 @@ export function WorkspaceTransition() {
               <div className="mt-12 text-center">
                 <motion.a
                   href="/contact?activeTab=demo"
-                  className="inline-flex items-center gap-2 rounded-sm bg-gradient-to-r from-primary to-chart-2 px-8 py-4 text-sm font-medium text-white shadow-lg"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-chart-2 px-8 py-4 text-sm font-medium text-white shadow-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

@@ -2,7 +2,7 @@
   "hero": {
     "badge": "ENTERPRISE CONTRACT REVIEW",
     "headline": "Private Contract Intelligence for Enterprise Legal & Procurement Teams",
-    "subhead": "Analyze contracts against your organization's policies, legal playbooks, and clause library using private AI—deployed entirely within your infrastructure.",
+    "subhead": "Analyze contracts against your organization's policies, legal playbooks, and clause library using private AI deployed entirely within your infrastructure.",
     "data_flow": "Self-hosted. Local AI. Your contracts never leave your environment.",
     "trust_badges": [
       {
@@ -169,7 +169,7 @@
     ],
     "highlight": {
       "title": "More than AI contract analysis",
-      "description": "Lexon AI combines local AI, configurable policy rules, reference documents, and review workflows to produce structured contract decisions—not just highlighted text.",
+      "description": "Lexon AI combines local AI, configurable policy rules, reference documents, and review workflows to produce structured contract decisions-not just highlighted text.",
       "benefits": [
         "Policy-aware recommendations",
         "Clause-level explanations",
@@ -427,7 +427,7 @@
   "use_cases": {
     "title": "Use Cases",
     "subtitle": "How teams use Lexon AI",
-    "description": "From NDA review to vendor onboarding — faster, more consistent contract workflows.",
+    "description": "From NDA review to vendor onboarding - faster, more consistent contract workflows.",
     "cases": [
       {
         "scenario": "Reviewing a vendor NDA before procurement approval",
@@ -543,7 +543,7 @@
     "tagline": "Self-hosted. Local-first. Designed for sensitive legal workflows.",
     "cta": [{ "label": "Book a Demo" }, { "label": "Watch Demo Video" }],
     "metrics": [
-      { "metric": "< 100 sec", "label": "Typical contract analysis" },
+      { "metric": "< 180 sec", "label": "Typical contract analysis" },
       { "metric": "Local-first", "label": "No external API calls" },
       { "metric": "Deployable", "label": "On-prem & private systems" }
     ],

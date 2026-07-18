@@ -36,9 +36,9 @@ export default function TermsPage() {
                 <p>
                   By accessing or using the Lexon AI website, product, or any
                   related services (collectively, the &quot;Services&quot;), you
-                  agree to be bound by these Terms of Service (&quot;Terms&quot;).
-                  If you do not agree to these Terms, please do not use our
-                  Services.
+                  agree to be bound by these Terms of Service
+                  (&quot;Terms&quot;). If you do not agree to these Terms,
+                  please do not use our Services.
                 </p>
                 <p>
                   These Terms constitute a legally binding agreement between you
@@ -55,10 +55,8 @@ export default function TermsPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  <strong className="text-foreground">
-                    Lexon AI
-                  </strong>{" "}
-                  is an AI-powered contract analysis tool designed to help users
+                  <strong className="text-foreground">Lexon AI</strong> is an
+                  AI-powered contract analysis tool designed to help users
                   review and analyze legal documents for potential risks.
                 </p>
                 <p>
@@ -166,7 +164,7 @@ export default function TermsPage() {
 
             <Card className="border-2 border-border p-8">
               <h2 className="mb-4 text-2xl font-bold">
-                6. AI-Assisted Review — Important Disclaimer
+                6. AI-Assisted Review - Important Disclaimer
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <div className="rounded-lg border-2 border-destructive/30 bg-destructive/5 p-4">
@@ -216,12 +214,12 @@ export default function TermsPage() {
             </Card>
 
             <Card className="border-2 border-border p-8">
-              <h2 className="mb-4 text-2xl font-bold">
-                7. Licensing
-              </h2>
+              <h2 className="mb-4 text-2xl font-bold">7. Licensing</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  <strong className="text-foreground">Perpetual License with Annual Maintenance:</strong>{" "}
+                  <strong className="text-foreground">
+                    Perpetual License with Annual Maintenance:
+                  </strong>{" "}
                   Lexon AI is licensed under a perpetual license model. Upon
                   purchase, you receive a perpetual license to use the software
                   indefinitely. Your annual maintenance renewal provides:
@@ -234,8 +232,8 @@ export default function TermsPage() {
                 <p>
                   If you choose not to renew your annual maintenance, you retain
                   the right to use the last version you received under your
-                  perpetual license. However, you will no longer receive updates,
-                  bug fixes, or technical support until you renew.
+                  perpetual license. However, you will no longer receive
+                  updates, bug fixes, or technical support until you renew.
                 </p>
                 <p>
                   <strong className="text-foreground">
@@ -260,9 +258,10 @@ export default function TermsPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  The Services and Lexon AI product are provided &quot;as is&quot;
-                  and &quot;as available&quot; without any warranties of any kind,
-                  either express or implied, including but not limited to:
+                  The Services and Lexon AI product are provided &quot;as
+                  is&quot; and &quot;as available&quot; without any warranties
+                  of any kind, either express or implied, including but not
+                  limited to:
                 </p>
                 <ul className="list-inside list-disc space-y-2">
                   <li>
@@ -381,16 +380,14 @@ export default function TermsPage() {
                   </li>
                 </ul>
                 <p>
-                  We recommend using local AI inference for maximum data
-                  privacy and control.
+                  We recommend using local AI inference for maximum data privacy
+                  and control.
                 </p>
               </div>
             </Card>
 
             <Card className="border-2 border-border p-8">
-              <h2 className="mb-4 text-2xl font-bold">
-                12. Data and Privacy
-              </h2>
+              <h2 className="mb-4 text-2xl font-bold">12. Data and Privacy</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   Your use of the Services is also governed by our Privacy
@@ -462,17 +459,15 @@ export default function TermsPage() {
                   <p>
                     <span className="text-sm text-muted-foreground">
                       {COMPANY.structure.aiDivision} is the AI division of{" "}
-                      {COMPANY.structure.company}.{" "}
-                      {COMPANY.structure.product} is the legal AI product built
-                      by {COMPANY.structure.aiDivision}.
+                      {COMPANY.structure.company}. {COMPANY.structure.product}{" "}
+                      is the legal AI product built by{" "}
+                      {COMPANY.structure.aiDivision}.
                     </span>
                   </p>
                   <p className="text-sm">
                     Registered by: {COMPANY.registration.owner}
                   </p>
-                  <p className="text-sm">
-                    {COMPANY.registration.authority}
-                  </p>
+                  <p className="text-sm">{COMPANY.registration.authority}</p>
                   <p className="text-sm">
                     Registration No: {COMPANY.registration.regNo}
                   </p>

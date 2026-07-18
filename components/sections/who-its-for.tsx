@@ -46,7 +46,11 @@ function LexonCard({
       const t1 = setTimeout(() => setActiveLayer(0), 0)
       const t2 = setTimeout(() => setActiveLayer(1), 300)
       const t3 = setTimeout(() => setActiveLayer(2), 600)
-      return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3) }
+      return () => {
+        clearTimeout(t1)
+        clearTimeout(t2)
+        clearTimeout(t3)
+      }
     } else if (flowPhase >= 3) {
       setActiveLayer(2) // Stay on last layer
     } else {
@@ -214,16 +218,14 @@ function ApprovedBadge({ flowPhase }: { flowPhase: number }) {
     <AnimatePresence>
       {flowPhase >= 8 && (
         <motion.div
-          className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2"
+          className="mx-auto -mt-10 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2"
           initial={{ opacity: 0, scale: 0.8, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 10 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <Check className="h-4 w-4 text-emerald-400" />
-          <span className="text-sm font-medium text-emerald-400">
-            Approved
-          </span>
+          <span className="text-sm font-medium text-emerald-400">Approved</span>
         </motion.div>
       )}
     </AnimatePresence>
@@ -330,9 +332,7 @@ function BranchLines({
             key={i}
             d={path}
             stroke={
-              isActive
-                ? "rgba(99, 102, 241, 0.4)"
-                : "rgba(255, 255, 255, 0.08)"
+              isActive ? "rgba(99, 102, 241, 0.4)" : "rgba(255, 255, 255, 0.08)"
             }
             strokeWidth="2"
             strokeDasharray="8 8"
@@ -358,8 +358,7 @@ function DesktopLayout({
 }) {
   const showContractLine = flowPhase >= 1
   const showBranchLines = flowPhase >= 3
-  const activeTeamIndex =
-    flowPhase >= 4 && flowPhase <= 7 ? flowPhase - 4 : -1
+  const activeTeamIndex = flowPhase >= 4 && flowPhase <= 7 ? flowPhase - 4 : -1
 
   const containerRef = useRef<HTMLDivElement>(null)
   const lexonRef = useRef<HTMLDivElement>(null)
@@ -394,7 +393,7 @@ function DesktopLayout({
           </svg>
         </div>
 
-        {/* Branch lines — z-0 */}
+        {/* Branch lines - z-0 */}
         <BranchLines
           lexonCardRef={lexonCardRef}
           teamRefs={teamRefs}
@@ -402,9 +401,9 @@ function DesktopLayout({
           isActive={showBranchLines}
         />
 
-        {/* Content — z-10 */}
+        {/* Content - z-10 */}
         <div className="relative z-10">
-          {/* Row 1: Legal + Lexon + Compliance — aligned */}
+          {/* Row 1: Legal + Lexon + Compliance - aligned */}
           <div className="grid grid-cols-3 items-center gap-6">
             <div className="flex justify-end">
               <TeamCard
@@ -412,11 +411,17 @@ function DesktopLayout({
                 index={0}
                 isActive={activeTeamIndex === 0}
                 revealed={revealed}
-                cardRef={(el) => { teamRefs.current[0] = el }}
+                cardRef={(el) => {
+                  teamRefs.current[0] = el
+                }}
               />
             </div>
             <div ref={lexonRef}>
-              <LexonCard revealed={revealed} flowPhase={flowPhase} cardRef={lexonCardRef} />
+              <LexonCard
+                revealed={revealed}
+                flowPhase={flowPhase}
+                cardRef={lexonCardRef}
+              />
             </div>
             <div className="flex justify-start">
               <TeamCard
@@ -424,12 +429,14 @@ function DesktopLayout({
                 index={2}
                 isActive={activeTeamIndex === 2}
                 revealed={revealed}
-                cardRef={(el) => { teamRefs.current[2] = el }}
+                cardRef={(el) => {
+                  teamRefs.current[2] = el
+                }}
               />
             </div>
           </div>
 
-          {/* Row 2: Procurement + Operations — aligned below */}
+          {/* Row 2: Procurement + Operations - aligned below */}
           <div className="mt-4 grid grid-cols-[1fr_1fr] gap-6">
             <div className="flex justify-center">
               <TeamCard
@@ -437,7 +444,9 @@ function DesktopLayout({
                 index={1}
                 isActive={activeTeamIndex === 1}
                 revealed={revealed}
-                cardRef={(el) => { teamRefs.current[1] = el }}
+                cardRef={(el) => {
+                  teamRefs.current[1] = el
+                }}
               />
             </div>
             <div className="flex justify-center">
@@ -446,7 +455,9 @@ function DesktopLayout({
                 index={3}
                 isActive={activeTeamIndex === 3}
                 revealed={revealed}
-                cardRef={(el) => { teamRefs.current[3] = el }}
+                cardRef={(el) => {
+                  teamRefs.current[3] = el
+                }}
               />
             </div>
           </div>
@@ -472,8 +483,7 @@ function MobileLayout({
   revealed: boolean
   flowPhase: number
 }) {
-  const activeTeamIndex =
-    flowPhase >= 4 && flowPhase <= 7 ? flowPhase - 4 : -1
+  const activeTeamIndex = flowPhase >= 4 && flowPhase <= 7 ? flowPhase - 4 : -1
 
   return (
     <div className="block md:hidden">
@@ -504,7 +514,7 @@ function MobileLayout({
         {/* Lexon Card */}
         <LexonCard revealed={revealed} flowPhase={flowPhase} />
 
-        {/* Team Cards — vertical stack */}
+        {/* Team Cards - vertical stack */}
         {teams.map((team, i) => (
           <div key={team.title}>
             {/* Line */}
@@ -566,14 +576,14 @@ export function WhoItsFor() {
     if (!revealed) return
 
     const timers = [
-      setTimeout(() => setFlowPhase(1), 500),     // Contract → Lexon line
-      setTimeout(() => setFlowPhase(2), 1500),    // Lexon highlights
-      setTimeout(() => setFlowPhase(3), 3000),    // Branch lines draw
-      setTimeout(() => setFlowPhase(4), 4000),    // Legal lights up
-      setTimeout(() => setFlowPhase(5), 4500),    // Procurement lights up
-      setTimeout(() => setFlowPhase(6), 5000),    // Compliance lights up
-      setTimeout(() => setFlowPhase(7), 5500),    // Operations lights up
-      setTimeout(() => setFlowPhase(8), 6500),    // Approved badge
+      setTimeout(() => setFlowPhase(1), 500), // Contract → Lexon line
+      setTimeout(() => setFlowPhase(2), 1500), // Lexon highlights
+      setTimeout(() => setFlowPhase(3), 3000), // Branch lines draw
+      setTimeout(() => setFlowPhase(4), 4000), // Legal lights up
+      setTimeout(() => setFlowPhase(5), 4500), // Procurement lights up
+      setTimeout(() => setFlowPhase(6), 5000), // Compliance lights up
+      setTimeout(() => setFlowPhase(7), 5500), // Operations lights up
+      setTimeout(() => setFlowPhase(8), 6500), // Approved badge
       setTimeout(() => {
         setFlowPhase(0)
         setLoopKey((k) => k + 1)
@@ -631,11 +641,7 @@ export function WhoItsFor() {
         />
 
         {/* Mobile Layout */}
-        <MobileLayout
-          teams={teams}
-          revealed={revealed}
-          flowPhase={flowPhase}
-        />
+        <MobileLayout teams={teams} revealed={revealed} flowPhase={flowPhase} />
       </div>
     </section>
   )

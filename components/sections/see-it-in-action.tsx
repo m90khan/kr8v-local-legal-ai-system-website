@@ -683,7 +683,7 @@ export function SeeItInAction() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#030305] py-28"
+      className="relative overflow-hidden bg-background py-28"
     >
       <div className="mx-auto max-w-4xl px-6">
         {/* Section header */}
@@ -710,13 +710,13 @@ export function SeeItInAction() {
             See It In Action
           </h2>
           <p className="mt-3 text-sm text-white/40">
-            From upload to audit-ready decision — fully autonomous.
+            From upload to audit-ready decision - fully autonomous.
           </p>
         </motion.div>
 
         {/* Pipeline */}
         <div ref={pipelineRef} className="relative">
-          {/* Row 1 — Cards layer */}
+          {/* Row 1 - Cards layer */}
           <motion.div
             variants={rowContainerVariants}
             initial="hidden"
@@ -740,7 +740,7 @@ export function SeeItInAction() {
             </div>
           </motion.div>
 
-          {/* Row 1 — Status layer (vertical lines + status boxes) */}
+          {/* Row 1 - Status layer (vertical lines + status boxes) */}
           <motion.div
             variants={rowContainerVariants}
             initial="hidden"
@@ -789,7 +789,7 @@ export function SeeItInAction() {
           {/* Row connector */}
           <RowConnector activeIdx={activeIdx} pipelineRef={pipelineRef} />
 
-          {/* Row 2 — Cards layer */}
+          {/* Row 2 - Cards layer */}
           <motion.div
             variants={rowContainerVariants}
             initial="hidden"
@@ -813,7 +813,7 @@ export function SeeItInAction() {
             </div>
           </motion.div>
 
-          {/* Row 2 — Status layer (vertical lines + status boxes) */}
+          {/* Row 2 - Status layer (vertical lines + status boxes) */}
           <motion.div
             variants={rowContainerVariants}
             initial="hidden"

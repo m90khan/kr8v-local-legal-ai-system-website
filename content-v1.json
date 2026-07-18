@@ -40,7 +40,7 @@
   "problem_section": {
     "title": "Every contract hides risk",
     "subtitle": "in plain English",
-    "description": "NDAs, vendor agreements, DPAs, MSAs — every contract has clauses that can expose your organization. Identify them instantly.",
+    "description": "NDAs, vendor agreements, DPAs, MSAs - every contract has clauses that can expose your organization. Identify them instantly.",
     "real_nda": {
       "title": "Standard Mutual NDA",
       "pages": "12",
@@ -108,7 +108,7 @@
   "decision_output_section": {
     "badge": "Decision Intelligence",
     "title": "Get structured risk decisions with clear reasoning",
-    "subtitle": "Lexon AI does not just analyze contracts — it helps you decide what to do next.",
+    "subtitle": "Lexon AI does not just analyze contracts - it helps you decide what to do next.",
     "decisions": [
       {
         "status": "Lower Observed Risk",
@@ -137,7 +137,7 @@
       }
     ],
     "highlight": {
-      "title": "This is not just analysis — it's decision support",
+      "title": "This is not just analysis - it's decision support",
       "description": "Most tools highlight text. Lexon AI provides structured recommendations, reasoning, and next steps so you can act faster with confidence.",
       "benefits": [
         "Suggested decisions",
@@ -411,7 +411,7 @@
   "use_cases": {
     "title": "Use Cases",
     "subtitle": "How teams use Lexon AI",
-    "description": "From NDA review to vendor onboarding — faster, more consistent contract workflows.",
+    "description": "From NDA review to vendor onboarding - faster, more consistent contract workflows.",
     "cases": [
       {
         "scenario": "Reviewing a vendor NDA before procurement approval",
@@ -522,7 +522,7 @@
       },
       {
         "question": "Do you support other contract types?",
-        "answer": "Yes — vendor agreements, DPAs, MSAs, and procurement contracts are planned. Visit our vision page for the full roadmap."
+        "answer": "Yes - vendor agreements, DPAs, MSAs, and procurement contracts are planned. Visit our vision page for the full roadmap."
       }
     ],
     "bottom_cta": {

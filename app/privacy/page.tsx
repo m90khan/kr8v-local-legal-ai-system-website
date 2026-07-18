@@ -92,7 +92,7 @@ export default function PrivacyPage() {
 
             <Card className="border-2 border-border p-8">
               <h2 className="mb-4 text-2xl font-bold">
-                2. Deployed Software — Zero Data Collection
+                2. Deployed Software - Zero Data Collection
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -156,7 +156,7 @@ export default function PrivacyPage() {
                     and theme preferences.
                     <br />
                     <span className="text-xs">
-                      No consent required — always active
+                      No consent required - always active
                     </span>
                   </p>
                 </div>

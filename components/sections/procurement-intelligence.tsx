@@ -5,8 +5,6 @@ import { useRef } from "react"
 import { easing } from "@/lib/animation"
 import { BlurReveal } from "@/components/shared/blur-reveal"
 import { AmbientOrb } from "@/components/shared/ambient-orb"
-import { DashflowLine } from "@/components/shared/dashflow-line"
-import { FlowingParticles } from "@/components/shared/flowing-particles"
 import { SectionHeader } from "@/components/shared/section-header"
 
 export function ProcurementIntelligence() {
@@ -18,8 +16,22 @@ export function ProcurementIntelligence() {
       ref={containerRef}
       className="relative overflow-hidden bg-background px-6 py-32"
     >
-      <AmbientOrb color="rgba(99, 102, 241, 0.05)" size={600} x="5%" y="30%" blur={100} delay={0} />
-      <AmbientOrb color="rgba(234, 179, 8, 0.04)" size={400} x="95%" y="70%" blur={70} delay={3} />
+      <AmbientOrb
+        color="rgba(99, 102, 241, 0.05)"
+        size={600}
+        x="5%"
+        y="30%"
+        blur={100}
+        delay={0}
+      />
+      <AmbientOrb
+        color="rgba(234, 179, 8, 0.04)"
+        size={400}
+        x="95%"
+        y="70%"
+        blur={70}
+        delay={3}
+      />
 
       <div className="container mx-auto max-w-6xl">
         <SectionHeader
@@ -43,7 +55,9 @@ export function ProcurementIntelligence() {
               whileHover={{ borderColor: "rgba(99, 102, 241, 0.3)" }}
             >
               <div className="mb-6 text-center">
-                <div className="text-2xl font-bold">Northwind Manufacturing</div>
+                <div className="text-2xl font-bold">
+                  Northwind Manufacturing
+                </div>
               </div>
 
               <div className="flex flex-col items-center gap-3">
@@ -53,7 +67,11 @@ export function ProcurementIntelligence() {
                     className="flex items-center gap-3 rounded-lg border border-border bg-background px-4 py-2"
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ delay: 1 + i * 0.15, duration: 0.4, ease: easing }}
+                    transition={{
+                      delay: 1 + i * 0.15,
+                      duration: 0.4,
+                      ease: easing,
+                    }}
                   >
                     <div className="h-2 w-2 rounded-full bg-primary" />
                     <span className="text-sm font-medium">{doc}</span>
@@ -75,19 +93,43 @@ export function ProcurementIntelligence() {
           <div className="grid gap-4 md:grid-cols-2">
             {[
               { label: "Total Contracts", value: "12", color: "text-primary" },
-              { label: "Average Risk", value: "Medium", color: "text-yellow-500" },
-              { label: "Repeated Liability Language", value: "Seen in 5 contracts", color: "text-red-500" },
-              { label: "Preferred Language", value: '"Liability limited to fees paid"', color: "text-green-500" },
-              { label: "Negotiation History", value: "2 revisions", color: "text-muted-foreground" },
-              { label: "Last Review", value: "3 days ago", color: "text-muted-foreground" },
+              {
+                label: "Average Risk",
+                value: "Medium",
+                color: "text-yellow-500",
+              },
+              {
+                label: "Repeated Liability Language",
+                value: "Seen in 5 contracts",
+                color: "text-red-500",
+              },
+              {
+                label: "Preferred Language",
+                value: '"Liability limited to fees paid"',
+                color: "text-green-500",
+              },
+              {
+                label: "Negotiation History",
+                value: "2 revisions",
+                color: "text-muted-foreground",
+              },
+              {
+                label: "Last Review",
+                value: "3 days ago",
+                color: "text-muted-foreground",
+              },
             ].map((item, i) => (
               <BlurReveal key={i} delay={2.3 + i * 0.1} duration={0.4}>
                 <motion.div
                   className="rounded-xl border-2 border-border bg-card p-4"
                   whileHover={{ borderColor: "rgba(99, 102, 241, 0.3)" }}
                 >
-                  <div className="text-xs text-muted-foreground">{item.label}</div>
-                  <div className={`mt-1 font-bold ${item.color}`}>{item.value}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {item.label}
+                  </div>
+                  <div className={`mt-1 font-bold ${item.color}`}>
+                    {item.value}
+                  </div>
                 </motion.div>
               </BlurReveal>
             ))}
@@ -106,7 +148,9 @@ export function ProcurementIntelligence() {
             <div className="mx-auto max-w-2xl overflow-hidden rounded-2xl border-2 border-border bg-card">
               {/* Company Policy */}
               <div className="border-b border-border p-6">
-                <div className="mb-2 text-xs font-medium text-muted-foreground">Company Policy</div>
+                <div className="mb-2 text-xs font-medium text-muted-foreground">
+                  Company Policy
+                </div>
                 <motion.div
                   className="rounded-lg bg-primary/5 p-3 font-mono text-sm"
                   initial={{ opacity: 0 }}
@@ -119,7 +163,9 @@ export function ProcurementIntelligence() {
 
               {/* Vendor Contract */}
               <div className="p-6">
-                <div className="mb-2 text-xs font-medium text-muted-foreground">Vendor Contract</div>
+                <div className="mb-2 text-xs font-medium text-muted-foreground">
+                  Vendor Contract
+                </div>
                 <motion.div
                   className="rounded-lg bg-red-500/5 p-3 font-mono text-sm"
                   initial={{ opacity: 0 }}
@@ -149,7 +195,7 @@ export function ProcurementIntelligence() {
         <div className="mx-auto mb-20 max-w-5xl">
           <BlurReveal delay={5} duration={0.5}>
             <div className="mb-8 text-center text-sm font-medium text-muted-foreground">
-              Procurement Bottleneck — Eliminated
+              Procurement Bottleneck - Eliminated
             </div>
           </BlurReveal>
 
@@ -157,13 +203,25 @@ export function ProcurementIntelligence() {
             {/* Before */}
             <BlurReveal delay={5.2} duration={0.6}>
               <div className="rounded-2xl border-2 border-border bg-card p-6">
-                <div className="mb-4 text-sm font-medium text-muted-foreground">Before</div>
+                <div className="mb-4 text-sm font-medium text-muted-foreground">
+                  Before
+                </div>
                 <div className="space-y-3">
-                  {["Vendor sends contract", "Inbox", "Waiting...", "Waiting...", "Waiting...", "Legal Review", "Signed"].map((step, i) => (
+                  {[
+                    "Vendor sends contract",
+                    "Inbox",
+                    "Waiting...",
+                    "Waiting...",
+                    "Waiting...",
+                    "Legal Review",
+                    "Signed",
+                  ].map((step, i) => (
                     <motion.div
                       key={i}
                       className={`flex items-center gap-3 rounded-lg border border-border px-3 py-2 text-sm ${
-                        step.includes("Waiting") ? "border-yellow-500/30 bg-yellow-500/5 text-yellow-600" : ""
+                        step.includes("Waiting")
+                          ? "border-yellow-500/30 bg-yellow-500/5 text-yellow-600"
+                          : ""
                       }`}
                       initial={{ opacity: 0, x: -10 }}
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -180,9 +238,17 @@ export function ProcurementIntelligence() {
             {/* With Lexon */}
             <BlurReveal delay={5.2} duration={0.6}>
               <div className="rounded-2xl border-2 border-primary/30 bg-primary/5 p-6">
-                <div className="mb-4 text-sm font-medium text-primary">With Lexon</div>
+                <div className="mb-4 text-sm font-medium text-primary">
+                  With Lexon
+                </div>
                 <div className="space-y-3">
-                  {["Vendor sends contract", "Lexon analyzes", "Review Required", "Legal Review", "Signed"].map((step, i) => (
+                  {[
+                    "Vendor sends contract",
+                    "Lexon analyzes",
+                    "Review Required",
+                    "Legal Review",
+                    "Signed",
+                  ].map((step, i) => (
                     <motion.div
                       key={i}
                       className="flex items-center gap-3 rounded-lg border border-border px-3 py-2 text-sm"
@@ -216,11 +282,22 @@ export function ProcurementIntelligence() {
                   className="rounded-xl border-2 border-border bg-card p-4 text-center"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: 6.8 + i * 0.1, duration: 0.4, ease: easing }}
-                  whileHover={{ scale: 1.05, borderColor: "rgba(99, 102, 241, 0.3)" }}
+                  transition={{
+                    delay: 6.8 + i * 0.1,
+                    duration: 0.4,
+                    ease: easing,
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    borderColor: "rgba(99, 102, 241, 0.3)",
+                  }}
                 >
-                  <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground">{stat.label}</div>
+                  <div className="text-2xl font-bold text-primary">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </div>

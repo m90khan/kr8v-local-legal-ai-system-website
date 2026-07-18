@@ -178,10 +178,10 @@ export function DocumentHeaderSection({
                 className="text-sm font-semibold"
               >
                 {decision === "APPROVE"
-                  ? "Approved — Ready to sign"
+                  ? "Approved - Ready to sign"
                   : decision === "REJECT"
-                    ? "Rejected — Action required"
-                    : "Under Review — Needs attention"}
+                    ? "Rejected - Action required"
+                    : "Under Review - Needs attention"}
               </motion.p>
             </div>
             <Badge variant="ghost" className="text-lg font-medium">

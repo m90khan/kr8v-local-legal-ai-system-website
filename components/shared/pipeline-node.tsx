@@ -141,19 +141,19 @@ export function StageCard({
               : "border-white/10"
         } `}
       >
-        {/* Left port — rectangle */}
+        {/* Left port - rectangle */}
         <div
           data-port="left"
           className={`absolute top-1/2 left-0 h-1 w-2 -translate-x-1/2 -translate-y-1/2 rounded-sm transition-colors duration-500 ${isActive || isCompleted ? "bg-primary/80" : "bg-white/40"} `}
         />
 
-        {/* Right port — circle */}
+        {/* Right port - circle */}
         <div
           data-port="right"
           className={`absolute top-1/2 right-0 h-2 w-2 translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-500 ${isActive || isCompleted ? "bg-primary/80" : "bg-white/40"} `}
         />
 
-        {/* Bottom port — circle */}
+        {/* Bottom port - circle */}
         <div
           className={`absolute bottom-0 left-1/2 h-2 w-2 -translate-x-1/2 translate-y-1/2 rounded-full transition-colors duration-500 ${isActive || isCompleted ? "bg-primary/80" : "bg-white/40"} `}
         />
@@ -166,7 +166,7 @@ export function StageCard({
             {icon}
           </div>
           <div className="flex flex-col items-start">
-            {/* Label — monospace */}
+            {/* Label - monospace */}
             <p className="font-mono text-[11px] leading-tight text-white/90">
               {label}
             </p>
@@ -212,7 +212,7 @@ export function StatusBox({
             : "border-white/[0.04] bg-transparent"
       } ${className} `}
     >
-      {/* Fixed-height container — content swaps inside, height never changes */}
+      {/* Fixed-height container - content swaps inside, height never changes */}
       <div className="h-[150px] w-full overflow-hidden">
         <AnimatePresence mode="wait">
           {!showAfter ? (
@@ -232,7 +232,10 @@ export function StatusBox({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+              transition={{
+                duration: 0.4,
+                ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+              }}
               className="h-full"
             >
               {afterContent}

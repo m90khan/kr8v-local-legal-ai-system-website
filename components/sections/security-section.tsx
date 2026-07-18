@@ -10,7 +10,13 @@ import {
   Settings,
 } from "lucide-react"
 
-const featureIconMap = { LockKeyhole, ShieldCheck, ScrollText, ClipboardList, Settings }
+const featureIconMap = {
+  LockKeyhole,
+  ShieldCheck,
+  ScrollText,
+  ClipboardList,
+  Settings,
+}
 
 export function SecuritySection() {
   const securityData = content.security_section
@@ -70,9 +76,9 @@ export function SecuritySection() {
           </p>
         </motion.div>
 
-        {/* Bento Grid — 2 large top, 3 small bottom */}
+        {/* Bento Grid - 2 large top, 3 small bottom */}
         <div className="space-y-6">
-          {/* Row 1 — 2 large cards */}
+          {/* Row 1 - 2 large cards */}
           <div className="grid gap-6 md:grid-cols-2">
             {security.features.slice(0, 2).map((feature, index) => {
               const Icon =
@@ -107,7 +113,7 @@ export function SecuritySection() {
             })}
           </div>
 
-          {/* Row 2 — 3 small cards */}
+          {/* Row 2 - 3 small cards */}
           <div className="grid gap-6 md:grid-cols-3">
             {security.features.slice(2, 5).map((feature, index) => {
               const Icon =

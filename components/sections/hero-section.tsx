@@ -9,15 +9,18 @@ import {
   Play,
   Calendar,
   FileCheck,
+  Users,
 } from "lucide-react"
 import { useRef } from "react"
 import { VideoModal } from "@/components/shared/video-modal"
+import { ZohoModal } from "@/components/shared/zoho-modal"
 import { getHeroContent } from "@/lib/content"
 import Image from "next/image"
 
 export function HeroSection() {
   const content = getHeroContent()
   const [showVideo, setShowVideo] = useState(false)
+  const [showZoho, setShowZoho] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -25,25 +28,23 @@ export function HeroSection() {
   })
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
   const getBadgeIcon = (text: string) => {
     if (text.includes("Local")) return Server
-    if (text.includes("Policy")) return FileCheck
-    if (text.includes("Self-Hosted")) return Server
-    if (text.includes("Enterprise")) return Shield
+    if (text.includes("Organization")) return FileCheck
+    if (text.includes("Self-Hosted")) return Shield
+    if (text.includes("Unlimited")) return Users
     return Shield
   }
 
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background pt-40"
+      className="relative flex min-h-[120vh] items-center justify-center overflow-hidden bg-background pt-40"
     >
       {/* Animated Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.15),rgba(255,255,255,0))]" />
-      </div>
+
       <motion.div
         className="relative z-10 container mx-auto max-w-7xl px-6 text-center"
         style={{ y, opacity }}
@@ -61,7 +62,7 @@ export function HeroSection() {
         </motion.div>
         {/* Pain-Driven Headline */}
         <motion.h1
-          className="mb-6 text-3xl leading-[1.1] font-bold tracking-tight md:text-4xl lg:text-5xl"
+          className="mx-auto mb-6 max-w-3xl text-3xl leading-[1.1] font-bold tracking-tight md:text-4xl lg:text-4xl"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -111,7 +112,8 @@ export function HeroSection() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               size="lg"
-              className="group text-md rounded-sm bg-gradient-to-r from-primary to-chart-2 px-5 py-6 shadow-lg"
+              onClick={() => setShowZoho(true)}
+              className="group text-md bg-gradient-to-r from-primary to-chart-2 px-5 py-6 shadow-lg"
             >
               <Calendar className="mr-2 h-5 w-5" />
               {content.cta?.[0]?.label || "Book a Demo"}
@@ -123,7 +125,7 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               onClick={() => setShowVideo(true)}
-              className="group text-md rounded-sm px-5 py-6"
+              className="group text-md px-5 py-6"
             >
               <Play className="mr-2 h-5 w-5" />
               {content.cta?.[1]?.label || "Watch Demo"}
@@ -139,9 +141,46 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Glow Orb 1 - Primary */}
-          <div className="absolute -inset-20 -z-10 -rotate-30 rounded-full bg-gradient-to-r from-primary/20 to-primary/60 opacity-20 blur-[100px]" />
-          {/* Glow Orb 2 - Green */}
-          <div className="absolute -inset-20 -z-10 -rotate-30 rounded-full bg-gradient-to-r from-blue-400/60 to-blue-600/10 opacity-10 blur-[100px]" />
+          <motion.div
+            className="absolute -inset-20 -z-10 rounded-full bg-gradient-to-r from-primary/30 via-primary/20 to-chart-2/30 blur-[80px]"
+            animate={{
+              scale: [1, 1.1, 0.95, 1.05, 1],
+              rotate: [0, 5, -5, 3, 0],
+              borderRadius: [
+                "40% 60% 55% 45%",
+                "55% 45% 40% 60%",
+                "45% 55% 60% 40%",
+                "50% 50% 50% 50%",
+                "40% 60% 55% 45%",
+              ],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          {/* Glow Orb 2 - Blue */}
+          <motion.div
+            className="absolute -inset-24 -z-10 rounded-full bg-gradient-to-br from-blue-400/20 via-primary/15 to-blue-600/20 blur-[100px]"
+            animate={{
+              scale: [0.95, 1.05, 1, 0.9, 0.95],
+              rotate: [0, -8, 5, -3, 0],
+              borderRadius: [
+                "55% 45% 50% 50%",
+                "45% 55% 45% 55%",
+                "50% 50% 55% 45%",
+                "40% 60% 50% 50%",
+                "55% 45% 50% 50%",
+              ],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
           <Image
             src="/images/lexon-dash.png"
             alt="Lexon AI Dashboard"
@@ -157,6 +196,7 @@ export function HeroSection() {
       </motion.div>
 
       <VideoModal isOpen={showVideo} onClose={() => setShowVideo(false)} />
+      <ZohoModal open={showZoho} onClose={() => setShowZoho(false)} />
     </section>
   )
 }

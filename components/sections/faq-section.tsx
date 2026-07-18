@@ -126,7 +126,7 @@ export function FaqSection() {
           </p>
 
           <motion.button
-            className="rounded-sm bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
