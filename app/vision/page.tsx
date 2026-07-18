@@ -30,6 +30,7 @@ import {
   Lock,
   Brain,
   Target,
+  ArrowRight,
   FileText as FileTextIcon,
 } from "lucide-react"
 
@@ -88,38 +89,45 @@ function IconRenderer({ name }: { name: string }) {
   }
 }
 
+function StatusBadge({ built, phaseOrder }: { built: boolean; phaseOrder: number }) {
+  if (built) {
+    return (
+      <span className="flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+        <Check className="h-3 w-3" />
+        Live
+      </span>
+    )
+  }
+  if (phaseOrder === 2) {
+    return (
+      <span className="flex items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 text-xs font-bold text-amber-600 dark:text-amber-400">
+        <ArrowRight className="h-3 w-3" />
+        Coming
+      </span>
+    )
+  }
+  return (
+    <span className="flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-xs font-bold text-muted-foreground">
+      Vision
+    </span>
+  )
+}
+
 export default function VisionPage() {
   const heroRef = useRef<HTMLDivElement>(null)
   const problemsRef = useRef<HTMLDivElement>(null)
-  const startRef = useRef<HTMLDivElement>(null)
+  const knowledgeRef = useRef<HTMLDivElement>(null)
   const roadmapRef = useRef<HTMLDivElement>(null)
   const foundationRef = useRef<HTMLDivElement>(null)
   const principlesRef = useRef<HTMLDivElement>(null)
   const securityRef = useRef<HTMLDivElement>(null)
-  const useCasesRef = useRef<HTMLDivElement>(null)
 
-  const problemsInView = useInView(problemsRef, {
-    once: true,
-    margin: "-100px",
-  })
-  const startInView = useInView(startRef, { once: true, margin: "-100px" })
+  const problemsInView = useInView(problemsRef, { once: true, margin: "-100px" })
+  const knowledgeInView = useInView(knowledgeRef, { once: true, margin: "-100px" })
   const roadmapInView = useInView(roadmapRef, { once: true, margin: "-100px" })
-  const foundationInView = useInView(foundationRef, {
-    once: true,
-    margin: "-100px",
-  })
-  const principlesInView = useInView(principlesRef, {
-    once: true,
-    margin: "-100px",
-  })
-  const securityInView = useInView(securityRef, {
-    once: true,
-    margin: "-100px",
-  })
-  const useCasesInView = useInView(useCasesRef, {
-    once: true,
-    margin: "-100px",
-  })
+  const foundationInView = useInView(foundationRef, { once: true, margin: "-100px" })
+  const principlesInView = useInView(principlesRef, { once: true, margin: "-100px" })
+  const securityInView = useInView(securityRef, { once: true, margin: "-100px" })
 
   const vision = visionData
   const phases = [1, 2, 3, 4]
@@ -164,7 +172,7 @@ export default function VisionPage() {
           </div>
         </section>
 
-        {/* The Problem with Legal AI Today */}
+        {/* Why Cloud AI Doesn't Work for Contracts */}
         <section ref={problemsRef} className="bg-muted/30 px-6 py-32">
           <div className="container mx-auto max-w-7xl">
             <motion.div
@@ -174,10 +182,10 @@ export default function VisionPage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-                The Problem with Legal AI Today
+                Why Cloud AI Doesn&apos;t Work for Contracts
               </h2>
               <p className="text-md mx-auto max-w-2xl text-muted-foreground">
-                Legal intelligence must be private by design.
+                Contract intelligence must be private by design.
               </p>
             </motion.div>
 
@@ -190,9 +198,7 @@ export default function VisionPage() {
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                 >
                   <Card className="h-full border-2 border-border p-6">
-                    <IconRenderer
-                      name={typeof p.icon === "string" ? p.icon : ""}
-                    />
+                    <IconRenderer name={typeof p.icon === "string" ? p.icon : ""} />
                     <h3 className="mb-3 text-xl font-bold">{p.title}</h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">
                       {p.description}
@@ -209,8 +215,7 @@ export default function VisionPage() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <p className="mb-2 text-2xl font-bold">
-                This is why private legal intelligence is the only logical path
-                forward.
+                This is why private contract intelligence is the only logical path forward.
               </p>
               <p className="text-muted-foreground">
                 Private infrastructure. Local AI. Complete control.
@@ -219,63 +224,54 @@ export default function VisionPage() {
           </div>
         </section>
 
-        {/* Where It Starts */}
-        <section ref={startRef} className="px-6 py-32">
-          <div className="container mx-auto max-w-7xl">
-            <motion.div
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              animate={startInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">
-                Where It Starts
-              </h2>
-              <p className="mx-auto max-w-2xl text-center text-xl text-muted-foreground">
-                NDA review is the entry point, not the destination. This is
-                Layer 1 of the system.
-              </p>
-            </motion.div>
+        {/* The Knowledge Layer */}
+        {vision?.knowledge_layer && (
+          <section ref={knowledgeRef} className="px-6 py-32">
+            <div className="container mx-auto max-w-7xl">
+              <motion.div
+                className="mb-16 text-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={knowledgeInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+                  {vision.knowledge_layer.headline}
+                </h2>
+                <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
+                  {vision.knowledge_layer.subhead}
+                </p>
+              </motion.div>
 
-            <div className="grid gap-6 md:grid-cols-3">
-              {vision?.start?.map((s, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={startInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
-                >
-                  <Card className="h-full border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-transparent p-6">
-                    <div className="mb-4 flex items-start justify-between">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20">
-                        <IconRenderer
-                          name={typeof s.icon === "string" ? s.icon : ""}
-                        />
-                      </div>
-                      <div className="flex flex-col items-end gap-1">
-                        <span className="rounded-full bg-primary/20 px-3 py-1 text-xs font-bold text-primary">
-                          {s.status}
-                        </span>
-                        <span className="font-mono text-xs text-muted-foreground">
-                          {s.layer}
+              <div className="grid gap-6 md:grid-cols-3">
+                {vision.knowledge_layer.items.map((item: any, index: number) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={knowledgeInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                  >
+                    <Card className="h-full border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-transparent p-6">
+                      <div className="mb-4 flex items-start justify-between">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20">
+                          <IconRenderer name={typeof item.icon === "string" ? item.icon : ""} />
+                        </div>
+                        <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+                          {item.status}
                         </span>
                       </div>
-                    </div>
-                    <h3 className="mb-2 text-lg font-bold">{s.title}</h3>
-                    <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                      {s.description}
-                    </p>
-                    <div className="inline-block rounded bg-primary/10 px-2 py-1 font-mono text-xs text-primary">
-                      {s.metric}
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
+                      <h3 className="mb-2 text-lg font-bold">{item.title}</h3>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        {/* Roadmap */}
+        {/* Where We're Going */}
         <section ref={roadmapRef} className="bg-muted/30 px-6 py-32">
           <div className="container mx-auto max-w-7xl">
             <motion.div
@@ -285,10 +281,10 @@ export default function VisionPage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-                Where We're Going
+                Where We&apos;re Going
               </h2>
               <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-                From single-document analysis to complete legal intelligence.
+                From single-document analysis to complete contract intelligence.
               </p>
             </motion.div>
 
@@ -304,46 +300,35 @@ export default function VisionPage() {
                   Target: Procurement + Vendor Contract Review
                 </h3>
                 <p className="text-muted-foreground">
-                  NDAs → Vendor Agreements → DPAs → MSAs → Procurement
-                  Workflows
+                  NDAs → Vendor Agreements → DPAs → MSAs → Procurement Workflows
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="rounded-lg border border-border/50 bg-card/50 p-4">
-                  <p className="text-sm font-bold text-primary">NDA Agent</p>
-                  <p className="text-xs text-muted-foreground">
-                    Entry Feature
-                  </p>
+                  <div className="mb-1 flex items-center gap-2">
+                    <p className="text-sm font-bold text-primary">NDA, DPA, MSA, Vendor</p>
+                    <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-400">Live</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground">4 Document Types Supported</p>
                 </div>
                 <div className="rounded-lg border border-border/50 bg-card/50 p-4">
-                  <p className="text-sm font-bold text-primary">
-                    Legal Workspace
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Operating System
-                  </p>
+                  <p className="text-sm font-bold text-primary">Knowledge Layer</p>
+                  <p className="text-xs text-muted-foreground">Core Differentiator</p>
                 </div>
                 <div className="rounded-lg border border-border/50 bg-card/50 p-4">
-                  <p className="text-sm font-bold text-primary">
-                    Obligation Tracking
-                  </p>
-                  <p className="text-xs text-muted-foreground">Value Engine</p>
+                  <p className="text-sm font-bold text-primary">Contract Intelligence</p>
+                  <p className="text-xs text-muted-foreground">Platform Vision</p>
                 </div>
                 <div className="rounded-lg border border-border/50 bg-card/50 p-4">
                   <p className="text-sm font-bold text-primary">Integrations</p>
-                  <p className="text-xs text-muted-foreground">
-                    Distribution Layer
-                  </p>
+                  <p className="text-xs text-muted-foreground">Future</p>
                 </div>
               </div>
             </motion.div>
 
             {/* Phase Groups */}
             {phases.map((phaseNum) => {
-              const phaseItems =
-                vision?.roadmap?.filter(
-                  (r: any) => r.phaseOrder === phaseNum
-                ) || []
+              const phaseItems = vision?.roadmap?.filter((r: any) => r.phaseOrder === phaseNum) || []
               const phaseLabel = phaseItems[0]?.phaseLabel || `Phase ${phaseNum}`
 
               return (
@@ -372,12 +357,8 @@ export default function VisionPage() {
                       >
                         <Card className="group border-2 border-border p-6 transition-colors hover:border-primary/30">
                           <div className="flex items-start gap-6">
-                            <div
-                              className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${r.color}`}
-                            >
-                              <IconRenderer
-                                name={typeof r.icon === "string" ? r.icon : ""}
-                              />
+                            <div className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${r.color}`}>
+                              <IconRenderer name={typeof r.icon === "string" ? r.icon : ""} />
                             </div>
                             <div className="flex-1">
                               <div className="mb-2 flex items-center justify-between">
@@ -385,12 +366,7 @@ export default function VisionPage() {
                                   <h3 className="text-xl font-bold transition-colors group-hover:text-primary">
                                     {r.title}
                                   </h3>
-                                  {r.built && (
-                                    <span className="flex items-center gap-1 rounded-full bg-primary/20 px-2 py-0.5 text-xs font-bold text-primary">
-                                      <Check className="h-3 w-3" />
-                                      Live
-                                    </span>
-                                  )}
+                                  <StatusBadge built={r.built} phaseOrder={r.phaseOrder} />
                                 </div>
                               </div>
                               <p className="leading-relaxed text-muted-foreground">
@@ -437,12 +413,8 @@ export default function VisionPage() {
                   >
                     <Card className="group h-full border-2 border-border p-6 transition-colors hover:border-primary/30">
                       <div className="flex items-start gap-4">
-                        <div
-                          className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${f.color}`}
-                        >
-                          <IconRenderer
-                            name={typeof f.icon === "string" ? f.icon : ""}
-                          />
+                        <div className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${f.color}`}>
+                          <IconRenderer name={typeof f.icon === "string" ? f.icon : ""} />
                         </div>
                         <div>
                           <h3 className="mb-2 text-lg font-bold transition-colors group-hover:text-primary">
@@ -474,7 +446,7 @@ export default function VisionPage() {
                 Principles Behind the System
               </h2>
               <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-                Legal AI should never require trust. It should guarantee it.
+                Contract intelligence should never require trust. It should guarantee it.
               </p>
             </motion.div>
 
@@ -525,64 +497,22 @@ export default function VisionPage() {
                     {vision.security.trust_statement.title}
                   </h3>
                   <ul className="space-y-2">
-                    {vision.security.trust_statement.markers?.map(
-                      (m: string, i: number) => (
-                        <li
-                          key={i}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
-                        >
-                          <Lock className="h-4 w-4 text-primary" />
-                          {m}
-                        </li>
-                      )
-                    )}
+                    {vision.security.trust_statement.markers?.map((m: string, i: number) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Lock className="h-4 w-4 text-primary" />
+                        {m}
+                      </li>
+                    ))}
                   </ul>
                 </Card>
                 <div className="grid gap-4">
                   {vision.security.controls?.map((c: any, i: number) => (
                     <Card key={i} className="border-2 border-border p-4">
                       <h4 className="mb-1 font-bold">{c.title}</h4>
-                      <p className="text-sm text-muted-foreground">
-                        {c.description}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{c.description}</p>
                     </Card>
                   ))}
                 </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Use Cases */}
-        {vision?.use_cases && vision.use_cases.length > 0 && (
-          <section ref={useCasesRef} className="px-6 py-32">
-            <div className="container mx-auto max-w-7xl">
-              <motion.div
-                className="mb-16 text-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={useCasesInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-                  Use Cases
-                </h2>
-                <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-                  How teams use Lexon AI for procurement and vendor contract
-                  review.
-                </p>
-              </motion.div>
-              <div className="grid gap-6 md:grid-cols-2">
-                {vision.use_cases.map((uc: any, i: number) => (
-                  <Card key={i} className="border-2 border-border p-6">
-                    <h3 className="mb-2 text-lg font-bold">{uc.scenario}</h3>
-                    <p className="mb-3 text-sm text-muted-foreground">
-                      {uc.outcome}
-                    </p>
-                    <div className="inline-block rounded bg-primary/10 px-2 py-1 font-mono text-xs text-primary">
-                      {uc.metric}
-                    </div>
-                  </Card>
-                ))}
               </div>
             </div>
           </section>

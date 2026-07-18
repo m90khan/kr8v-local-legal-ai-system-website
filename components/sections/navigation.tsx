@@ -8,9 +8,11 @@ import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { ThemeToggle } from "@/components/shared/theme-toggle"
+import { useTheme } from "next-themes"
 
 export function Navigation() {
   const router = useRouter()
+  const { resolvedTheme } = useTheme()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -55,11 +57,15 @@ export function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/logo.png"
+            src={
+              resolvedTheme === "dark"
+                ? "/images/logo-dark.png"
+                : "/images/logo-light.png"
+            }
             alt="Lexon AI"
-            width={32}
-            height={32}
-            className="hidden h-5 w-auto md:block"
+            width={44}
+            height={44}
+            className="hidden h-9 w-auto md:block"
           />
           <span className="bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-xl font-bold tracking-tight text-transparent">
             Lexon AI

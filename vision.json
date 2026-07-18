@@ -1,44 +1,43 @@
 {
   "seo": {
     "metadata": {
-      "title": "Lexon AI Legal Intelligence Platform | Private On-Premise AI for Contract & NDA Review",
-      "description": "Private legal AI platform for NDA review, contract analysis, vendor agreement review, policy validation, redline recommendations, and procurement risk intelligence. Deploy fully offline on your infrastructure with no external API dependency.",
+      "title": "Lexon AI | Private Contract Intelligence Platform",
+      "description": "Private contract intelligence platform for NDA review, contract analysis, vendor agreement review, policy validation, redline recommendations, and procurement risk intelligence. Deploy fully offline on your infrastructure with no external API dependency.",
       "keywords": [
-        "private legal AI",
-        "on-premise legal AI",
+        "private contract intelligence",
+        "on-premise contract review",
         "offline contract analysis",
         "NDA review AI",
-        "legal intelligence platform",
+        "contract intelligence platform",
         "contract risk analysis",
         "policy compliance engine",
         "AI contract review",
         "air-gapped AI",
-        "enterprise legal AI",
+        "enterprise contract intelligence",
         "procurement risk analysis",
         "vendor contract review",
         "private AI infrastructure",
-        "legal AI assistant",
         "contract playbook engine",
         "redline recommendation AI"
       ],
       "openGraph": {
-        "title": "Lexon AI Legal Intelligence Platform",
-        "description": "Private on-premise legal AI for NDA review, vendor agreement review, contract intelligence, policy validation, and enterprise compliance.",
+        "title": "Lexon AI | Private Contract Intelligence Platform",
+        "description": "Private contract intelligence for NDA review, vendor agreement review, policy validation, and enterprise compliance.",
         "type": "website"
       },
       "twitter": {
         "card": "summary_large_image",
-        "title": "Lexon AI Legal Intelligence Platform",
-        "description": "Offline legal AI infrastructure for enterprises and sensitive organizations."
+        "title": "Lexon AI | Private Contract Intelligence Platform",
+        "description": "Private contract intelligence infrastructure for enterprises and sensitive organizations."
       }
     },
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Lexon AI Legal Intelligence Platform",
+      "name": "Lexon AI | Private Contract Intelligence Platform",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Windows, Linux",
-      "description": "Private on-premise legal AI platform for NDA review, contract intelligence, vendor agreement review, policy compliance, redline recommendations, and vendor risk analysis.",
+      "description": "Private contract intelligence platform for NDA review, vendor agreement review, policy compliance, redline recommendations, and vendor risk analysis.",
       "offers": {
         "@type": "Offer",
         "price": "Custom",
@@ -46,7 +45,7 @@
       },
       "featureList": [
         "Offline AI inference",
-        "NDA review",
+        "Contract review (NDA, DPA, MSA, Vendor)",
         "Contract playbook validation",
         "Policy compliance checks",
         "Redline recommendations",
@@ -58,20 +57,19 @@
         "Role-based access control"
       ],
       "keywords": [
-        "Legal AI",
         "Contract Intelligence",
         "Private AI",
         "On-Premise AI",
         "Enterprise AI",
-        "NDA Analysis",
+        "Contract Analysis",
         "Policy Compliance",
         "Vendor Risk Intelligence"
       ]
     }
   },
   "hero": {
-    "headline": "Private Legal AI for Enterprise Contracts",
-    "subhead": "Offline, on-premise legal intelligence for NDA review, contract analysis, vendor agreement review, policy compliance, and procurement risk detection.",
+    "headline": "Private Contract Intelligence",
+    "subhead": "Built for organizations that want every contract reviewed against their own policies, playbooks, and legal knowledge.",
     "cta": ["Book a Demo", "Watch Demo"]
   },
   "problems": [
@@ -82,7 +80,7 @@
     },
     {
       "icon": "CloudOff",
-      "title": "External AI introduces security and compliance risks",
+      "title": "Cloud-based AI introduces security and compliance concerns",
       "description": "Uploading contracts to third-party APIs reduces visibility and control over sensitive information."
     },
     {
@@ -91,38 +89,36 @@
       "description": "Teams lack a unified private system for legal review, policy enforcement, and contract intelligence."
     }
   ],
-  "start": [
-    {
-      "icon": "FileSearch",
-      "title": "NDA Review Engine",
-      "description": "Analyze clauses, obligations, restrictions, and legal risks in seconds.",
-      "status": "Live",
-      "metric": "10 sec avg",
-      "layer": "Now"
-    },
-    {
-      "icon": "ShieldCheck",
-      "title": "Risk Detection Engine",
-      "description": "Identify problematic clauses, negotiation risks, and policy violations.",
-      "status": "Live",
-      "metric": "95% accuracy",
-      "layer": "Now"
-    },
-    {
-      "icon": "BrainCircuit",
-      "title": "Decision Intelligence",
-      "description": "Generate explainable Safe, Review, and High-Risk recommendations.",
-      "status": "Live",
-      "metric": "3 decision levels",
-      "layer": "Now"
-    }
-  ],
+  "knowledge_layer": {
+    "headline": "Your Legal Knowledge Powers Every Review",
+    "subhead": "Build your legal knowledge base once. Every future contract is reviewed against it. The more you use it, the smarter it gets.",
+    "items": [
+      {
+        "icon": "BookOpenCheck",
+        "title": "Policies & Playbooks",
+        "description": "Upload your company policies, approved standards, and legal playbooks. Every contract is validated against them.",
+        "status": "Live"
+      },
+      {
+        "icon": "FileSearch",
+        "title": "Reference Contracts",
+        "description": "Your best negotiations become the reference library. New contracts are compared against your approved standards.",
+        "status": "Live"
+      },
+      {
+        "icon": "Scale",
+        "title": "Type-Specific Rules",
+        "description": "NDA, DPA, MSA, Vendor — each document type has tailored analysis, risk detection, and rewrite templates.",
+        "status": "Live"
+      }
+    ]
+  },
   "roadmap": [
     {
       "icon": "FileSearch",
       "title": "NDA Review Engine",
       "description": "Analyze clauses, obligations, restrictions, and legal risks in NDAs within seconds.",
-      "phaseLabel": "Phase 1 — NDA Review Engine",
+      "phaseLabel": "Phase 1 — Contract Review Core",
       "phaseOrder": 1,
       "built": true,
       "priority": "high",
@@ -132,7 +128,7 @@
       "icon": "ShieldCheck",
       "title": "Risk Detection Engine",
       "description": "Identify problematic clauses, negotiation risks, and policy violations with high accuracy.",
-      "phaseLabel": "Phase 1 — NDA Review Engine",
+      "phaseLabel": "Phase 1 — Contract Review Core",
       "phaseOrder": 1,
       "built": true,
       "priority": "high",
@@ -141,8 +137,8 @@
     {
       "icon": "BrainCircuit",
       "title": "Decision Intelligence",
-      "description": "Generate explainable Safe, Review, and High-Risk recommendations for every clause.",
-      "phaseLabel": "Phase 1 — NDA Review Engine",
+      "description": "Provides policy-aware recommendations to support consistent review decisions.",
+      "phaseLabel": "Phase 1 — Contract Review Core",
       "phaseOrder": 1,
       "built": true,
       "priority": "high",
@@ -152,7 +148,7 @@
       "icon": "BookOpenCheck",
       "title": "Contract Playbook Engine",
       "description": "Validate agreements against approved legal playbooks, fallback clauses, and company standards.",
-      "phaseLabel": "Phase 1 — NDA Review Engine",
+      "phaseLabel": "Phase 1 — Contract Review Core",
       "phaseOrder": 1,
       "built": true,
       "priority": "high",
@@ -162,27 +158,7 @@
       "icon": "FilePenLine",
       "title": "Redline Recommendation System",
       "description": "Suggest safer clause replacements and negotiation-ready fallback language.",
-      "phaseLabel": "Phase 2 — Legal Workspace",
-      "phaseOrder": 2,
-      "built": true,
-      "priority": "high",
-      "color": "from-chart-2 to-chart-3"
-    },
-    {
-      "icon": "Scale",
-      "title": "Policy-to-Contract Validation",
-      "description": "Detect conflicts between contracts, procurement rules, privacy requirements, and internal policies.",
-      "phaseLabel": "Phase 2 — Legal Workspace",
-      "phaseOrder": 2,
-      "built": true,
-      "priority": "high",
-      "color": "from-chart-2 to-chart-3"
-    },
-    {
-      "icon": "GitCompareArrows",
-      "title": "Multi-Document Reasoning",
-      "description": "Compare NDAs, vendor agreements, DPAs, MSAs, and related contracts simultaneously.",
-      "phaseLabel": "Phase 2 — Legal Workspace",
+      "phaseLabel": "Phase 2 — Contract Intelligence",
       "phaseOrder": 2,
       "built": true,
       "priority": "high",
@@ -192,7 +168,27 @@
       "icon": "Workflow",
       "title": "Approval Workflow Intelligence",
       "description": "Automatically route agreements to legal, finance, procurement, or compliance reviewers.",
-      "phaseLabel": "Phase 2 — Legal Workspace",
+      "phaseLabel": "Phase 2 — Contract Intelligence",
+      "phaseOrder": 2,
+      "built": true,
+      "priority": "high",
+      "color": "from-chart-2 to-chart-3"
+    },
+    {
+      "icon": "Scale",
+      "title": "Policy-to-Contract Validation",
+      "description": "Detect conflicts between contracts, procurement rules, privacy requirements, and internal policies.",
+      "phaseLabel": "Phase 2 — Contract Intelligence",
+      "phaseOrder": 2,
+      "built": true,
+      "priority": "high",
+      "color": "from-chart-2 to-chart-3"
+    },
+    {
+      "icon": "GitCompareArrows",
+      "title": "Multi-Document Reasoning",
+      "description": "Compare NDAs, vendor agreements, DPAs, MSAs, and related contracts simultaneously.",
+      "phaseLabel": "Phase 2 — Contract Intelligence",
       "phaseOrder": 2,
       "built": true,
       "priority": "high",
@@ -214,7 +210,7 @@
       "description": "Analyze liability exposure, procurement risks, jurisdiction conflicts, indemnity terms, and data obligations.",
       "phaseLabel": "Phase 3 — Obligation & Vendor Intelligence",
       "phaseOrder": 3,
-      "built": true,
+      "built": false,
       "priority": "high",
       "color": "from-chart-3 to-chart-4"
     },
@@ -260,8 +256,8 @@
     },
     {
       "icon": "MessagesSquare",
-      "title": "Private Legal Copilot",
-      "description": "Internal AI assistant for contract Q&A, policy interpretation, clause reasoning, and legal guidance.",
+      "title": "Private AI Assistant",
+      "description": "Document-grounded Q&A for contract follow-up questions, policy interpretation, and clause reasoning.",
       "color": "from-chart-4 to-primary"
     }
   ],
@@ -283,9 +279,9 @@
     }
   ],
   "security": {
-    "title": "Security & Compliance",
+    "title": "Designed for Enterprise Deployment",
     "trust_statement": {
-      "title": "Built for Sensitive Legal Operations",
+      "title": "Built for Sensitive Contract Operations",
       "description": "Privacy-preserving infrastructure designed for organizations handling confidential contracts and regulated data.",
       "markers": [
         "Offline or self-hosted deployment",
@@ -311,37 +307,6 @@
       }
     ]
   },
-  "use_cases": [
-    {
-      "scenario": "Vendor onboarding with MSA + DPA review",
-      "outcome": "Automated multi-document analysis before procurement approval",
-      "metric": "Faster vendor cycles"
-    },
-    {
-      "scenario": "Procurement team reviewing vendor agreements at scale",
-      "outcome": "Policy-aware risk detection across NDAs, MSAs, and vendor contracts",
-      "metric": "Reduced legal bottlenecks"
-    },
-    {
-      "scenario": "Obligation tracking across active contracts",
-      "outcome": "Automatic extraction of deadlines, renewals, and compliance obligations",
-      "metric": "No missed renewals"
-    }
-  ],
-  "features": [
-    {
-      "title": "Private-by-Design Infrastructure",
-      "description": "Deploy entirely on your infrastructure with local AI inference and encrypted storage."
-    },
-    {
-      "title": "Policy-Aware Legal Intelligence",
-      "description": "Analyze contracts against internal legal standards, procurement rules, and compliance policies."
-    },
-    {
-      "title": "Reference-Driven Contract Analysis",
-      "description": "Compare agreements against approved templates, historical contracts, and negotiation precedents."
-    }
-  ],
   "cta": {
     "primary": {
       "label": "Book a Demo"
