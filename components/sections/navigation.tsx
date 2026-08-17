@@ -93,7 +93,7 @@ export function Navigation() {
               <Button
                 size="lg"
                 onClick={() => setShowZoho(true)}
-                className="bg-gradient-to-r from-primary to-chart-2 px-5 text-sm font-semibold"
+                className="bg-gradient-to-r from-primary to-chart-2 px-5 text-sm font-semibold text-black"
               >
                 Book a Demo
               </Button>

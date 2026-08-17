@@ -19,7 +19,10 @@ declare global {
   }
 }
 
-export function ZohoEmbed({ prefillName = "", prefillEmail = "" }: ZohoEmbedProps) {
+export function ZohoEmbed({
+  prefillName = "",
+  prefillEmail = "",
+}: ZohoEmbedProps) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -28,7 +31,7 @@ export function ZohoEmbed({ prefillName = "", prefillEmail = "" }: ZohoEmbedProp
     // Check if script already loaded
     if (window.Bookings?.inlineEmbed) {
       window.Bookings.inlineEmbed({
-        url: "https://lexonai.zohobookings.com/portal-embed#/4944556000000033048",
+        url: "https://lexonai.zohobookings.com/portal-embed#/4948129000000036045",
         parent: "#zoho-embed-container",
         height: "700px",
       })
@@ -44,7 +47,7 @@ export function ZohoEmbed({ prefillName = "", prefillEmail = "" }: ZohoEmbedProp
     script.onload = () => {
       if (window.Bookings?.inlineEmbed) {
         window.Bookings.inlineEmbed({
-          url: "https://lexonai.zohobookings.com/portal-embed#/4944556000000033048",
+          url: "https://lexonai.zohobookings.com/portal-embed#/4948129000000036045",
           parent: "#zoho-embed-container",
           height: "700px",
         })
