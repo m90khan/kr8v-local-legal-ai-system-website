@@ -31,7 +31,7 @@ export function ZohoEmbed({
     // Check if script already loaded
     if (window.Bookings?.inlineEmbed) {
       window.Bookings.inlineEmbed({
-        url: "https://lexonai.zohobookings.com/portal-embed#/4948129000000036045",
+        url: "https://lexonai1.zohobookings.com/portal-embed#/4948129000000036045",
         parent: "#zoho-embed-container",
         height: "700px",
       })
@@ -47,7 +47,7 @@ export function ZohoEmbed({
     script.onload = () => {
       if (window.Bookings?.inlineEmbed) {
         window.Bookings.inlineEmbed({
-          url: "https://lexonai.zohobookings.com/portal-embed#/4948129000000036045",
+          url: "https://lexonai1.zohobookings.com/portal-embed#/4948129000000036045",
           parent: "#zoho-embed-container",
           height: "700px",
         })

@@ -37,7 +37,7 @@ export function ZohoModal({ open, onClose }: ZohoModalProps) {
     const loadZoho = () => {
       if (window.Bookings?.inlineEmbed) {
         window.Bookings.inlineEmbed({
-          url: "https://lexonai.zohobookings.com/portal-embed#/4948129000000036045",
+          url: "https://lexonai1.zohobookings.com/portal-embed#/4948129000000036045",
           parent: "#zoho-modal-container",
           height: "650px",
         })
@@ -53,7 +53,7 @@ export function ZohoModal({ open, onClose }: ZohoModalProps) {
         scriptLoaded.current = true
         if (window.Bookings?.inlineEmbed) {
           window.Bookings.inlineEmbed({
-            url: "https://lexonai.zohobookings.com/portal-embed#/4948129000000036045",
+            url: "https://lexonai1.zohobookings.com/portal-embed#/4948129000000036045",
             parent: "#zoho-modal-container",
             height: "650px",
           })
